@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Oceanarium Międzyzdroje | Podwodny świat nad Bałtykiem</title>
+<meta name="description" content="Oceanarium w Międzyzdrojach: 3000 m², rekiny, mureny, ryby raf koralowych, półtunel 16 m, dotykowy basen i kawiarnia. Sprawdź godziny i ceny biletów.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --navy:#0b2a3c; --navy-2:#123b52; --teal:#1f9d98; --teal-2:#2bb5af;
+    --sand:#f5f1e8; --ink:#14212b; --muted:#5b6b76; --white:#ffffff; --line:#e3ebef;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .demo-bar{background:var(--teal);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+  .demo-bar a{color:#fff;font-weight:600}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,42,60,.96);backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.3px}
+  .brand img{width:44px;height:44px;border-radius:50%;background:#fff;padding:4px;object-fit:contain}
+  .brand small{display:block;font-weight:400;font-size:12px;opacity:.75;letter-spacing:0}
+  nav ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+  nav a{color:#dbe7ec;text-decoration:none;font-size:15px}
+  nav a:hover{color:#fff}
+  .lang{display:flex;gap:8px;font-size:13px}
+  .lang a{opacity:.7;padding:4px 8px;border:1px solid rgba(255,255,255,.25);border-radius:6px}
+  .lang a.on{opacity:1;background:var(--teal);border-color:var(--teal)}
+
+  /* Hero */
+  .hero{position:relative;color:#fff;min-height:620px;display:flex;align-items:center;background:var(--navy) center/cover no-repeat;background-image:linear-gradient(90deg,rgba(11,42,60,.92) 0%,rgba(11,42,60,.6) 55%,rgba(11,42,60,.25) 100%),url("https://www.oceanarium.com.pl/images/IMG-8729.JPG")}
+  .hero .wrap{padding-top:64px;padding-bottom:96px}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal-2);font-weight:700;margin-bottom:18px}
+  .hero h1{font-size:clamp(36px,5.2vw,62px);line-height:1.08;font-weight:800;max-width:720px;letter-spacing:-.5px}
+  .hero p.lead{font-size:19px;max-width:600px;margin-top:20px;color:#e1edf2}
+  .cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-2)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+  /* Stats */
+  .stats{background:var(--navy-2);color:#fff;margin-top:-56px;position:relative;z-index:2;border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .stat{padding:30px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-size:34px;font-weight:800;color:var(--teal-2)}
+  .stat span{font-size:14px;color:#cfe0e8}
+
+  section{padding:96px 0}
+  .kicker{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  h2{font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin-top:10px;letter-spacing:-.3px;color:var(--navy)}
+  .sec-lead{color:var(--muted);max-width:680px;margin-top:14px;font-size:17px}
+
+  /* Intro */
+  .intro{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+  .intro p{margin-top:18px;color:#34444e;font-size:17px}
+  .intro .pill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .pill{background:var(--sand);color:var(--navy);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600}
+  .intro figure img{border-radius:22px;height:480px;width:100%;object-fit:cover;box-shadow:0 24px 60px rgba(11,42,60,.18)}
+
+  /* Zones */
+  .zones{background:var(--sand)}
+  .zone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+  .zone{background:#fff;border-radius:20px;padding:34px 30px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+  .zone:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,60,.1)}
+  .zone .level{font-size:13px;font-weight:800;color:var(--teal);letter-spacing:1.5px;text-transform:uppercase}
+  .zone h3{font-size:22px;color:var(--navy);margin:10px 0 12px}
+  .zone p{color:var(--muted);font-size:15.5px}
+  .zone ul{list-style:none;margin-top:18px}
+  .zone li{padding:8px 0 8px 26px;position:relative;border-top:1px solid var(--line);font-size:15px}
+  .zone li::before{content:"";position:absolute;left:0;top:16px;width:10px;height:10px;border-radius:50%;background:var(--teal)}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+  .gallery img{width:100%;height:240px;object-fit:cover;border-radius:16px;transition:transform .3s}
+  .gallery img:hover{transform:scale(1.03)}
+  .gallery img.tall{grid-row:span 2;height:100%}
+
+  /* Kids */
+  .kids{background:var(--navy);color:#fff}
+  .kids .kicker{color:var(--teal-2)}
+  .kids h2{color:#fff}
+  .kids .sec-lead{color:#c6d9e2}
+  .kids-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .kids-grid img{border-radius:22px;width:100%;height:440px;object-fit:cover}
+  .kid-items{display:grid;gap:16px;margin-top:28px}
+  .kid{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:20px 22px;border-radius:16px}
+  .kid b{display:block;font-size:17px;margin-bottom:4px}
+  .kid span{color:#c6d9e2;font-size:15px}
+
+  /* Cafe */
+  .cafe-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .menu{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:26px}
+  .menu div{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .menu b{color:var(--navy)}
+  .cafe-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cafe-photos img{width:100%;height:220px;object-fit:cover;border-radius:16px}
+  .cafe-photos img:first-child{grid-column:span 2;height:300px}
+  .phone-box{display:inline-flex;align-items:center;gap:12px;margin-top:28px;background:var(--teal);color:#fff;padding:14px 22px;border-radius:14px;text-decoration:none;font-weight:700}
+
+  /* Visit */
+  .visit{background:var(--sand)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;margin-top:52px;align-items:stretch}
+  .info-card{background:#fff;border-radius:22px;padding:36px;border:1px solid var(--line);display:flex;flex-direction:column;gap:26px}
+  .info-card h4{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .info-card p,.info-card a{font-size:17px;color:var(--navy);text-decoration:none}
+  .info-card a:hover{text-decoration:underline}
+  .info-card .note{font-size:15px;color:var(--muted)}
+  .map iframe{width:100%;height:100%;min-height:420px;border:0;border-radius:22px}
+
+  .partners{padding:56px 0;border-top:1px solid var(--line)}
+  .partners .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .partners span{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .partner-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+  .partner-logos img{height:48px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.75}
+
+  footer{background:var(--navy);color:#b9cdd7;padding:52px 0 36px;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  footer a{color:#e6f0f4;text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  footer .sig{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:13px}
+  footer .sig img{width:26px;height:26px;background:#fff;border-radius:50%;padding:2px}
+
+  @media (max-width:980px){
+    .stats .wrap{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:0}
+    .intro,.kids-grid,.cafe-grid,.visit-grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .gallery img.tall{grid-row:auto;height:240px}
+    .zone-grid{grid-template-columns:1fr}
+    .intro figure img,.kids-grid img{height:340px}
+    nav ul{display:none}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 18px}
+    .hero{min-height:560px}
+    .menu{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr;gap:10px}
+    .gallery img{height:160px}
+    section{padding:72px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Projekt demonstracyjny przygotowany przez <a href="https://softosync.com" target="_blank" rel="noopener">Softosync</a>. Treści i zdjęcia pochodzą z oficjalnej strony Oceanarium.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="https://www.oceanarium.com.pl/images/logo-kolor.png" alt="Logo Oceanarium Międzyzdroje">
+      <div>Oceanarium<small>Międzyzdroje</small></div>
+    </a>
+    <nav aria-label="Główna nawigacja">
+      <ul>
+        <li><a href="#zwiedzaj">Zwiedzaj</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#dla-dzieci">Dla dzieci</a></li>
+        <li><a href="#kawiarnia">Kawiarnia</a></li>
+        <li><a href="#wizyta">Wizyta</a></li>
+        <li><a href="https://www.oceanarium.com.pl/cennik.html">Cennik</a></li>
+      </ul>
+    </nav>
+    <div class="lang" aria-label="Wersje językowe">
+      <a class="on" href="https://www.oceanarium.com.pl/index.html">PL</a>
+      <a href="https://www.oceanarium.com.pl/en/index_en.html">EN</a>
+      <a href="https://www.oceanarium.com.pl/de/index_de.html">DE</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Oceanarium Międzyzdroje">
+    <div class="wrap">
+      <span class="eyebrow">Międzyzdroje · Wybrzeże Bałtyku</span>
+      <h1>Podwodny świat tuż nad Bałtykiem</h1>
+      <p class="lead">Nowo powstałe Oceanarium na powierzchni 3000 m². Rekiny, mureny, ryby raf koralowych i słodkowodne piękności, wszystko pod jednym dachem.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://www.oceanarium.com.pl/cennik.html">Bilety i godziny</a>
+        <a class="btn btn-ghost" href="#galeria">Zobacz galerię</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="wrap" style="padding:0;display:grid;grid-template-columns:repeat(4,1fr)">
+        <div class="stat"><b>3000 m²</b><span>powierzchni ekspozycji</span></div>
+        <div class="stat"><b>220 t</b><span>wody w zbiornikach</span></div>
+        <div class="stat"><b>16 m</b><span>półtunel z rybami</span></div>
+        <div class="stat"><b>35</b><span>zbiorników z okazami</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="zwiedzaj">
+    <div class="wrap intro">
+      <div>
+        <span class="kicker">Co zobaczysz</span>
+        <h2>Ryby z najdalszych zakątków świata</h2>
+        <p>W naszym obiekcie zobaczysz drapieżne rekiny i mureny, przepięknie ubarwione ryby raf koralowych oraz słodkowodne gatunki, takie jak jesiotry, cichlidy i arapaimy.</p>
+        <p>Najbardziej widowiskowy jest 16-metrowy półtunel, w którym ryby płyną dookoła Ciebie. W dotykowym basenie możesz dotknąć żywych ryb, a w paludarium zobaczysz japońskie karpie koi.</p>
+        <div class="pill-list">
+          <span class="pill">Rekiny</span><span class="pill">Mureny</span><span class="pill">Ryby raf koralowych</span><span class="pill">Jesiotry</span><span class="pill">Karpie koi</span><span class="pill">Basen dotykowy</span>
+        </div>
+      </div>
+      <figure>
+        <img src="https://www.oceanarium.com.pl/images/IMG_20201017_1335032.jpg" alt="Akwarium z rybami w Oceanarium Międzyzdroje" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="zones">
+    <div class="wrap">
+      <span class="kicker">Plan obiektu</span>
+      <h2>Trzy poziomy, jedna wyprawa</h2>
+      <p class="sec-lead">Każdy poziom ma coś innego: podwodne widoki, odpoczynek w kawiarni i zabawę dla dzieci.</p>
+      <div class="zone-grid">
+        <article class="zone">
+          <span class="level">Poziom -1</span>
+          <h3>Świat podwodny</h3>
+          <p>Dziesięć zbiorników z okazami z najdalszych zakątków świata i półtunel, w którym można obserwować podwodne życie.</p>
+          <ul><li>10 zbiorników</li><li>16 m półtunel</li><li>Siedziska do obserwacji</li></ul>
+        </article>
+        <article class="zone">
+          <span class="level">Poziom 0</span>
+          <h3>Akwaria i kawiarnia</h3>
+          <p>Dwadzieścia pięć zbiorników, miejsca do odpoczynku i kawiarnia. Przy recepcji znajdziesz też sklepik z pamiątkami.</p>
+          <ul><li>25 zbiorników</li><li>Oceanarium Cafe</li><li>Sklepik z pamiątkami</li></ul>
+        </article>
+        <article class="zone">
+          <span class="level">Poziom +1</span>
+          <h3>Strefa zabawy</h3>
+          <p>Bawialnia z miejscami do odpoczynku, wystawa modeli rekinów w skali 1:1 i gry multimedialne z wykrywaniem ruchu.</p>
+          <ul><li>Wystawa rekinów 1:1</li><li>Gry multimedialne</li><li>Infokiosk</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <span class="kicker">Galeria</span>
+      <h2>Zobacz, jak u nas jest</h2>
+      <p class="sec-lead">Zdjęcia prosto z naszych akwariów.</p>
+      <div class="gallery">
+        <img class="tall" src="https://www.oceanarium.com.pl/images/ryby/1.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 1" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/2.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 2" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/3.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 3" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/4.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 4" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/5.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 5" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/6.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 6" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/7.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 7" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/ryby/8.jpeg" alt="Ryba w akwarium Oceanarium Międzyzdroje, zdjęcie 8" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="kids" id="dla-dzieci">
+    <div class="wrap kids-grid">
+      <div>
+        <span class="kicker">Dla najmłodszych</span>
+        <h2>Nauka przez zabawę</h2>
+        <p class="sec-lead">Najmłodsi goście mają własne atrakcje, w których poznają morze i jego mieszkańców.</p>
+        <div class="kid-items">
+          <div class="kid"><b>Sala edukacyjna i multimedialna</b><span>Dzieci uczą się przez zabawę, z ekranami i interaktywnymi treściami.</span></div>
+          <div class="kid"><b>Bawialnia</b><span>Miejsce do odpoczynku i zabawy między zwiedzaniem akwariów.</span></div>
+          <div class="kid"><b>Rekin w skali 1:1</b><span>Wystawa modeli rekinów w skali 1:1.</span></div>
+        </div>
+      </div>
+      <img src="https://www.oceanarium.com.pl/images/IMG-20200309-WA0044.jpg" alt="Wnętrze Oceanarium Międzyzdroje dla dzieci" loading="lazy">
+    </div>
+  </section>
+
+  <section id="kawiarnia">
+    <div class="wrap cafe-grid">
+      <div>
+        <span class="kicker">Oceanarium Cafe</span>
+        <h2>Przerwa przy kawie</h2>
+        <p class="sec-lead">Klimatyczna restauracja w sercu Oceanarium. Zwiedzanie możesz zakończyć filiżanką kawy i kawałkiem ciasta własnego wypieku.</p>
+        <div class="menu">
+          <div><b>Kawa</b><br>Julius Meinl</div>
+          <div><b>Pizza</b><br>Croccantella, prawdziwa włoska</div>
+          <div><b>Desery</b><br>Ciasta własnego wypieku</div>
+          <div><b>Lody</b><br>Włoskie, ręcznie robione</div>
+          <div><b>Pancakes</b><br>Także w wersji wytrawnej</div>
+          <div><b>Sałatki</b><br>Lekkie dania i przekąski</div>
+        </div>
+        <a class="phone-box" href="tel:+48881344066">Zamówienia i rezerwacje: +48 881 344 066</a>
+      </div>
+      <div class="cafe-photos">
+        <img src="https://www.oceanarium.com.pl/images/kawiarnia/1616353683008.jpg" alt="Wnętrze restauracji Oceanarium Cafe" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/kawiarnia/1616353708332.jpg" alt="Kawiarnia Oceanarium Cafe, stoliki" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/kawiarnia/1616355181763.jpg" alt="Deser w kawiarni Oceanarium" loading="lazy">
+        <img src="https://www.oceanarium.com.pl/images/kawiarnia/DSC06412.JPG" alt="Kawiarnia Oceanarium, widok na wnętrze" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="wizyta">
+    <div class="wrap">
+      <span class="kicker">Odwiedź nas</span>
+      <h2>Jak do nas trafić</h2>
+      <p class="sec-lead">Oceanarium znajduje się w Międzyzdrojach, przy ul. Bohaterów Warszawy 16B.</p>
+      <div class="visit-grid">
+        <div class="info-card">
+          <div>
+            <h4>Adres</h4>
+            <p>ul. Bohaterów Warszawy 16B<br>72-500 Międzyzdroje</p>
+          </div>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel:+48512755809">512 755 809</a>
+          </div>
+          <div>
+            <h4>E-mail</h4>
+            <a href="mailto:biuro@oceanarium.com.pl">biuro@oceanarium.com.pl</a>
+          </div>
+          <div>
+            <h4>Godziny i ceny</h4>
+            <p class="note">Aktualne godziny otwarcia i cennik biletów znajdziesz na stronie cennika.</p>
+            <p><a href="https://www.oceanarium.com.pl/cennik.html">Przejdź do cennika &rarr;</a></p>
+          </div>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.0875214664097!2d14.442621216037551!3d53.93018893851884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aa8b452fe4ab01%3A0x4594cb1a6274961f!2sOceanarium%20Mi%C4%99dzyzdroje!5e0!3m2!1spl!2spl!4v1583349672353!5m2!1spl!2spl" title="Mapa dojazdu do Oceanarium Międzyzdroje" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="partners">
+    <div class="wrap">
+      <span>Partnerzy</span>
+      <div class="partner-logos">
+        <a href="https://www.miedzyzdrojegoldentulip.pl/" target="_blank" rel="noopener"><img src="https://www.oceanarium.com.pl/images/golden_tulip_logo.png" alt="Golden Tulip Międzyzdroje" loading="lazy"></a>
+        <a href="https://magazynakwarium.pl/" target="_blank" rel="noopener"><img src="https://www.oceanarium.com.pl/images/akwarystyka.png" alt="Magazyn Akwarium" loading="lazy"></a>
+        <a href="https://www.zut.edu.pl/" target="_blank" rel="noopener"><img src="https://www.oceanarium.com.pl/images/logo5.jpg" alt="Zachodniopomorski Uniwersytet Technologiczny" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff;font-size:16px">Oceanarium Międzyzdroje</strong>
+      <p style="margin-top:8px">ul. Bohaterów Warszawy 16B, 72-500 Międzyzdroje</p>
+      <p style="margin-top:4px">biuro@oceanarium.com.pl · 512 755 809</p>
+      <p style="margin-top:14px"><a href="https://www.facebook.com/oceanarium.miedzyzdroje/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/oceanarium.miedzyzdroje/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+    <div>
+      <p><a href="https://www.oceanarium.com.pl/cennik.html">Cennik</a> · <a href="https://www.oceanarium.com.pl/restauracja.html">Restauracja</a> · <a href="https://www.oceanarium.com.pl/edukacja.html">Edukacja</a> · <a href="https://www.oceanarium.com.pl/kontakt.php">Kontakt</a> · <a href="https://www.oceanarium.com.pl/polityka.html">Polityka prywatności</a></p>
+      <div class="sig">
+        <img src="softosync-logo.png" alt="Logo Softosync">
+        <span>Demo przygotowane przez Softosync</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
