@@ -44,7 +44,7 @@ nav a:hover{color:var(--amber)}
 @media(min-width:860px){nav ul{display:flex}.navcta{display:inline-flex;padding:10px 18px;font-size:14px}}
 
 /* hero */
-.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:72px 0 88px}
+.hero{position:relative;background:linear-gradient(rgba(13,22,38,.80),rgba(13,22,38,.92)),url('https://images.unsplash.com/photo-1650392131866-e4e2e06a0c78?auto=format&fit=crop&q=70&w=1600') center/cover no-repeat var(--ink);color:#fff;overflow:hidden;padding:72px 0 88px}
 .hero::before{content:"";position:absolute;inset:0;
   background:
    radial-gradient(60% 55% at 50% -10%,rgba(245,166,35,.38),transparent 70%),
@@ -72,8 +72,9 @@ h2{font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:cl
 .cats{display:grid;gap:18px}
 .cat{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
 .cat:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,22,38,.12)}
-.cat .art{height:150px;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.cat .art::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 50% 0%,rgba(245,166,35,.45),transparent 70%)}
+.cat .art{height:170px;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cat .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat .art::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(13,22,38,.15),rgba(13,22,38,.55)),radial-gradient(70% 90% at 50% 0%,rgba(245,166,35,.35),transparent 70%)}
 .cat .art svg{position:relative;width:84px;height:84px}
 .cat .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
 .cat h3{font-family:var(--head);font-size:28px;text-transform:uppercase;color:var(--ink);line-height:1.1}
@@ -167,12 +168,7 @@ footer a:hover{color:var(--amber)}
     <div class="cats">
 
       <a class="cat" href="http://www.megalightph.com/commercial-residential-lighting.html" rel="noopener">
-        <div class="art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of a ceiling downlight">
-            <path d="M8 14h48"/><path d="M20 14v6h24v-6"/><path d="M22 20l-8 30M42 20l8 30M32 20v32" opacity=".55"/>
-            <circle cx="32" cy="24" r="3" fill="#f5a623"/>
-          </svg>
-        </div>
+        <div class="art"><img src="https://images.unsplash.com/photo-1727948539766-1f74c503d757?auto=format&fit=crop&q=70&w=800" alt="Ceiling of a building with a round LED light fixture" loading="lazy" width="800" height="520"></div>
         <div class="body">
           <h3>Commercial / Residential Lighting</h3>
           <p>Your lighting needs for your office, malls, schools, homes, and more!</p>
@@ -182,12 +178,7 @@ footer a:hover{color:var(--amber)}
       </a>
 
       <a class="cat" href="http://www.megalightph.com/industrial-lighting.html" rel="noopener">
-        <div class="art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of an industrial high bay light">
-            <path d="M32 6v10"/><path d="M14 40c0-14 8-24 18-24s18 10 18 24z"/><path d="M12 40h40"/>
-            <path d="M18 48l-6 10M32 48v12M46 48l6 10" opacity=".55"/>
-          </svg>
-        </div>
+        <div class="art"><img src="https://images.unsplash.com/photo-1650392131866-e4e2e06a0c78?auto=format&fit=crop&q=70&w=800" alt="High warehouse ceiling with skylights, the kind of space lit by high bay lights" loading="lazy" width="800" height="520"></div>
         <div class="body">
           <h3>Industrial Lighting</h3>
           <p>Your lighting needs for your factories, warehouses, gyms, streetlights, parking lot, billboards.</p>
@@ -197,12 +188,7 @@ footer a:hover{color:var(--amber)}
       </a>
 
       <a class="cat" href="http://www.megalightph.com/solar-lighting.html" rel="noopener">
-        <div class="art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of the sun above a solar panel">
-            <circle cx="32" cy="20" r="8"/><path d="M32 4v4M32 32v4M16 20h4M44 20h4M21 9l3 3M43 9l-3 3"/>
-            <path d="M12 58l5-14h30l5 14z"/><path d="M24 44l-2 14M40 44l2 14M15 51h34" opacity=".55"/>
-          </svg>
-        </div>
+        <div class="art"><img src="https://images.unsplash.com/photo-1592263904934-b00851dc93eb?auto=format&fit=crop&q=70&w=800" alt="Rows of solar panels on a green field under a blue sky" loading="lazy" width="800" height="520"></div>
         <div class="body">
           <h3>Solar Lighting</h3>
           <p>Your solar lighting needs for a greener and brighter tomorrow!</p>
@@ -263,7 +249,7 @@ footer a:hover{color:var(--amber)}
     </div>
     <div class="made" style="margin-top:20px">
       <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" width="22" height="22" loading="lazy">
-      <span>Demo project prepared by Softosync &middot; <a href="https://softosync.com" rel="noopener">softosync.com</a></span>
+      <span>Demo project prepared by Softosync &middot; <a href="https://softosync.com" rel="noopener">softosync.com</a> &middot; Demo photos: stock images from Unsplash (Pieter-Jan Casteels, ft shafi, Gabriel), to be replaced with MEGALIGHT's own photos.</span>
     </div>
   </div>
 </footer>
