@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Demo redesign of the MEGALIGHT home page: lighting for offices, malls, schools, homes, factories, warehouses, streets and solar.">
+<title>MEGALIGHT – Home (design demo by Softosync)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1626; --ink2:#16233a; --paper:#f7f5f0; --line:#e3ded2;
+  --amber:#f5a623; --amber-d:#c97f00; --text:#1d2433; --muted:#5c6577;
+  --head:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--text);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* demo bar */
+.demobar{background:#000;color:#cfd5e1;font-size:12px;text-align:center;padding:7px 12px;letter-spacing:.02em}
+.demobar b{color:var(--amber);font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(13,22,38,.96);backdrop-filter:blur(8px);border-bottom:1px solid #22304a}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--head);font-weight:700;font-size:26px;letter-spacing:.12em;color:#fff;display:flex;align-items:center;gap:10px}
+.brand i{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--amber);box-shadow:0 0 14px 4px rgba(245,166,35,.6)}
+nav ul{display:none;list-style:none;gap:28px}
+nav a{color:#cdd5e4;font-size:14px;font-weight:500}
+nav a:hover{color:var(--amber)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;padding:13px 22px;border-radius:6px;transition:.2s;cursor:pointer;border:0}
+.btn-amber{background:var(--amber);color:#1a1200}
+.btn-amber:hover{background:#ffb83d}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.navcta{display:none}
+@media(min-width:860px){nav ul{display:flex}.navcta{display:inline-flex;padding:10px 18px;font-size:14px}}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:72px 0 88px}
+.hero::before{content:"";position:absolute;inset:0;
+  background:
+   radial-gradient(60% 55% at 50% -10%,rgba(245,166,35,.38),transparent 70%),
+   radial-gradient(35% 40% at 15% 0%,rgba(255,214,140,.18),transparent 70%),
+   radial-gradient(35% 40% at 85% 0%,rgba(255,214,140,.18),transparent 70%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;
+  background:linear-gradient(to top,var(--ink2),transparent)}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:14px}
+h1{font-family:var(--head);font-weight:700;text-transform:uppercase;line-height:.98;font-size:clamp(44px,11vw,92px);letter-spacing:.01em;max-width:11ch}
+h1 span{color:var(--amber)}
+.hero p{margin-top:20px;max-width:520px;font-size:18px;color:#cbd3e3}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.chips span{font-size:13px;padding:6px 12px;border:1px solid #2c3d5c;border-radius:999px;color:#b6c0d4;background:rgba(255,255,255,.03)}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{margin-bottom:34px;max-width:620px}
+.sec-head .eyebrow{color:var(--amber-d)}
+h2{font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:clamp(32px,6vw,48px);line-height:1.05;color:var(--ink)}
+.sec-head p{margin-top:12px;color:var(--muted)}
+
+/* categories */
+.cats{display:grid;gap:18px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.cat:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,22,38,.12)}
+.cat .art{height:150px;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cat .art::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 50% 0%,rgba(245,166,35,.45),transparent 70%)}
+.cat .art svg{position:relative;width:84px;height:84px}
+.cat .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cat h3{font-family:var(--head);font-size:28px;text-transform:uppercase;color:var(--ink);line-height:1.1}
+.cat p{color:var(--muted);font-size:15px}
+.cat ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.cat li{font-size:12.5px;padding:4px 10px;background:#f1eee6;border-radius:999px;color:#3a4254}
+.cat .go{margin-top:auto;padding-top:10px;font-weight:600;font-size:14px;color:var(--amber-d)}
+.cat .go::after{content:" →"}
+@media(min-width:760px){.cats{grid-template-columns:repeat(3,1fr)}}
+
+/* where */
+.where{background:var(--ink);color:#fff}
+.where h2{color:#fff}
+.where .sec-head p{color:#aab5cb}
+.grid2{display:grid;gap:12px}
+.use{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid #243551;border-radius:10px;background:var(--ink2)}
+.use b{display:block;font-weight:600;color:#fff}
+.use small{color:#9fabc2;font-size:13.5px}
+.dot{flex:0 0 10px;height:10px;margin-top:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px rgba(245,166,35,.7)}
+@media(min-width:760px){.grid2{grid-template-columns:repeat(3,1fr)}}
+
+/* about */
+.about{display:grid;gap:26px;align-items:center}
+.quote{font-family:var(--head);font-size:clamp(30px,5vw,44px);text-transform:uppercase;line-height:1.08;color:var(--ink)}
+.quote span{color:var(--amber-d)}
+.about p{color:var(--muted);font-size:17px}
+@media(min-width:860px){.about{grid-template-columns:1.1fr 1fr;gap:56px}}
+
+/* cta */
+.cta{background:linear-gradient(120deg,#f5a623,#ffc65c);color:#1a1200;text-align:center;padding:64px 0}
+.cta h2{color:#1a1200}
+.cta p{margin:10px auto 24px;max-width:520px}
+.cta .btn{background:#0d1626;color:#fff}
+.cta .btn:hover{background:#1c2c48}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta .btn.alt{background:transparent;color:#1a1200;border:1.5px solid #1a1200}
+
+/* footer */
+footer{background:#080e1a;color:#8f9bb3;padding:36px 0 30px;font-size:13.5px}
+.foot{display:flex;flex-direction:column;gap:18px}
+footer .brand{font-size:22px}
+footer a:hover{color:var(--amber)}
+.links{display:flex;flex-wrap:wrap;gap:16px}
+.made{display:flex;align-items:center;gap:8px;padding-top:18px;border-top:1px solid #1a2740;font-size:12.5px}
+.made img{width:22px;height:22px;object-fit:contain;background:#fff;border-radius:4px;padding:2px}
+@media(min-width:760px){.foot{flex-direction:row;justify-content:space-between;align-items:center}}
+</style>
+</head>
+<body>
+
+<div class="demobar">Demo project prepared by <b>Softosync</b> &middot; Design concept only, not the live MEGALIGHT website</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="MEGALIGHT home"><i aria-hidden="true"></i>MEGALIGHT</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#where">Where we light</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="http://www.megalightph.com/contact.html" rel="noopener">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-amber navcta" href="http://www.megalightph.com/contact.html" rel="noopener">Contact us</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Commercial &middot; Industrial &middot; Solar</div>
+    <h1>Lighting the way to <span>your future</span></h1>
+    <p>Your lighting needs for your office, malls, schools, homes, and more!</p>
+    <div class="actions">
+      <a class="btn btn-amber" href="#products">Browse products</a>
+      <a class="btn btn-ghost" href="http://www.megalightph.com/contact.html" rel="noopener">Contact us</a>
+    </div>
+    <div class="chips" aria-label="Product types">
+      <span>Downlights</span><span>Panel Lights</span><span>T5 &amp; T8 Tube Lights</span><span>Highbay</span><span>Floodlight</span><span>Streetlight</span><span>Solar Lighting</span>
+    </div>
+  </div>
+</div>
+
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Your lighting needs</div>
+      <h2>Three ranges, one supplier</h2>
+      <p>Pick the range that fits your space. Each category opens the full product page on the current MEGALIGHT site.</p>
+    </div>
+    <div class="cats">
+
+      <a class="cat" href="http://www.megalightph.com/commercial-residential-lighting.html" rel="noopener">
+        <div class="art">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of a ceiling downlight">
+            <path d="M8 14h48"/><path d="M20 14v6h24v-6"/><path d="M22 20l-8 30M42 20l8 30M32 20v32" opacity=".55"/>
+            <circle cx="32" cy="24" r="3" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Commercial / Residential Lighting</h3>
+          <p>Your lighting needs for your office, malls, schools, homes, and more!</p>
+          <ul><li>Downlights</li><li>Panel Lights</li><li>T5 Tube Lights</li><li>T8 Tube Lights</li></ul>
+          <span class="go">View range</span>
+        </div>
+      </a>
+
+      <a class="cat" href="http://www.megalightph.com/industrial-lighting.html" rel="noopener">
+        <div class="art">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of an industrial high bay light">
+            <path d="M32 6v10"/><path d="M14 40c0-14 8-24 18-24s18 10 18 24z"/><path d="M12 40h40"/>
+            <path d="M18 48l-6 10M32 48v12M46 48l6 10" opacity=".55"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Industrial Lighting</h3>
+          <p>Your lighting needs for your factories, warehouses, gyms, streetlights, parking lot, billboards.</p>
+          <ul><li>Highbay</li><li>Floodlight</li><li>Gas Station Light</li><li>Ministreetlight</li><li>Streetlight</li></ul>
+          <span class="go">View range</span>
+        </div>
+      </a>
+
+      <a class="cat" href="http://www.megalightph.com/solar-lighting.html" rel="noopener">
+        <div class="art">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Icon of the sun above a solar panel">
+            <circle cx="32" cy="20" r="8"/><path d="M32 4v4M32 32v4M16 20h4M44 20h4M21 9l3 3M43 9l-3 3"/>
+            <path d="M12 58l5-14h30l5 14z"/><path d="M24 44l-2 14M40 44l2 14M15 51h34" opacity=".55"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Solar Lighting</h3>
+          <p>Your solar lighting needs for a greener and brighter tomorrow!</p>
+          <span class="go">View range</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="where" class="where">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Where we light</div>
+      <h2>Find lighting by space</h2>
+      <p>Spaces named on the MEGALIGHT site, grouped so visitors can jump straight to the right range.</p>
+    </div>
+    <div class="grid2">
+      <div class="use"><span class="dot"></span><div><b>Offices, malls, schools, homes</b><small>Commercial / Residential range</small></div></div>
+      <div class="use"><span class="dot"></span><div><b>Factories, warehouses, gyms</b><small>Industrial range</small></div></div>
+      <div class="use"><span class="dot"></span><div><b>Streetlights, parking lots, billboards</b><small>Industrial range</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="quote">We are the solution to <span>your problems.</span></div>
+    <div>
+      <p>We are committed to provide you with quality products and services.</p>
+      <p style="margin-top:12px"><b style="color:var(--ink)">Lighting The Way To Your Future!</b></p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Planning a lighting project?</h2>
+    <p>Get in touch with the MEGALIGHT team about your space.</p>
+    <div class="row">
+      <a class="btn" href="http://www.megalightph.com/contact.html" rel="noopener">Contact page</a>
+      <a class="btn alt" href="tel:+6322771646">Call (632) 277-16-46</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top"><i aria-hidden="true"></i>MEGALIGHT</a>
+      <div class="links">
+        <a href="http://www.megalightph.com/products.html" rel="noopener">Products</a>
+        <a href="http://www.megalightph.com/about.html" rel="noopener">About</a>
+        <a href="http://www.megalightph.com/contact.html" rel="noopener">Contact</a>
+      </div>
+    </div>
+    <div class="made" style="margin-top:20px">
+      <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" width="22" height="22" loading="lazy">
+      <span>Demo project prepared by Softosync &middot; <a href="https://softosync.com" rel="noopener">softosync.com</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
