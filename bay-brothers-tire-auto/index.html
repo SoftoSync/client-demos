@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demo homepage concept for Bay Brothers Tire &amp; Auto LLC, San Francisco. Prepared by Softosync.">
+<title>Bay Brothers Tire &amp; Auto | Demo homepage by Softosync</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asphalt:#10151C;
+  --asphalt-2:#1A222D;
+  --navy:#123A6B;
+  --signal:#F5B700;
+  --signal-dark:#C98F00;
+  --fog:#E9EDF2;
+  --paper:#FFFFFF;
+  --ink:#10151C;
+  --muted:#4A5666;
+  --line:#CBD3DD;
+  --radius:6px;
+  --maxw:1160px;
+  --head:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--body);font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--paper)}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--signal);color:var(--ink);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:0}
+
+/* demo bar */
+.demobar{background:var(--signal);color:var(--ink);font-size:.78rem;font-weight:600;text-align:center;padding:.35rem 1rem;line-height:1.3}
+
+/* header */
+.site-header{background:var(--asphalt);color:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid #263142}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{white-space:nowrap;font-family:var(--head);font-weight:800;font-size:1.25rem;line-height:1;text-decoration:none;letter-spacing:.01em}
+.brand small{display:block;font-weight:600;font-size:.8rem;color:var(--signal);letter-spacing:.14em;margin-top:.2rem}
+.nav{display:none;gap:1.6rem}
+.nav a{text-decoration:none;font-weight:500;font-size:.98rem;color:#DCE3EC}
+.nav a:hover{color:var(--signal)}
+.callbtn{display:inline-flex;align-items:center;gap:.5rem;background:var(--signal);color:var(--ink);font-weight:700;text-decoration:none;padding:.6rem 1rem;border-radius:var(--radius);font-size:.98rem;white-space:nowrap}
+.callbtn:hover{background:#FFCB33}
+.callbtn svg{width:18px;height:18px}
+.callbtn .full{display:none}
+
+/* hero */
+.hero{background:var(--asphalt);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;padding-top:3rem;padding-bottom:3.5rem}
+.status{display:inline-flex;align-items:center;gap:.55rem;font-size:.9rem;font-weight:600;background:var(--asphalt-2);border:1px solid #2E3B4D;border-radius:999px;padding:.4rem .9rem}
+.dot{width:.65rem;height:.65rem;border-radius:50%;background:#7C8796}
+.status[data-state="open"] .dot{background:#3DDC84;box-shadow:0 0 0 4px rgba(61,220,132,.2)}
+.hero h1{font-family:var(--head);font-weight:800;font-size:clamp(2.7rem,11vw,5.6rem);line-height:.95;letter-spacing:-.005em;margin:1.2rem 0 1rem;max-width:11ch}
+.hero p.lead{font-size:1.15rem;color:#C9D3DF;max-width:34rem;margin:0 0 1.8rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.9rem 1.4rem;border-radius:var(--radius);font-size:1.02rem;min-height:48px;border:2px solid transparent}
+.btn-primary{background:var(--signal);color:var(--ink)}
+.btn-primary:hover{background:#FFCB33}
+.btn-ghost{border-color:#4B5A6E;color:#fff}
+.btn-ghost:hover{border-color:var(--signal);color:var(--signal)}
+.btn-dark{background:var(--asphalt);color:#fff}
+.btn-dark:hover{background:var(--navy)}
+
+/* signature wheel */
+.wheel-wrap{position:absolute;right:-58vw;bottom:-34vw;width:96vw;max-width:760px;z-index:1;opacity:.95;pointer-events:none}
+.wheel{transform:rotate(var(--rot,0deg));transition:transform .12s linear;will-change:transform}
+
+/* visit strip */
+.visit{background:var(--navy);color:#fff}
+.visit .wrap{display:grid;grid-template-columns:1fr;gap:0}
+.visit-item{margin:0;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.visit-item a[href^="mailto"]{font-size:.9rem}
+.visit-item:last-child{border-bottom:0}
+.visit-item dt{font-size:.82rem;color:#B9CCE3;font-weight:500;margin:0}
+.visit-item dd{margin:.1rem 0 0;font-weight:600;font-size:1rem}
+.visit-item a{text-decoration:none}
+.visit-item a:hover{color:var(--signal)}
+
+/* sections */
+section{padding:4rem 0}
+.section-head{max-width:40rem;margin-bottom:2.2rem}
+h2{font-family:var(--head);font-weight:800;font-size:clamp(2.1rem,6.5vw,3.4rem);line-height:1;margin:0 0 .8rem;letter-spacing:-.005em}
+.section-head p{margin:0;color:var(--muted)}
+
+/* services as a tread pattern list */
+.services{background:var(--fog)}
+.svc{border-top:3px solid var(--asphalt);padding:1.6rem 0 1.7rem;display:grid;gap:.8rem}
+.svc:last-child{border-bottom:3px solid var(--asphalt)}
+.svc h3{font-family:var(--head);font-weight:800;font-size:2rem;line-height:1;margin:0}
+.svc p{margin:0;color:var(--muted);max-width:36rem}
+.svc ul{list-style:none;margin:.2rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.svc li{font-size:.92rem;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:.25rem .65rem}
+.svc .meta{display:grid;gap:.9rem}
+.svc a.more{justify-self:start;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--signal);padding-bottom:1px}
+.svc a.more:hover{color:var(--asphalt);background:var(--signal)}
+
+/* about */
+.about .grid{display:grid;gap:2rem}
+.about p{margin:0 0 1rem;color:var(--muted);max-width:38rem}
+.mission{background:var(--asphalt);color:#fff;border-radius:var(--radius);padding:1.6rem;border-left:8px solid var(--signal)}
+.mission h3{font-family:var(--head);font-size:1.7rem;margin:0 0 .6rem;line-height:1}
+.mission p{color:#C9D3DF;margin:0}
+
+/* team */
+.team{background:var(--asphalt);color:#fff}
+.team h2{color:#fff}
+.team .section-head p{color:#C9D3DF}
+.crew{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.crew li{display:flex;flex-direction:column;gap:.7rem}
+.badge{width:64px;height:64px;border-radius:50%;background:var(--signal);color:var(--ink);font-family:var(--head);font-weight:800;font-size:1.6rem;display:grid;place-items:center}
+.crew strong{display:block;font-size:1.1rem;line-height:1.2}
+.crew span{color:#B9C5D4;font-size:.95rem}
+
+/* values */
+.values .grid{display:grid;gap:1.6rem;grid-template-columns:1fr}
+.value h3{font-family:var(--head);font-weight:800;font-size:1.6rem;margin:0 0 .3rem;line-height:1}
+.value p{margin:0;color:var(--muted)}
+.value{border-left:4px solid var(--signal);padding-left:1rem}
+
+/* contact */
+.contact{background:var(--fog)}
+.contact .grid{display:grid;gap:2rem}
+.card{background:var(--paper);border-radius:var(--radius);padding:1.6rem;border:1px solid var(--line)}
+.card dl{margin:0;display:grid;gap:1rem}
+.card dt{font-size:.85rem;font-weight:600;color:var(--muted)}
+.card dd{margin:0;font-weight:600;font-size:1.1rem;overflow-wrap:anywhere}
+.contact .grid>*,.about .grid>*,.visit-item{min-width:0}
+.visit-item dd{overflow-wrap:anywhere}
+.card a{text-decoration:none;color:var(--navy)}
+.card a:hover{text-decoration:underline}
+.card a[href^="mailto"]{font-size:.95rem}
+.cta-panel{background:var(--signal);border-radius:var(--radius);padding:1.8rem;display:flex;flex-direction:column;gap:1rem;justify-content:center}
+.cta-panel h3{font-family:var(--head);font-weight:800;font-size:2.2rem;line-height:1;margin:0}
+.cta-panel p{margin:0}
+
+/* footer */
+footer{background:var(--asphalt);color:#B9C5D4;padding:2.4rem 0;font-size:.95rem}
+footer .wrap{display:grid;gap:1.4rem}
+footer .legal{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
+footer a{color:#DCE3EC}
+.made{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:#8E9BAD}
+.made img{width:34px;height:34px;background:#fff;border-radius:6px;padding:3px}
+
+@media (min-width:640px){
+  .callbtn .full{display:inline}
+  .visit .wrap{grid-template-columns:1fr 1fr}
+  .visit-item{border-bottom:0;padding:1.3rem 0}
+  .crew{grid-template-columns:repeat(4,1fr)}
+  .values .grid{grid-template-columns:1fr 1fr}
+}
+@media (min-width:768px){
+  .nav{display:flex}
+  .svc{grid-template-columns:1fr 1.4fr;gap:2rem;align-items:start}
+  .svc h3{font-size:2.4rem}
+  .about .grid{grid-template-columns:1.3fr 1fr;align-items:start}
+  .contact .grid{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr auto;align-items:center}
+}
+@media (min-width:1024px){
+  .wheel-wrap{right:-8vw;bottom:-14vw;width:56vw}
+  .hero .wrap{padding-top:5rem;padding-bottom:6rem}
+  .visit .wrap{grid-template-columns:repeat(4,1fr);gap:2rem}
+  .values .grid{grid-template-columns:repeat(4,1fr)}
+  section{padding:5.5rem 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .wheel{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="demobar">Demonstration project prepared by Softosync</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bay Brothers Tire &amp; Auto, home">Bay Brothers<small>TIRE &amp; AUTO</small></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">About us</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="callbtn" href="tel:+14154151030" aria-label="Call 415-415-1030">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span><span class="full">Call </span>415-415-1030</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" style="padding:0">
+    <div class="wheel-wrap" aria-hidden="true">
+      <svg class="wheel" id="wheel" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <circle cx="200" cy="200" r="186" fill="none" stroke="#1E2835" stroke-width="28"/>
+        <circle cx="200" cy="200" r="186" fill="none" stroke="#2C394B" stroke-width="28" stroke-dasharray="16 11"/>
+        <circle cx="200" cy="200" r="166" fill="none" stroke="#0A0E13" stroke-width="6"/>
+        <circle cx="200" cy="200" r="150" fill="#16202C"/>
+        <circle cx="200" cy="200" r="150" fill="none" stroke="#F5B700" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+        <g stroke="#2A3B52" stroke-width="22" stroke-linecap="round">
+          <line x1="200" y1="200" x2="200" y2="68"/>
+          <line x1="200" y1="200" x2="325.5" y2="159"/>
+          <line x1="200" y1="200" x2="277.6" y2="306.8"/>
+          <line x1="200" y1="200" x2="122.4" y2="306.8"/>
+          <line x1="200" y1="200" x2="74.5" y2="159"/>
+        </g>
+        <circle cx="200" cy="200" r="46" fill="#123A6B"/>
+        <circle cx="200" cy="200" r="46" fill="none" stroke="#F5B700" stroke-width="4"/>
+        <g fill="#F5B700">
+          <circle cx="200" cy="170" r="5"/>
+          <circle cx="228.5" cy="190.7" r="5"/>
+          <circle cx="217.6" cy="224.3" r="5"/>
+          <circle cx="182.4" cy="224.3" r="5"/>
+          <circle cx="171.5" cy="190.7" r="5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="status" id="status" role="status" data-state="unknown">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="status-text">Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</span>
+      </div>
+      <h1>Professional tire and auto services you can trust</h1>
+      <p class="lead">Serving San Francisco with expert tire and auto care. Quality workmanship, honest service, and customer satisfaction guaranteed.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="tel:+14154151030">Call 415-415-1030</a>
+        <a class="btn btn-ghost" href="https://www.baybrotherstireauto.com/contacto">Schedule appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="visit">
+    <div class="wrap">
+      <dl class="visit-item"><dt>Visit us</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=230+Bayshore+Blvd+San+Francisco+CA+94124">230 Bayshore Blvd, San Francisco, CA 94124</a></dd></dl>
+      <dl class="visit-item"><dt>Hours</dt><dd>Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</dd></dl>
+      <dl class="visit-item"><dt>Phone</dt><dd><a href="tel:+14154151030">415-415-1030</a></dd></dl>
+      <dl class="visit-item"><dt>Email</dt><dd><a href="mailto:contact@baybrotherstireauto.com">contact@baybrotherstireauto.com</a></dd></dl>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our services</h2>
+        <p>Comprehensive tire and auto services with state-of-the-art equipment and highly trained technicians.</p>
+      </div>
+
+      <article class="svc">
+        <h3>Tire sales &amp; installation</h3>
+        <div class="meta">
+          <p>Wide selection of premium tire brands with professional installation. Expert guidance to find the perfect tires for your vehicle and driving needs.</p>
+          <ul><li>Premium brands available</li><li>Professional installation</li><li>Extended warranties</li></ul>
+          <a class="more" href="https://www.baybrotherstireauto.com/contacto">Get quote</a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Wheel balancing</h3>
+        <div class="meta">
+          <p>Computerized high-precision wheel balancing to eliminate vibrations and extend tire life.</p>
+          <ul><li>State-of-the-art equipment</li><li>Precise results</li><li>Quick service</li></ul>
+          <a class="more" href="https://www.baybrotherstireauto.com/contacto">Get quote</a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Wheel alignment</h3>
+        <div class="meta">
+          <p>Advanced laser alignment and steering geometry for safe handling and optimal fuel efficiency.</p>
+          <ul><li>Laser technology</li><li>Precise adjustments</li><li>Improved fuel economy</li></ul>
+          <a class="more" href="https://www.baybrotherstireauto.com/contacto">Book now</a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Oil &amp; fluid changes</h3>
+        <div class="meta">
+          <p>Complete oil and fluid service with certified quality products to keep your engine running smoothly.</p>
+          <ul><li>Premium oils</li><li>OEM filters</li><li>Complete inspection</li></ul>
+          <a class="more" href="https://www.baybrotherstireauto.com/contacto">Get quote</a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Brake service</h3>
+        <div class="meta">
+          <p>Complete brake system service from pad replacement to hydraulic system repair for your safety.</p>
+          <ul><li>Certified parts</li><li>Expert technicians</li><li>Safety testing</li></ul>
+          <a class="more" href="https://www.baybrotherstireauto.com/contacto">Get quote</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Meet the team dedicated to keeping you safe on the road</h2>
+      </div>
+      <div class="grid">
+        <div>
+          <p>Bay Brothers Tire &amp; Auto LLC was founded by brothers Luis and Jose Prato with a clear vision: to provide honest, professional tire and auto services to the San Francisco community. What started as a small family operation has grown into a trusted name in automotive care.</p>
+          <p>Our reputation is built on quality workmanship, transparent pricing, and genuine care for every customer who walks through our doors.</p>
+          <p>Today, we operate with state-of-the-art equipment, a highly skilled team of certified technicians, and partnerships with leading tire and parts manufacturers. We&rsquo;re proud to be your neighborhood auto service experts.</p>
+          <a class="btn btn-dark" href="https://www.baybrotherstireauto.com/acerca-de">Learn more</a>
+        </div>
+        <aside class="mission">
+          <h3>Our mission</h3>
+          <p>To provide exceptional tire and auto services that ensure safety, optimal performance, and peace of mind for our customers. We are committed to delivering professional solutions with cutting-edge technology, skilled technicians, and honest, transparent service in every interaction.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our team</h2>
+        <p>Passionate professionals committed to your satisfaction</p>
+      </div>
+      <ul class="crew">
+        <li><div class="badge" aria-hidden="true">LP</div><div><strong>Luis Prato</strong><span>Owner</span></div></li>
+        <li><div class="badge" aria-hidden="true">JP</div><div><strong>Jose Prato</strong><span>Service Manager</span></div></li>
+        <li><div class="badge" aria-hidden="true">JC</div><div><strong>Jean Carrero</strong><span>Master Mechanic</span></div></li>
+        <li><div class="badge" aria-hidden="true">JB</div><div><strong>Jackson Benitez</strong><span>Tire Specialist</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="values" id="values">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our values</h2>
+        <p>The principles that guide our daily work</p>
+      </div>
+      <div class="grid">
+        <div class="value"><h3>Quality</h3><p>We use only certified parts and premium products from trusted brands to ensure lasting results and customer satisfaction.</p></div>
+        <div class="value"><h3>Trust</h3><p>We build long-term relationships with our customers based on transparency, honest service, and fair pricing.</p></div>
+        <div class="value"><h3>Expertise</h3><p>Our team brings decades of combined experience in tire and auto service. We stay current with ongoing training and certifications.</p></div>
+        <div class="value"><h3>Commitment</h3><p>Your safety and satisfaction are our top priorities. Every job is completed with dedication and professionalism.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Contact us</h2>
+        <p>We&rsquo;re here to answer your questions and schedule your appointment</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <dl>
+            <div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=230+Bayshore+Blvd+San+Francisco+CA+94124">230 Bayshore Blvd, San Francisco, CA 94124</a></dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+14154151030">415-415-1030</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:contact@baybrotherstireauto.com">contact@baybrotherstireauto.com</a></dd></div>
+            <div><dt>Hours</dt><dd>Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</dd></div>
+          </dl>
+        </div>
+        <div class="cta-panel">
+          <h3>Ready to schedule your appointment?</h3>
+          <p>Call the shop, or send a message through the contact page.</p>
+          <div class="ctas">
+            <a class="btn btn-dark" href="tel:+14154151030">Call 415-415-1030</a>
+            <a class="btn btn-ghost" style="color:var(--ink);border-color:var(--ink)" href="https://www.baybrotherstireauto.com/contacto">Schedule appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">Bay Brothers Tire &amp; Auto LLC</strong><br>
+      Professional tire and auto services in San Francisco. Quality workmanship and customer satisfaction guaranteed.
+      <div class="legal" style="margin-top:.9rem">
+        <a href="https://www.baybrotherstireauto.com/politica-privacidad">Privacy policy</a>
+        <a href="https://www.baybrotherstireauto.com/terminos-servicio">Terms of service</a>
+        <a href="https://www.baybrotherstireauto.com/politica-reembolso">Refund policy</a>
+      </div>
+      <p style="margin:.9rem 0 0">&copy; 2026 Bay Brothers Tire &amp; Auto LLC. All rights reserved.</p>
+    </div>
+    <div class="made">
+      <img src="https://softosync.github.io/client-demos/softosync_logo.png" width="34" height="34" alt="Softosync logo">
+      <span>Demo by Softosync</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Open / closed chip, based on the posted hours (Mon-Sat 8:00 AM - 6:00 PM), San Francisco time */
+  try{
+    var parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var d={}; parts.forEach(function(p){d[p.type]=p.value});
+    var mins=(parseInt(d.hour,10)%24)*60+parseInt(d.minute,10);
+    var open = d.weekday!=='Sun' && mins>=480 && mins<1080;
+    var el=document.getElementById('status'), tx=document.getElementById('status-text');
+    if(open){el.setAttribute('data-state','open');tx.innerHTML='Open now &middot; until 6:00 PM';}
+    else{el.setAttribute('data-state','closed');tx.innerHTML='Outside posted hours &middot; Mon &ndash; Sat 8:00 AM &ndash; 6:00 PM';}
+  }catch(e){}
+
+  /* The wheel rolls as you scroll (skipped when reduced motion is requested) */
+  var wheel=document.getElementById('wheel');
+  if(wheel && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var ticking=false;
+    window.addEventListener('scroll',function(){
+      if(ticking)return; ticking=true;
+      requestAnimationFrame(function(){
+        wheel.style.setProperty('--rot',(window.scrollY*0.35)+'deg');
+        ticking=false;
+      });
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
