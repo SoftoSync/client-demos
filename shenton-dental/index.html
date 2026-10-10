@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Demo homepage concept for Shenton Dental Surgery, The Adelphi, 1 Coleman St, Singapore.">
+<title>Shenton Dental Surgery | Dental care at The Adelphi, Coleman Street, Singapore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10253A; --ink-soft:#4A5D6E; --teal:#17737C; --teal-deep:#0E4A52; --mist:#EAF3F2;
+  --paper:#FCFBF8; --sand:#E9DFC9; --line:#D7E2E1; --white:#fff;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6.2vw,4.4rem)}
+h2{font-size:clamp(1.8rem,4vw,2.75rem)}
+h3{font-size:1.3rem}
+p{margin:0}
+
+/* top bar */
+.demo-bar{background:var(--ink);color:#fff;font-size:.82rem;text-align:center;padding:7px 12px}
+.demo-bar a{color:#BFE3E5}
+
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:rgba(252,251,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand img{height:44px;width:auto}
+.nav-links{display:none;gap:28px;font-weight:500}
+.nav-links a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{border-color:var(--teal)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-right .btn{display:none}
+.menu-btn{background:none;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+.mobile-menu{display:none;border-top:1px solid var(--line);padding:10px 0 16px}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:11px 0;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--teal);background:var(--teal);color:#fff;transition:background .2s,color .2s;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+.btn.ghost{background:transparent;color:var(--teal-deep)}
+.btn.ghost:hover{background:var(--mist)}
+.btn.small{padding:9px 16px;font-size:.92rem}
+
+/* hero */
+.hero{padding:44px 0 64px}
+.hero-grid{display:grid;gap:36px}
+.hero-copy .lead{font-size:1.15rem;color:var(--ink-soft);max-width:34em;margin-top:20px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-facts{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:10px;font-size:.98rem;color:var(--ink-soft)}
+.hero-facts strong{color:var(--ink)}
+.arch{position:relative;border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--mist);aspect-ratio:4/5;max-width:520px;width:100%;justify-self:center}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch-note{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.92);border-radius:16px;padding:12px 16px;font-size:.92rem}
+.arch-note b{font-family:var(--serif);font-size:1.02rem}
+
+/* subsidy checker - signature section */
+.subsidy{background:var(--teal-deep);color:#fff;padding:72px 0}
+.subsidy-grid{display:grid;gap:36px;align-items:center}
+.subsidy p.lead{color:#CFE7E8;margin-top:16px;max-width:30em}
+.checker{background:#fff;color:var(--ink);border-radius:26px;padding:26px}
+.checker legend{font-weight:600;padding:0;margin-bottom:12px}
+.checker fieldset{border:0;margin:0;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:11px 18px;border-radius:999px;border:2px solid var(--line);font-weight:600;cursor:pointer;transition:all .2s;background:#fff}
+.chip input:checked + span{background:var(--teal);border-color:var(--teal);color:#fff}
+.chip input:focus-visible + span{outline:3px solid var(--teal);outline-offset:3px}
+.result{margin-top:24px;padding:22px;border-radius:18px;background:var(--mist);min-height:132px}
+.result .label{color:var(--ink-soft);font-size:.95rem}
+.price{font-family:var(--serif);font-size:clamp(2.8rem,9vw,4.2rem);font-weight:600;line-height:1.05;margin:4px 0;color:var(--teal-deep);transition:transform .25s}
+.price.pop{transform:scale(1.06)}
+.result small{display:block;color:var(--ink-soft);font-size:.86rem}
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:22px}
+.logos img{height:38px;width:auto;background:#fff;border-radius:10px;padding:5px 9px;object-fit:contain}
+
+/* services */
+section.block{padding:76px 0}
+.section-head{max-width:40em;margin-bottom:40px}
+.section-head p{color:var(--ink-soft);margin-top:12px}
+.svc{list-style:none;margin:0;padding:0;display:grid;gap:0 56px}
+.svc li{border-top:1px solid var(--line);padding:22px 0}
+.svc a{text-decoration:none;display:block}
+.svc h3{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.svc h3 span.go{font-family:var(--sans);font-size:.92rem;color:var(--teal);font-weight:600;white-space:nowrap}
+.svc p{color:var(--ink-soft);margin-top:6px;max-width:34em}
+.svc a:hover h3{color:var(--teal)}
+
+/* doctors */
+.doctors{background:var(--mist)}
+.doc-grid{display:grid;gap:28px}
+.doc{background:#fff;border-radius:26px;overflow:hidden;display:grid}
+.doc .photo{aspect-ratio:4/3;background:var(--sand)}
+.doc .photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.doc .body{padding:24px}
+.doc .creds{color:var(--teal);font-weight:600;margin:4px 0 14px}
+.doc ul{margin:0;padding-left:1.1em;color:var(--ink-soft)}
+.doc li{margin-bottom:8px}
+
+/* reviews */
+.reviews{display:grid;gap:22px}
+.review{border-left:4px solid var(--teal);padding:4px 0 4px 20px}
+.review p{font-family:var(--serif);font-size:1.2rem;line-height:1.45}
+.review cite{display:block;margin-top:10px;font-style:normal;color:var(--ink-soft);font-size:.92rem}
+
+/* philosophy */
+.philosophy{background:var(--sand)}
+.philosophy blockquote{margin:0;max-width:30em;font-family:var(--serif);font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.3}
+.philosophy p.after{margin-top:20px;max-width:36em;color:var(--ink-soft)}
+
+/* clinic */
+.rooms{display:grid;gap:14px}
+.rooms figure{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:var(--mist)}
+.rooms img{width:100%;height:100%;object-fit:cover}
+
+/* visit */
+.visit-grid{display:grid;gap:32px}
+.visit dl{margin:22px 0 0;display:grid;gap:14px}
+.visit dt{font-weight:600}
+.visit dd{margin:0;color:var(--ink-soft)}
+.visit dd a{color:var(--teal-deep)}
+.map{border-radius:22px;overflow:hidden;min-height:320px;background:var(--mist);border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:320px;border:0}
+
+footer.site{background:var(--ink);color:#C8D4DE;padding:34px 0 90px;font-size:.92rem}
+.foot{display:flex;flex-direction:column;gap:18px}
+.foot a{color:#fff}
+.softosync{display:flex;align-items:center;gap:10px}
+.softosync img{height:30px;width:auto;background:#fff;border-radius:8px;padding:3px 6px}
+
+/* mobile sticky action bar */
+.sticky-actions{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(252,251,248,.97);border-top:1px solid var(--line)}
+.sticky-actions .btn{flex:1;padding:12px 10px;font-size:.95rem}
+
+@media (min-width:768px){
+  body{font-size:18px}
+  .nav-links{display:flex}
+  .nav-right .btn{display:inline-flex}
+  .menu-btn{display:none}
+  .mobile-menu{display:none!important}
+  .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
+  .subsidy-grid{grid-template-columns:1fr 1fr;gap:56px}
+  .svc{grid-template-columns:1fr 1fr}
+  .doc-grid{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:repeat(3,1fr);gap:32px}
+  .rooms{grid-template-columns:repeat(3,1fr)}
+  .visit-grid{grid-template-columns:1fr 1.1fr;align-items:stretch}
+  .foot{flex-direction:row;justify-content:space-between;align-items:center}
+  .sticky-actions{display:none}
+  footer.site{padding-bottom:34px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Demo project prepared by <a href="https://softosync.com" target="_blank" rel="noopener">Softosync</a> &mdash; not the live website of Shenton Dental Surgery.</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Shenton Dental Surgery, home">
+      <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/Shenton-dental-logo-transaparent.png" alt="Shenton Dental Surgery logo" height="44">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#subsidies">Subsidies</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn small" href="https://www.shentondentalsurgery.com/booking/">Book Appointment</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#subsidies">Subsidies</a>
+      <a href="#visit">Visit</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Shenton Dental Surgery</h1>
+      <p class="lead">An established dental group practice in the heart of the city, providing comprehensive dental care by caring dental surgeons, using the latest technology.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://www.shentondentalsurgery.com/booking/">Book an Appointment</a>
+        <a class="btn ghost" href="https://wa.me/6584144023">Chat on WhatsApp</a>
+        <a class="btn ghost" href="tel:+6563333360">Call 6333 3360</a>
+      </div>
+      <div class="hero-facts">
+        <p><strong>Dr. Rosalind Ho</strong> has over 30 years of experience in general dentistry.</p>
+        <p>The clinic is at <strong>The Adelphi, 1 Coleman St, #03-20</strong>. Best by appointment, for a smooth procedure without rush.</p>
+      </div>
+    </div>
+    <div class="arch">
+      <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/room-1-1.jpg" alt="Treatment room at Shenton Dental Surgery with dental chair and equipment" width="800" height="1000" fetchpriority="high">
+      <div class="arch-note"><b>Prevention first.</b> Early intervention and minimally invasive procedures.</div>
+    </div>
+  </div>
+</section>
+
+<section class="subsidy" id="subsidies">
+  <div class="wrap subsidy-grid">
+    <div>
+      <h2>What will your scaling &amp; polishing cost?</h2>
+      <p class="lead">Have you applied for a government subsidy? Pick your card to see the scaling and polishing price listed by the clinic.</p>
+      <div class="logos" aria-label="Accepted schemes and partners">
+        <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/Merdeka.png" alt="Merdeka card logo" loading="lazy">
+        <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/CHAS-Logo-1024x1024-circle-8bdeaa4661973bea91316631ac3f2129-phxvow4jtlc2-e1756261203555.png" alt="CHAS logo" loading="lazy">
+        <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/IHP.webp" alt="IHP logo" loading="lazy">
+        <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/Medisave.webp" alt="Medisave logo" loading="lazy">
+        <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/adept-health.webp" alt="Adept Health logo" loading="lazy">
+        <img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/alliance-medinet.webp" alt="Alliance Medinet logo" loading="lazy">
+      </div>
+    </div>
+    <div class="checker">
+      <fieldset>
+        <legend>My card</legend>
+        <div class="chips" role="radiogroup">
+          <label class="chip"><input type="radio" name="card" value="chas" checked><span>CHAS</span></label>
+          <label class="chip"><input type="radio" name="card" value="merdeka"><span>Merdeka</span></label>
+          <label class="chip"><input type="radio" name="card" value="pg"><span>Pioneer / PG</span></label>
+        </div>
+      </fieldset>
+      <div class="result" aria-live="polite">
+        <div class="label" id="rLabel">Scaling &amp; polishing with CHAS</div>
+        <div class="price" id="rPrice">$35 to $40</div>
+        <small>Prices as listed on the clinic's website. Please confirm when you book.</small>
+      </div>
+      <a class="btn" style="margin-top:20px;width:100%" href="https://www.shentondentalsurgery.com/booking/">Book scaling &amp; polishing</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Care built around you</h2>
+      <p>Each discipline backed by the same clinical standard and unhurried approach.</p>
+    </div>
+    <ul class="svc">
+      <li><a href="https://www.shentondentalsurgery.com/services/fillings/"><h3>Fillings <span class="go">Learn more</span></h3><p>Tooth-coloured fillings, inlays, crowns and veneers.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/scaling-polishing/"><h3>Scaling &amp; Polishing / Gum treatment <span class="go">Learn more</span></h3><p>Deep clean, tartar removal and polish.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/teeth-whitening/"><h3>Teeth Whitening <span class="go">Learn more</span></h3><p>Take-home teeth whitening kit for a brighter smile.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/orthodontics/"><h3>Orthodontics / Aligners <span class="go">Learn more</span></h3><p>Braces and aligners for treating alignment of teeth problems.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/root-canal-treatment/"><h3>Root Canal Treatment <span class="go">Learn more</span></h3><p>Root canal treatment can save your teeth.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/dental-implants/"><h3>Dental Implants <span class="go">Learn more</span></h3><p>A longer term option for a missing tooth or teeth that feels more natural and is convenient.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/dentures/"><h3>Dentures and their material options <span class="go">Learn more</span></h3><p>Acrylic, flexible, chrome cobalt and full dentures.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/wisdom-tooth-surgery/"><h3>Wisdom Tooth Surgery <span class="go">Learn more</span></h3><p>Removal of wisdom teeth.</p></a></li>
+      <li><a href="https://www.shentondentalsurgery.com/services/crown-and-bridges/"><h3>Crowns &amp; Bridges / Nightguard <span class="go">Learn more</span></h3><p>Protecting worn and heavily restored teeth.</p></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block doctors" id="doctors">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>You're in good hands</h2>
+    </div>
+    <div class="doc-grid">
+      <article class="doc">
+        <div class="photo"><img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/Dr_Ho-adjusted.jpg" alt="Portrait of Dr. Rosalind Ho, general dental practitioner" loading="lazy"></div>
+        <div class="body">
+          <h3>Dr. Rosalind Ho</h3>
+          <p class="creds">BDS (SPORE), MFGDP (UK)</p>
+          <ul>
+            <li>Over 30 years of experience in general dentistry, with a keen interest in implants as well as braces.</li>
+            <li>Member of the Singapore Dental Association, registered with the Singapore Dental Council as a general practitioner.</li>
+            <li>Graduated from the National University of Singapore in the 80s, and later obtained her MFGDP (UK).</li>
+            <li>Volunteers at the Redhill free dental clinic on some Sundays.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="doc">
+        <div class="photo"><img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/Dr-Oh.jpg" alt="Portrait of Dr. Oh Xue Ling, dental surgeon" loading="lazy"></div>
+        <div class="body">
+          <h3>Dr. Oh Xue Ling</h3>
+          <p class="creds">BDS (ADELAIDE)</p>
+          <ul>
+            <li>Graduated from the University of Adelaide, South Australia. Her gentle and patient demeanor makes her well-liked by her patients.</li>
+            <li>Has practiced in both suburban and rural areas in Australia, treating patients of varying backgrounds.</li>
+            <li>A firm believer in patient education and communication, she seeks to alleviate dental fears so that each experience is as comfortable as possible.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What patients say</h2>
+      <p>Reviews posted on Google, shown on the clinic's website.</p>
+    </div>
+    <div class="reviews">
+      <figure class="review" style="margin:0">
+        <p>Dr Rosalind Ho is a very experienced dentist who is very understanding of patients' needs.</p>
+        <cite>Yee Xuan Lee, Google review</cite>
+      </figure>
+      <figure class="review" style="margin:0">
+        <p>Detailed, kind and very thorough services! Would absolutely recommend.</p>
+        <cite>Sukti Ghosh, Google review</cite>
+      </figure>
+      <figure class="review" style="margin:0">
+        <p>Thanks Dr Rosalind and the team for dealing with my hidden cavity so quickly!</p>
+        <cite>Bryan Leow, Google review</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="block philosophy">
+  <div class="wrap">
+    <blockquote>We look at dental issues as part of total health, as dental problems may signal underlying systemic disease.</blockquote>
+    <p class="after">Our dental clinic strongly believes in prevention, early intervention and minimally invasive procedures. Patients leave the clinic happy, enlightened and motivated to maintain a high standard of oral health.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Inside Shenton Dental</h2>
+      <p>Best by appointment, for a smooth procedure without rush.</p>
+    </div>
+    <div class="rooms">
+      <figure><img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/room-1-1.jpg" alt="Treatment room one at Shenton Dental Surgery" loading="lazy"></figure>
+      <figure><img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/room-3-1.jpg" alt="Treatment room three at Shenton Dental Surgery" loading="lazy"></figure>
+      <figure><img src="https://shentondentalsurgery.com/wp-content/uploads/2026/09/room2-2.jpg" alt="Treatment room two at Shenton Dental Surgery" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block visit" id="visit" style="background:var(--mist)">
+  <div class="wrap visit-grid">
+    <div>
+      <h2>Ready for a more comfortable checkup?</h2>
+      <dl>
+        <div><dt>Address</dt><dd>The Adelphi, 1 Coleman St, #03-20, Singapore 179803 &middot; <a href="https://maps.google.com/?q=1+Coleman+St,+%2303-20,+Singapore+179803">Open in Maps</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+6563333360">6333 3360</a> or <a href="tel:+6584144023">8414 4023</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/6584144023">Message us on 8414 4023</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:shentondentalsurgery@gmail.com">shentondentalsurgery@gmail.com</a></dd></div>
+      </dl>
+      <div class="hero-actions">
+        <a class="btn" href="https://www.shentondentalsurgery.com/booking/">Book Your Visit</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Map showing Shenton Dental Surgery at The Adelphi, 1 Coleman St, Singapore" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1%20Coleman%20St%2C%20%2303-20%2C%20Singapore%20179803&amp;z=15&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <p>&copy; 2026 Shenton Dental Surgery Pte. Ltd. Content and images belong to the clinic. This page is a design demo.</p>
+    <a class="softosync" href="https://softosync.com" target="_blank" rel="noopener">
+      <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" height="30">
+      <span>Demo by Softosync</span>
+    </a>
+  </div>
+</footer>
+
+<div class="sticky-actions">
+  <a class="btn" href="https://www.shentondentalsurgery.com/booking/">Book</a>
+  <a class="btn ghost" href="https://wa.me/6584144023">WhatsApp</a>
+  <a class="btn ghost" href="tel:+6563333360">Call</a>
+</div>
+
+<script>
+(function(){
+  var data={
+    chas:{label:'Scaling & polishing with CHAS',price:'$35 to $40'},
+    merdeka:{label:'Scaling & polishing with Merdeka',price:'$25'},
+    pg:{label:'Scaling & polishing with Pioneer / PG',price:'$0'}
+  };
+  var lab=document.getElementById('rLabel'),pr=document.getElementById('rPrice');
+  document.querySelectorAll('input[name="card"]').forEach(function(r){
+    r.addEventListener('change',function(){
+      var d=data[r.value];lab.textContent=d.label;pr.textContent=d.price;
+      pr.classList.add('pop');setTimeout(function(){pr.classList.remove('pop')},220);
+    });
+  });
+  var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false')})});
+})();
+</script>
+</body>
+</html>
