@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Radha Exports Pte Ltd – importers, exporters, wholesalers and retailers of FMCG. Home of ABC Bargain Centre and Valu$. Demo redesign by Softosync.">
+<title>Radha Exports – Demo redesign by Softosync</title>
+<style>
+:root{--blue:#0a4fd6;--blue-d:#06307f;--red:#d3171e;--ink:#101828;--mut:#5b6678;--bg:#f5f7fb;--card:#fff;--line:#e3e8f1;--r:18px}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit}img{max-width:100%;display:block}
+.demo-bar{background:#101828;color:#fff;font-size:12px;text-align:center;padding:6px 12px}
+.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:.2px}
+.mark{width:38px;height:38px;border-radius:10px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:900;box-shadow:0 4px 12px rgba(211,23,30,.35)}
+.brand small{display:block;font-weight:500;color:var(--mut);font-size:11px;letter-spacing:0}
+nav ul{display:flex;gap:6px;list-style:none;padding:0}
+nav a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:600;color:#344054}
+nav a:hover{background:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;min-height:48px}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(211,23,30,.3)}.btn-red:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:16px;min-height:44px}
+.hero{position:relative;color:#fff;background:linear-gradient(135deg,#06307f 0%,#0a4fd6 55%,#2f7bff 100%);overflow:hidden}
+.hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.22;mix-blend-mode:luminosity}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(211,23,30,.55),transparent 65%)}
+.hero .wrap{position:relative;z-index:2;padding:84px 0 70px;display:grid;gap:36px}
+.chip{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;width:fit-content;text-decoration:none}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.04;letter-spacing:-1.2px;max-width:15ch}
+h1 em{font-style:normal;color:#ffd1d3}
+.lead{font-size:clamp(16px,2vw,20px);max-width:56ch;color:#e3ecff}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:var(--r);padding:18px}
+.stat b{display:block;font-size:clamp(26px,4vw,40px);letter-spacing:-1px}.stat span{font-size:13px;color:#d6e3ff}
+section{padding:76px 0}
+.eyebrow{color:var(--red);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+h2{font-size:clamp(26px,4vw,40px);letter-spacing:-.8px;line-height:1.12;margin:8px 0 14px}
+.sub{color:var(--mut);max-width:62ch}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;position:relative}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;position:relative}
+.step i{font-style:normal;font-weight:900;font-size:30px;color:var(--blue);letter-spacing:-1px}
+.step h3{margin:6px 0;font-size:17px}.step p{font-size:14px;color:var(--mut)}
+.step.now{background:var(--blue);color:#fff;border-color:var(--blue)}.step.now i,.step.now p{color:#fff}
+.step.next{border:2px dashed var(--red)}.step.next i{color:var(--red)}
+.brands{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.bcard{border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);display:grid;grid-template-rows:200px auto}
+.bcard .ph{background:linear-gradient(135deg,var(--blue),var(--red));position:relative}
+.bcard .ph img{width:100%;height:100%;object-fit:cover}
+.bcard div.t{padding:22px}.bcard h3{font-size:22px}.bcard p{color:var(--mut);font-size:15px;margin-top:4px}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.partners span{background:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:999px;font-weight:700;font-size:14px}
+.hub{background:#0b1b3f;color:#fff}
+.hub .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hub .ph{border-radius:var(--r);overflow:hidden;min-height:320px;background:linear-gradient(135deg,#0a4fd6,#06307f)}
+.hub .ph img{width:100%;height:100%;min-height:320px;object-fit:cover}
+.hub p{color:#c8d6f5}.big{font-size:clamp(44px,8vw,84px);font-weight:900;letter-spacing:-2px;line-height:1;color:#fff}.big small{font-size:.28em;letter-spacing:0;color:#9db8f5;font-weight:700}
+.finder{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;margin-top:28px;box-shadow:0 20px 50px rgba(16,24,40,.07)}
+.ctrl{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.ctrl input{flex:1 1 260px;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:16px;min-height:48px}
+.ctrl input:focus{outline:3px solid rgba(10,79,214,.25);border-color:var(--blue)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tab{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;font-weight:700;font-size:14px;cursor:pointer;min-height:42px}
+.tab[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tab em{font-style:normal;opacity:.7;margin-left:4px;font-weight:600}
+.count{margin:16px 2px 8px;color:var(--mut);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-height:520px;overflow:auto;padding:2px}
+.store{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--bg)}
+.store b{display:block;font-size:14px;text-transform:capitalize}.store span{font-size:13px;color:var(--mut)}
+.store .rg{display:inline-block;margin-top:6px;font-size:11px;font-weight:800;color:var(--red);letter-spacing:.8px;text-transform:uppercase}
+.b2b{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:10px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.panel.red{background:linear-gradient(135deg,var(--red),#a30f15);color:#fff;border:0}
+.panel.red p{color:#ffe1e2}
+.panel ul{list-style:none;padding:0;margin-top:14px;display:grid;gap:10px}
+.panel li a{color:var(--blue);font-weight:700}
+.big2{font-size:44px;font-weight:900;letter-spacing:-1px}
+footer{background:#0a1226;color:#b8c3dc;padding:44px 0 30px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+footer a{color:#fff}.pw{display:flex;align-items:center;gap:10px;color:#8ea0c9;font-size:12px}
+.pw .logo{background:#fff;border-radius:8px;padding:6px 10px}.pw img{height:20px;width:auto}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.stats,.timeline{grid-template-columns:repeat(2,1fr)}.brands,.b2b,.hub .wrap{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}
+nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 4%}nav.open{display:block}nav ul{flex-direction:column}.menu{display:block}.hdr-cta{display:none}}
+@media(max-width:560px){section{padding:54px 0}.grid{grid-template-columns:1fr}.hero .wrap{padding:56px 0 48px}.timeline{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo project prepared by Softosync – not the live Radha Exports website</div>
+<header>
+<div class="wrap nav">
+<a class="brand" href="#top"><span class="mark" aria-hidden="true">R</span><span>Radha Exports<small>Importers, Exporters, Wholesalers &amp; Retailers</small></span></a>
+<nav id="nav" aria-label="Main navigation"><ul>
+<li><a href="#story">Our story</a></li><li><a href="#brands">Brands</a></li><li><a href="#hub">Distribution hub</a></li><li><a href="#stores">Store locations</a></li><li><a href="#contact">Enquiry</a></li></ul></nav>
+<a class="btn btn-red hdr-cta" href="tel:+6597707922">Call +65 9770 7922</a>
+<button class="menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+</div>
+</header>
+<main id="top">
+<div class="hero">
+<div class="bg" id="herobg" role="img" aria-label="Rows of everyday goods on supermarket shelves"></div>
+<div class="wrap">
+<a class="chip" href="https://www.singaporebrands.asia" target="_blank" rel="noopener">★ Singapore Brands 2024</a>
+<h1>Everyday essentials, <em>affordably</em> delivered.</h1>
+<p class="lead">Radha Exports is a preferred supplier of high-quality fast moving consumer goods (FMCG) at an affordable cost – and the company behind ABC Bargain Centre and Valu$.</p>
+<div class="cta"><a class="btn btn-red" href="#stores">Find a store near you</a><a class="btn btn-ghost" href="#contact">Wholesale enquiry</a></div>
+<div class="stats" id="stats">
+<div class="stat"><b data-n="1995" data-plain="1">1995</b><span>ABC Bargain Centre founded</span></div>
+<div class="stat"><b data-n="150" data-suf="+">150+</b><span>retail outlets across Singapore</span></div>
+<div class="stat"><b data-n="380000">380,000</b><span>sq ft Central Distribution Hub</span></div>
+<div class="stat"><b data-n="300">300</b><span>stores – our vision for the future</span></div>
+</div>
+</div>
+</div>
+
+<section id="story"><div class="wrap">
+<div class="eyebrow">Our story</div>
+<h2>From one bargain centre to a household name.</h2>
+<p class="sub">Our vision is to be the preferred supplier for delivering high-quality fast moving consumer goods at an affordable cost.</p>
+<div class="timeline">
+<div class="step reveal"><i>1995</i><h3>The Past</h3><p>Radha Exports founded the ABC Bargain Centre chain of stores dealing in FMCG.</p></div>
+<div class="step reveal"><i>2005</i><h3>Valu$ is born</h3><p>Radha Exports founded DD Private Limited, the company behind the Valu$ chain of stores.</p></div>
+<div class="step now reveal"><i>150+</i><h3>The Present</h3><p>More than 150 retail outlets across our own brands and strategic franchise and corporate partners.</p></div>
+<div class="step next reveal"><i>300</i><h3>The Future</h3><p>A future of 300 stores across Singapore – and catering to consumers all over the world.</p></div>
+</div></div></section>
+
+<section id="brands" style="padding-top:0"><div class="wrap">
+<div class="eyebrow">Our brands</div>
+<h2>Two chains. One promise: value.</h2>
+<div class="brands">
+<article class="bcard reveal"><div class="ph"><img data-src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=70" alt="Supermarket aisle with shelves of household goods" loading="lazy"></div><div class="t"><h3>ABC Bargain Centre</h3><p>Founded in 1995. Fast moving consumer goods at highly competitive prices.</p></div></article>
+<article class="bcard reveal"><div class="ph"><img data-src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=70" alt="Fresh groceries displayed in a neighbourhood store" loading="lazy"></div><div class="t"><h3>Valu$</h3><p>Operated by DD Private Limited, founded in 2005, for the daily needs of every individual.</p></div></article>
+</div>
+<div class="partners" aria-label="Franchise and corporate partners"><span>Japan Home</span><span>ACE Fresh</span><span>Mr Fix Singapore</span></div>
+</div></section>
+
+<section id="hub" class="hub"><div class="wrap">
+<div><div class="eyebrow" style="color:#ff9aa0">Back-end operations</div>
+<h2 style="color:#fff">The engine behind every shelf.</h2>
+<div class="big">380,000 <small>sq ft</small></div>
+<p style="margin-top:14px">Our back-end operations are supported by our Central Distribution Hub, located strategically in the western part of Singapore.</p></div>
+<div class="ph"><img data-src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=70" alt="Warehouse with stacked pallets and shelving" loading="lazy"></div>
+</div></section>
+
+<section id="stores"><div class="wrap">
+<div class="eyebrow">Store locations</div>
+<h2>Find your nearest store.</h2>
+<p class="sub">Search by name, street or postcode, or browse by region. Addresses are taken from the current Radha Exports store directory.</p>
+<div class="finder">
+<div class="ctrl"><label for="q" class="sub" style="font-weight:700">Search</label><input id="q" type="search" placeholder="e.g. Tampines, Jurong Point, 530698" autocomplete="off"></div>
+<div class="tabs" id="tabs" role="group" aria-label="Filter by region"></div>
+<p class="count" id="count" aria-live="polite"></p>
+<div class="grid" id="grid"></div>
+</div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap">
+<div class="eyebrow">Wholesale &amp; enquiries</div>
+<h2>Buying in bulk? Talk to our sales team.</h2>
+<div class="b2b">
+<div class="panel red"><div class="big2">$3,500</div><p><b>Minimum order for purchase.</b> For orders below $3,500, please visit one of our retail stores.</p>
+<div class="cta" style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--red)" href="tel:+6597707922">Call +65 9770 7922</a><a class="btn btn-ghost" href="mailto:online-enquiry@radhaexports.com">Email us</a></div></div>
+<div class="panel"><h3>Radha Exports Pte Ltd</h3><p class="sub">118 Pioneer Road, Singapore 639598<br>Tel (65) 6220 2777 · Sales &amp; Purchasing +65-97707922</p>
+<ul><li><a href="https://www.radhaexports.com/index.php?page=enquiry">Send an enquiry →</a></li><li><a href="https://www.radhaexports.com/index.php?page=category">Browse products →</a></li><li><a href="https://www.radhaexports.com/index.php?page=top_sellers">Top sellers →</a></li><li><a href="https://www.radhaexports.com/index.php?page=whats_new">What's new →</a></li></ul></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">
+<div><b style="color:#fff">Radha Exports Pte Ltd</b><br>118 Pioneer Road, Singapore 639598<br><a href="https://www.radhaexports.com/privacy.php">Privacy Policy</a></div>
+<div class="pw"><span>Demo by</span><span class="logo"><img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo"></span></div>
+</div></footer>
+<script>
+(function(){
+var S="Central|Lucky Plaza Basement 1|304 Orchard Road #B1-93/94|238863;Tiong Bahru Rd|302 Tiong Bahru Rd #2-123|168732;Lucky Plaza Level 6|304 Orchard Road #06-48|238863;23 Bendemeer Road|Blk 23 Bendemeer Road #01-527|330023;Kallang Trivista|Blk 8 Upper Boonkeng Road #01-01|380008;Kallang Bahru|Blk 66 Kallang Bahru #01-499|330066;Circuit Road|87 Circuit Road #01-973|;Macpherson Garden Estate|377 Upper Aljunied Road|367862;290/292 Geylang Road|290/292 Geylang Road|389337;Redhill|Blk 84 Redhill Lane #01-368|150084;Jalan Kukoh|Blk 8 Jalan Kukoh #01-33|162008;Whampoa Drive|Blk 86 Whampoa Drive #01-941|320086;City Square Mall|180 Kitchener Road #B2-37/38|208539;Cambridge Road|41 Cambridge Road #01-24|210041;176 Serangoon Road|176 Serangoon Road|218055;ABC Express Serangoon|240 Serangoon Road #01-1711|218086;Bugis|63 Queen Street, Bugis Village|188542;Arab Street|128 Arab Street|199821;803 King George's Ave|803 King George's Ave #01-162|200803;Haji Lane|28 Haji Lane|;Peninsula Plaza|111 North Bridge Road #01-32/42|179098;Bendemeer|Blk 25 Bendemeer Rd #01-593|330025;111 Toa Payoh Lorong 1|Blk 111 Toa Payoh Lorong 1 #01-362|310111;20 Lorong 7 Toa Payoh|20 Lorong 7 Toa Payoh #01-732|310020;Chinatown Point|133 New Bridge Road #B1-22|059413;Upper Cross Street|34 Upper Cross Street #01-160|050034;People's Park Complex|1 Park Road #03-58|059108;Telok Blangah|Blk 9 Telok Blangah Crescent #01-121|090009;Toa Payoh Central|Blk 500 Lorong 6 Toa Payoh #B1-33|310500"
++"~West|Boon Lay Place|Blk 221 Boonlay Place #01-234|640221;Bukit Panjang Plaza|1 Jelebu Road #03-05B|677743;Teck Whye Lane|138 Teck Whye Lane #01-343|680138;Ghim Moh|Blk 19 Ghim Moh Road #01-239|270019;325 Clementi|Blk 325 Clementi Avenue 5 #01-147|120325;449 Clementi|Blk 449 Clementi Avenue 3 #01-225|120449;505 West Coast Drive|Blk 505 West Coast Drive #01-220|120505;Benoi Road|55 Benoi Road #01-09/10, Joo Koon Bus Interchange|629907;12 Tuas South|12 Tuas South Street 13 #01-02/03/04/05/06/07|636937;727 Clementi|727 Clementi West Street 2 #01-256|120727;Fajar|Blk 445 Fajar Road #01-534|670445;253 Jurong East|253 Jurong East Street 24 #01-251|600253;351 Jurong East|351 Jurong East Street 31 #01-83 Yuhua Place|600351;Jurong Point|1 Jurong West Central 2 #B1-17|648886;Blk 492 Jurong West|Blk 492 Jurong West Street 41 #01-68|640492;Blk 503 Jurong West|Blk 503 Jurong West Avenue 1 #01-843|640503;Blk 960 Jurong West|Blk 960 Jurong West Street 92 #01-186|640960;Taman Jurong|Blk 399 Yung Sheng Road #01-10|610399;Yew Tee|Blk 624 Choa Chu Kang St 62 #02-220|680624;253 Choa Chu Kang|Blk 253 Choa Chu Kang Ave 1 #B1-02|680253;West Mall|1 Bukit Batok Central Link #03-20|658713;274 Bukit Batok|Blk 274 Bukit Batok East Avenue 4 #01-86|650274;371 Bukit Batok|Blk 371 Bukit Batok Street 31 #01-312|650371"
++"~North East|Bishan|Blk 507 Bishan Street 11 #01-392/394/396|570507;284 Bishan|Blk 284 Bishan Street 22 #01-209|;Waterway Point|83 Punggol Central #B1-10A|828761;84 Punggol Way|84 Punggol Way #01-74|829911;308C Punggol Way|308C Punggol Way #01-312|823308;338 Ang Mo Kio|Blk 338 Ang Mo Kio Ave 1 #01-1651|560338;410 Ang Mo Kio|Blk 410 Ang Mo Kio Ave 10 #01-831|560410;Compass One|1 Sengkang Square #B1-06|545078;Sengkang Grand Mall|70 Compassvale Bow #01-77|544692;Hougang Mall|90 Hougang Avenue 10 #04-01|538766;Hougang Rivercourt|377 Hougang Street 32 #B1-02|530377;698 Hougang|698 Hougang Street 61 #01-06|530698;102 Hougang|102 Hougang Ave 1 #01-1195|530102;NEX Mall|23 Serangoon Central #04-11|556083;48 Serangoon Road|48 Serangoon Road #01-19/20|217959;153 Serangoon|153 Serangoon North Ave 1 #01-472|550153;Ang Mo Kio 629|Blk 629 Ang Mo Kio Avenue 4 #01-1024|560629;Upper Thomson Road|Blk 244B Upper Thomson Road|574369;Thomson Plaza|301 Upper Thomson Road #02-31/32|574408"
++"~North|883 Woodlands|Blk 883 Woodlands Street 82 #01-486|730883;303 Woodlands|Blk 303 Woodlands Street 31 #01-181|730303;Marsiling|Blk 19 Marsiling Lane #01-317|730019;Marsiling Rise|Blk 132 Marsiling Rise #01-228|730132;101 Yishun|Blk 101 Yishun Ave 5 #01-43|760101;418 Yishun|Blk 418 Yishun Ave 11 #01-397|760418;North Point City|Yishun Central 1 #B1-177/178|769098;18 Yishun|18 Yishun Ave 9 #01-44|768897;846 Yishun|846 Yishun Ring Road #01-3645|760846;888 Woodlands|Blk 888 Woodlands Drive 50 #01-717|730888;11 Kranji Close|11 Kranji Close #01-04|737673;Sembawang|604 Sembawang Road #01-13/17|758459;Sun Plaza|30 Sembawang Drive #03-07/08/09|757713"
++"~East|213 Bedok|Blk 213 Bedok North Street 1 #01-97|460213;539 Bedok North Street|Blk 539 Bedok North Street 3 #01-583|460539;26A Chai Chee Road|Blk 26A Chai Chee Road #01-401|461026;Marine Terrace|Blk 57 Marine Terrace #01-115|440057;Buangkok Square|991 Buangkok Link #01-22/23|530991;East Point Mall|3 Simei Street 6 #03-23|528833;Tampines Hub|1 Tampines Walk #01-90/91/92|528523;Tampines 1|10 Tampines Central 1 #B1-20|529536;Jalan Batu|Blk 7 Jalan Batu #01-107|431007;631 Bedok|Blk 631 Bedok Reservoir Road #01-962|470631;Paya Lebar Square|60 Paya Lebar Road #B1-25/28|409051;PLQ Mall|10 Paya Lebar Road #04-24|409057;Haig Road|10 Haig Road #01-361|430010;Potong Pasir|Blk 148 Potong Pasir Ave 1 #01-35|350148;Pasir Ris (Blk 445)|Blk 445 Pasir Ris Drive 6 #01-92/94|510445;Pasir Ris (Blk 735)|Blk 735 Pasir Ris St 72 #01-320|510735;Marine Parade|82 Marine Parade Central #01-620|440082;Ubi|Blk 301 Ubi Ave 1 #01-239|400301;139 Tampines|Blk 139 Tampines Street 11 #01-20|521139;201D Tampines|Blk 201D Tampines Street 21 #01-1119|524201;477 Tampines|Blk 477 Tampines Street 43 #01-158|520477;826 Tampines|Blk 826 Tampines Street 81 #01-112|520826;Changi City Point|5 Changi Business Park Central 1 #B1-48/49|486038;Eunos|Blk 2A Eunos Crescent #01-2445|401002;SingPost Centre|Blk 10 Eunos Road 8 #02-131|408600;Changi Village|1 Changi Village #01-2022|500001;White Sands|1 Pasir Ris Central Street 3 #03-10|518457"
++"~South|Jalan Bukit Merah|Blk 2 Jalan Bukit Merah #01-5170|150002;Bukit Merah Lane 1 (Blk 124)|Blk 124 Bukit Merah Lane 1 #01-140|150124;Bukit Merah Lane 1 (Blk 1165)|Blk 1165 Bukit Merah Lane 1 #01-3669|150165;109 Bukit Purmei|Blk 109 Bukit Purmei Road #01-139|090109;40 Beo Crescent|Blk 40 Beo Crescent #01-22|160040";
+var all=[];S.split("~").forEach(function(b){var p=b.split("|");var region=p.shift();var rest=p.join("|").split(";");
+ // first record carries no region prefix issue: handled below
+ rest.forEach(function(r,i){var f=(i===0?[p[0],p[1],p[2]]:r.split("|"));if(i===0)f=r.split("|");all.push({r:region,n:f[0],a:f[1],z:f[2]||""})})});
+var regions=["Central","West","North East","North","East","South"],cur="All",q="";
+var tabs=document.getElementById("tabs"),grid=document.getElementById("grid"),cnt=document.getElementById("count");
+function cntOf(r){return all.filter(function(s){return r==="All"||s.r===r}).length}
+["All"].concat(regions).forEach(function(r){var b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("aria-pressed",r==="All");b.innerHTML=r+"<em>"+cntOf(r)+"</em>";b.onclick=function(){cur=r;[].forEach.call(tabs.children,function(x){x.setAttribute("aria-pressed",x===b)});render()};tabs.appendChild(b)});
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(){var t=q.toLowerCase();var l=all.filter(function(s){return(cur==="All"||s.r===cur)&&(!t||(s.n+" "+s.a+" "+s.z).toLowerCase().indexOf(t)>-1)});
+ cnt.textContent=l.length+" store"+(l.length===1?"":"s")+" shown";
+ grid.innerHTML=l.map(function(s){return'<div class="store"><b>'+esc(s.n)+'</b><span>'+esc(s.a)+(s.z?", Singapore "+s.z:"")+'</span><br><span class="rg">'+esc(s.r)+'</span></div>'}).join("")||'<p class="sub">No store matches your search.</p>'}
+document.getElementById("q").addEventListener("input",function(e){q=e.target.value;render()});render();
+// lazy images with graceful fallback
+document.querySelectorAll("img[data-src]").forEach(function(i){i.onerror=function(){i.style.display="none"};i.src=i.dataset.src});
+var hb=document.getElementById("herobg");hb.style.backgroundImage="url(https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1400&q=60)";
+// reveal + counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(function(e){io.observe(e)});
+var done=false;new IntersectionObserver(function(es,o){if(!es[0].isIntersecting||done)return;done=true;
+ document.querySelectorAll("[data-n]").forEach(function(el){if(el.dataset.plain)return;var n=+el.dataset.n,suf=el.dataset.suf||"",t0=null;
+ (function f(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(n*p).toLocaleString("en-SG")+(p===1?suf:"");if(p<1)requestAnimationFrame(f)})(performance.now())})},{threshold:.4}).observe(document.getElementById("stats"));
+})();
+</script>
+</body>
+</html>
