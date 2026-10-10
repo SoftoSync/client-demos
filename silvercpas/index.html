@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Demo: CPA in Silver City, NM | Mike Morones &amp; Associates, LLC</title>
+<style>
+:root{
+  --blue:#0b3f9e; --blue-deep:#082a6b; --blue-pale:#e8eefb; --copper:#b8643f; --copper-dark:#9a4f2e;
+  --ink:#16213a; --muted:#51607e; --sand:#f6f1ea; --white:#fff;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+.demo-bar{background:var(--ink);color:#dfe6f7;font-size:13px;text-align:center;padding:6px 12px;line-height:1.4}
+header.site{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #dde3f0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+.nav img.logo{height:54px;width:auto}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:26px}
+.nav ul a{text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;padding:8px 2px;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a[aria-current]{border-color:var(--copper)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;background:var(--copper);color:#fff;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer}
+.btn:hover{background:var(--copper-dark)}
+.btn.ghost{background:transparent;border:2px solid #fff}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+.nav .btn{padding:10px 18px;min-height:44px;font-size:15px}
+@media(min-width:900px){.nav ul{display:flex}}
+
+/* HERO: sunrise over the Gila ridge line, the sun rises once on load */
+.hero{position:relative;min-height:min(88vh,720px);color:#fff;overflow:hidden;background:linear-gradient(#1b2f66 0%,#7a4a63 55%,#d98a54 100%);display:flex;align-items:flex-end}
+.hero .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;mix-blend-mode:luminosity}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,42,107,.78) 0%,rgba(8,42,107,.35) 55%,rgba(8,20,50,.85) 100%);z-index:1}
+.sun{position:absolute;z-index:1;left:68%;bottom:18%;width:clamp(150px,26vw,300px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#ffe2a8 0%,#f7b267 45%,rgba(247,178,103,0) 70%);transform:translateY(60%);opacity:0;animation:rise 2.6s .2s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{transform:translateY(0);opacity:.95}}
+.ridge{position:absolute;z-index:2;left:0;right:0;bottom:0;width:100%;height:clamp(110px,22vw,230px)}
+.hero-inner{position:relative;z-index:3;padding:90px 0 clamp(120px,24vw,250px)}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,6.4vw,70px);line-height:1.06;margin:0 0 18px;max-width:19ch;letter-spacing:-.01em}
+.hero p.lead{font-size:clamp(17px,2.2vw,21px);max-width:46ch;margin:0 0 28px;color:#eef2fc}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:rgba(255,255,255,.14);padding:8px 16px;border-radius:999px;font-size:14px;backdrop-filter:blur(4px)}
+.dot{width:10px;height:10px;border-radius:50%;background:#9aa6c4}
+.dot.on{background:#53d38a;box-shadow:0 0 0 4px rgba(83,211,138,.25)}
+@media(prefers-reduced-motion:reduce){.sun{animation:none;transform:none;opacity:.95}html{scroll-behavior:auto}}
+
+section{padding:clamp(54px,8vw,96px) 0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 16px;letter-spacing:-.01em}
+.intro{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+.intro img{border-radius:6px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.intro p{max-width:60ch;color:var(--muted)}
+.talk{font-family:var(--serif);font-size:22px;color:var(--blue);margin:22px 0 14px}
+@media(min-width:900px){.intro{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+
+.services{background:var(--blue-deep);color:#fff}
+.services h2{color:#fff}
+.svc{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);list-style:none;padding:0;margin:28px 0 0}
+.svc a{display:flex;align-items:flex-end;min-height:120px;padding:16px;border-radius:6px;color:#fff;text-decoration:none;font-weight:700;font-size:15px;background:linear-gradient(160deg,#16489f,#0b2f78);border:1px solid rgba(255,255,255,.18);transition:background .2s}
+.svc a:hover{background:linear-gradient(160deg,#c06b44,#8f4426)}
+@media(min-width:760px){.svc{grid-template-columns:repeat(4,1fr)}.svc a{min-height:150px;font-size:16px}}
+
+.pillars{display:grid;gap:22px}
+.pillar{background:var(--blue-pale);padding:30px;border-radius:6px}
+.pillar h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:0 0 10px;color:var(--blue)}
+.pillar p{margin:0 0 20px;color:var(--muted);font-size:16px}
+@media(min-width:900px){.pillars{grid-template-columns:repeat(3,1fr)}}
+
+.press{background:var(--sand);text-align:center}
+.press h2{max-width:22ch;margin-inline:auto}
+.press-list{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 38px;margin:28px 0 12px;font-family:var(--serif);font-size:24px;color:var(--ink)}
+.press small{display:block;color:var(--muted);font-size:15px;max-width:60ch;margin:0 auto}
+.insights{display:grid;gap:16px;margin-top:34px;text-align:left}
+.insights a{display:block;background:#fff;border-top:4px solid var(--blue);padding:20px;text-decoration:none;color:var(--ink);box-shadow:0 1px 0 #e4dccf}
+.insights time{font-size:13px;color:var(--blue);font-weight:700}
+.insights strong{display:block;margin-top:6px;font-weight:600;line-height:1.35}
+@media(min-width:800px){.insights{grid-template-columns:repeat(3,1fr)}}
+
+.reviews{background:var(--blue);color:#fff}
+.reviews h2{color:#fff}
+.quotes{display:grid;gap:18px;margin-top:28px}
+.quotes figure{margin:0;background:#fff;color:var(--ink);padding:26px;border-radius:6px}
+.quotes blockquote{margin:0 0 14px;font-family:var(--serif);font-size:19px;line-height:1.45}
+.quotes figcaption{font-size:14px;color:var(--muted)}
+.stars{color:#e0a100;letter-spacing:2px;margin-bottom:8px;font-size:18px}
+@media(min-width:900px){.quotes{grid-template-columns:repeat(3,1fr)}}
+
+.final{background:linear-gradient(135deg,#082a6b,#0b3f9e);color:#fff;text-align:center}
+.final h2{color:#fff;max-width:22ch;margin-inline:auto}
+.final p{max-width:48ch;margin:0 auto 26px;color:#e3eafb}
+
+footer{background:#0d1530;color:#c9d3ee;padding:48px 0 28px;font-size:15px}
+.f-grid{display:grid;gap:28px}
+footer h3{color:#fff;font-size:16px;margin:0 0 8px}
+footer a{color:#fff}
+footer img.logo{height:60px;background:#fff;padding:6px 10px;border-radius:4px}
+.f-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:30px 0 0;padding:18px 0 0;border-top:1px solid #2a3560;list-style:none}
+.f-links a{text-decoration:none}
+.credit{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;color:#93a0c8;flex-wrap:wrap}
+.credit img{height:26px;width:26px;background:#fff;border-radius:4px;padding:2px}
+@media(min-width:800px){.f-grid{grid-template-columns:1.2fr 1fr 1fr 1.2fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo project prepared by Softosync. Content and contact details are taken from silvercpas.com.</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="https://silvercpas.com/" aria-label="Mike Morones &amp; Associates, LLC home"><img class="logo" src="https://silvercpas.com/wp-content/uploads/2024/08/MMAlogo.jpg" alt="Logo of Mike Morones &amp; Associates, LLC, CPA firm" width="150" height="54"></a>
+    <ul>
+      <li><a href="#top" aria-current="page">Home</a></li>
+      <li><a href="https://silvercpas.com/about-us/">About Us</a></li>
+      <li><a href="https://silvercpas.com/services/">Services</a></li>
+      <li><a href="https://silvercpas.com/client-portal/">Client Portal</a></li>
+      <li><a href="https://silvercpas.com/frequent-links/">Frequent Links</a></li>
+      <li><a href="https://silvercpas.com/contact-us/">Contact Us</a></li>
+    </ul>
+    <a class="btn" href="tel:+15755382750">Call 575-538-2750</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0" aria-labelledby="h1">
+  <img class="photo" src="https://silvercpas.com/wp-content/uploads/2024/08/nm-sunrise.jpg" alt="Sunrise over the Southwest New Mexico landscape near Silver City" fetchpriority="high" width="1200" height="800">
+  <div class="sun" aria-hidden="true"></div>
+  <svg class="ridge" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 220V150l90-34 70 26 110-62 80 40 120-78 90 48 130-70 100 56 120-34 90 40 140-66 110 62 90-30 90 48v134z" fill="#12306f" opacity=".75"/>
+    <path d="M0 220v-58l120 20 100-44 130 38 110-40 140 34 120-36 130 42 110-30 150 40 120-26 110 30v90z" fill="#082a6b"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <h1 id="h1">Ignite Financial Empowerment with Mike Morones &amp; Associates, LLC</h1>
+    <p class="lead">Tax and accounting services from a CPA firm in Silver City, NM, serving Southwest NM and clients nationwide.</p>
+    <div class="cta">
+      <a class="btn" href="https://silvercpas.com/contact-us/#form">Request a Consultation</a>
+      <a class="btn ghost" href="tel:+15755382750">Call 575-538-2750</a>
+    </div>
+    <div class="status" role="status"><span class="dot" id="dot"></span><span id="open-text">Office hours: Monday to Thursday, 8:30 am to 5:00 pm</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-intro">
+  <div class="wrap intro">
+    <div>
+      <h2 id="h-intro">Your Trusted Advisors in Business Success</h2>
+      <p>Located in Silver City, NM, Mike Morones &amp; Associates, LLC is a distinguished <a href="https://silvercpas.com/about-us/">CPA firm</a> serving clients across Southwest NM, and nationwide. Specializing in a wide range of <a href="https://silvercpas.com/services/">tax and accounting services</a>, our team caters to business owners, executives, and non-profit organizations. Committed to professionalism, responsiveness, and quality, we strive to exceed our clients' expectations and help them seize opportunities.</p>
+      <p class="talk">Let's talk taxes.</p>
+      <a class="btn" href="tel:+15755382750">Call 575-538-2750</a>
+    </div>
+    <img src="https://silvercpas.com/wp-content/uploads/2024/08/nm-sunrise.jpg" alt="Silver City, NM landscape" loading="lazy" width="800" height="600">
+  </div>
+</section>
+
+<section class="services" aria-labelledby="h-svc">
+  <div class="wrap">
+    <h2 id="h-svc">Services</h2>
+    <ul class="svc">
+      <li><a href="https://silvercpas.com/services/">Individual Returns</a></li>
+      <li><a href="https://silvercpas.com/services/">Partners Returns</a></li>
+      <li><a href="https://silvercpas.com/services/">C Corporations</a></li>
+      <li><a href="https://silvercpas.com/services/">S Corporations</a></li>
+      <li><a href="https://silvercpas.com/services/">Trust &amp; Estate Returns</a></li>
+      <li><a href="https://silvercpas.com/services/">Payroll Services</a></li>
+      <li><a href="https://silvercpas.com/services/">Gross Receipts Tax Services</a></li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="h-nav">
+  <div class="wrap">
+    <h2 id="h-nav" style="text-align:center;margin-bottom:34px">Navigating Your Finances with Expertise</h2>
+    <div class="pillars">
+      <div class="pillar"><h3>Expert Financial Services</h3><p>Our experienced team provides a comprehensive range of financial services, including payroll and compliance work, and corporate, nonprofit, estate, and trust tax returns.</p><a class="btn" href="https://silvercpas.com/services/">Our Services</a></div>
+      <div class="pillar"><h3>A Team With Decades of Experience</h3><p>Get to know our team of professional accountants and learn about their qualifications, expertise, and dedication to delivering exceptional services.</p><a class="btn" href="https://silvercpas.com/about-us#meet-our-team">Meet Our Team</a></div>
+      <div class="pillar"><h3>Valuable Resources</h3><p>From our secure portal to tax due dates, a variety of financial calculators, and return tracking, we aim to empower our clients to make well-informed financial decisions.</p><a class="btn" href="https://silvercpas.com/client-portal/">Access the Client Portal</a> <a href="https://silvercpas.com/frequent-links/" style="display:inline-block;margin-top:12px;font-weight:600">Browse Resources</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="press" aria-labelledby="h-press">
+  <div class="wrap">
+    <h2 id="h-press">Recognized Expertise. Trusted Locally. Featured Nationally.</h2>
+    <div class="press-list" aria-label="Featured in"><span>HelloNation</span><span>Morningstar</span><span>Yahoo Finance</span></div>
+    <small>Featured on New Mexico's Gross Receipts Tax and what it means for small businesses.</small>
+    <div class="insights">
+      <a href="https://silvercpas.com/"><time datetime="2026-06-26">June 26, 2026</time><strong>Finding the Right Tax Guidance in Silver City, NM: A Practical Guide for Local Residents</strong></a>
+      <a href="https://silvercpas.com/"><time datetime="2026-06-17">June 17, 2026</time><strong>Deciding If a Certified Public Accountant Is Right for Your Tax Filing Needs in Silver City, NM</strong></a>
+      <a href="https://silvercpas.com/"><time datetime="2026-06-10">June 10, 2026</time><strong>Understanding the Benefits and Drawbacks of Filing Your Taxes Early in Silver City, NM</strong></a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="h-rev">
+  <div class="wrap">
+    <h2 id="h-rev">Client Success Stories</h2>
+    <div class="quotes">
+      <figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Mike and his team are the best in the business and a local favorite for Accounting, Tax Prep, and payroll services. Highly recommend.</blockquote><figcaption>Paul Leetmae, Google review</figcaption></figure>
+      <figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Quick to answer questions, very responsive and knowledgeable. Highly recommend.</blockquote><figcaption>Martha Everett, Google review</figcaption></figure>
+      <figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>They've provided excellence in accounting that I depend on as a local business.</blockquote><figcaption>Marshall Fischer, Google review</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="h-final">
+  <div class="wrap">
+    <h2 id="h-final">Embark on your path to financial success with Mike Morones &amp; Associates</h2>
+    <p>Your business isn't just a number, but a valued partner. Schedule a consultation today!</p>
+    <a class="btn" href="tel:+15755382750">Call 575-538-2750</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div><img class="logo" src="https://silvercpas.com/wp-content/uploads/2024/08/MMAlogo.jpg" alt="Logo of Mike Morones &amp; Associates, LLC" width="150" height="60"></div>
+      <div><h3>Location</h3><p>Mike Morones &amp; Associates, LLC<br>608 N Bullard St,<br>Silver City, NM 88061</p></div>
+      <div><h3>Hours</h3><p>Monday to Thursday:<br>8:30 am to 5:00 pm<br>We have extended hours during tax season.</p></div>
+      <div><h3>Contact</h3><p>Phone: <a href="tel:+15755382750">575-538-2750</a><br>Fax: 575-538-0681<br>Email: <a href="mailto:office@silvercpas.com">office@silvercpas.com</a></p></div>
+    </div>
+    <ul class="f-links">
+      <li><a href="https://silvercpas.com/">Home</a></li><li><a href="https://silvercpas.com/about-us/">About Us</a></li><li><a href="https://silvercpas.com/services/">Services</a></li><li><a href="https://silvercpas.com/client-portal/">Client Portal</a></li><li><a href="https://silvercpas.com/frequent-links/">Frequent Links</a></li><li><a href="https://silvercpas.com/contact-us/">Contact Us</a></li><li><a href="https://silvercpas.com/sitemap/">Sitemap</a></li>
+    </ul>
+    <div class="credit"><img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" width="26" height="26"><span>Demo design by Softosync. Not the official website of Mike Morones &amp; Associates, LLC.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Denver',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var d={},i;for(i=0;i<p.length;i++){d[p[i].type]=p[i].value}
+    var mins=(parseInt(d.hour,10)%24)*60+parseInt(d.minute,10);
+    var open=['Mon','Tue','Wed','Thu'].indexOf(d.weekday)>-1&&mins>=510&&mins<1020;
+    var dot=document.getElementById('dot'),t=document.getElementById('open-text');
+    if(open){dot.className='dot on';t.textContent='Open now. Monday to Thursday, 8:30 am to 5:00 pm';}
+    else{t.textContent='Currently closed. Open Monday to Thursday, 8:30 am to 5:00 pm';}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
