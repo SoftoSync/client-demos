@@ -3,225 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="Demo homepage concept for Avon Auto &amp; Truck and Alpine Tire Co. (Avon and Glenwood Springs, Colorado). Prepared by Softosync.">
-<title>Avon Auto &amp; Truck and Alpine Tire Co. | Demo homepage by Softosync</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demo homepage concept for Avon Auto & Truck and Alpine Tire Co. (Avon and Glenwood Springs, Colorado). Prepared by Softosync.">
+<title>Avon Auto & Truck and Alpine Tire Co. | Demo homepage by Softosync</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-function imgFail(el){
-  var s=document.createElement('span');
-  s.className='img-fallback';
-  s.textContent=el.alt;
-  el.replaceWith(s);
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ridge:#0E2A4D;
-  --ridge-2:#1A3C69;
-  --ridge-3:#274E80;
-  --snow:#F6F8FB;
-  --paper:#FFFFFF;
-  --glow:#F28C1E;
-  --glow-dark:#C46C0A;
-  --promo:#C81E18;
-  --ink:#12233B;
-  --muted:#4B5A6B;
-  --line:#D5DEE9;
-  --radius:10px;
-  --maxw:1160px;
-  --head:"Bricolage Grotesque","Trebuchet MS","Segoe UI",system-ui,sans-serif;
-  --body:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --navy:#0F2742; --blue:#1D5FA8; --sun:#F2A33A; --snow:#F4F7FA; --ink:#14202E; --muted:#51606F; --red:#C8242B; --line:#D9E1E9; --white:#fff;
+  --head:"Barlow Condensed","Arial Narrow",Arial,sans-serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--body);font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--snow)}
-img,svg{max-width:100%}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0;color:var(--ridge);letter-spacing:-.01em}
-p{margin:0}
-:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
-.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
-.skip{position:absolute;left:-999px;top:0;background:var(--paper);color:var(--ink);padding:.75rem 1rem;z-index:100}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.05;letter-spacing:.2px}
+h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--navy)}
+h3{font-size:1.5rem;color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.7rem 1.4rem;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:background .15s,color .15s,border-color .15s;cursor:pointer;font-family:var(--body);font-size:1rem}
+.btn-sun{background:var(--sun);color:var(--navy)}
+.btn-sun:hover{background:#ffb852}
+.btn-line{border-color:currentColor;color:var(--white)}
+.btn-line:hover{background:var(--white);color:var(--navy)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:#174f8c}
+.skip{position:absolute;left:-999px;top:0;background:var(--sun);color:var(--navy);padding:.6rem 1rem;z-index:100}
 .skip:focus{left:0}
 
-/* demo bar and promo */
-.demobar{background:#081B33;color:#DCE6F3;font-size:.8125rem;text-align:center;padding:.4rem 1rem}
-.promo{background:var(--promo);color:#fff;text-align:center;font-weight:600;font-size:.9375rem;line-height:1.35}
-.promo a{display:block;padding:.6rem 1rem;text-decoration:none}
+/* demo bar */
+.demobar{background:#0a1b2e;color:#cdd9e6;font-size:.82rem;text-align:center;padding:.35rem 1rem}
+/* promo bar */
+.promo{background:var(--red);color:#fff;text-align:center;font-weight:600;font-size:.92rem;padding:.55rem 1rem}
+.promo a{text-decoration:none}
 .promo a:hover{text-decoration:underline}
 
 /* header */
-.site-header{background:var(--paper);border-bottom:1px solid var(--line)}
-.site-header .bar{display:flex;align-items:center;gap:1rem;min-height:72px}
-.brand{display:flex;align-items:center;text-decoration:none;font-family:var(--head);font-weight:800;color:var(--ridge);font-size:1.125rem}
-.brand img{height:48px;width:auto;max-width:190px;object-fit:contain}
-.nav-toggle{margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:.55rem .8rem;font:inherit;font-weight:600;color:var(--ridge);cursor:pointer}
-.nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1rem;z-index:20}
-.nav.is-open{display:block}
-.nav ul{list-style:none;margin:0;padding:0}
-.nav a{display:block;padding:.8rem 0;text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
-.nav a:hover{color:var(--glow-dark)}
-.btn.header-call{display:none}
-.site-header{position:relative}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.7rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:1rem;line-height:1.2;text-align:center}
-.btn-primary{background:var(--glow);color:var(--ridge)}
-.btn-primary:hover{background:#FFA13A}
-.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.12)}
-.btn-dark{background:var(--ridge);color:#fff}
-.btn-dark:hover{background:var(--ridge-2)}
-.btn-line{border-color:var(--ridge);color:var(--ridge)}
-.btn-line:hover{background:var(--ridge);color:#fff}
+header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px}
+.logo img{height:46px;width:auto}
+nav.main ul{display:flex;gap:1.6rem;list-style:none}
+nav.main a{text-decoration:none;font-weight:500;color:var(--navy);padding:.4rem 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-bottom-color:var(--sun)}
+.hcall{display:none}
+.menu-btn{display:inline-flex;background:none;border:2px solid var(--navy);color:var(--navy);border-radius:4px;min-height:44px;padding:0 .9rem;font-weight:600;font-family:var(--body);cursor:pointer}
+nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--white);border-bottom:1px solid var(--line);padding:1rem 1.25rem 1.4rem}
+nav.main.open{display:block}
+nav.main ul{flex-direction:column;gap:.2rem}
+nav.main a{display:block;padding:.7rem 0;font-size:1.05rem}
+@media(min-width:960px){
+  .menu-btn{display:none}
+  nav.main{display:block;position:static;border:0;padding:0}
+  nav.main ul{flex-direction:row}
+  nav.main a{padding:.4rem 0;font-size:1rem}
+  .hcall{display:inline-flex}
+}
 
 /* hero */
-.hero{background:linear-gradient(180deg,#081B33 0%,#0E2A4D 45%,#1F5290 100%);color:#fff;overflow:hidden}
-.hero-copy{padding-top:2.5rem;padding-bottom:1rem;position:relative;z-index:2}
-.hero h1{color:#fff;font-size:clamp(2.1rem,6.4vw,4rem);font-weight:800;max-width:17ch;letter-spacing:-.02em}
-.hero .lede{margin-top:1rem;max-width:34rem;font-size:1.1875rem;color:#E4ECF7}
-.switch{display:inline-flex;margin-top:1.5rem;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:4px;gap:4px;background:rgba(8,27,51,.35)}
-.switch button{font:inherit;font-weight:700;color:#fff;background:transparent;border:0;border-radius:999px;padding:.6rem 1.1rem;min-height:44px;cursor:pointer}
-.switch button[aria-pressed="true"]{background:#fff;color:var(--ridge)}
-.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.1rem}
-.shopline{margin-top:1rem;color:#DCE6F3;font-size:.9688rem}
-.shopline a{color:#fff;font-weight:600}
-.scene{display:block;width:100%;height:auto;margin-top:-.5rem;margin-bottom:-2px}
-.scene .pin{cursor:pointer}
-.scene .pin circle.dot{fill:var(--ridge);stroke:#fff;stroke-width:5;transition:fill .2s}
-.scene .pin.is-active circle.dot{fill:var(--glow)}
-.scene .pin .ring{fill:none;stroke:var(--glow);stroke-width:3;opacity:0}
-.scene .pin.is-active .ring{opacity:.9}
-.scene .pin text{fill:#fff;font-family:var(--head);font-weight:700;font-size:36px;text-anchor:middle}
-.scene .route{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.85;stroke-dasharray:1;stroke-dashoffset:0}
-@media (prefers-reduced-motion:no-preference){
-  .scene .route{animation:draw 2.2s ease-out .3s both}
-}
-@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,39,66,.96) 0%,rgba(15,39,66,.78) 55%,rgba(15,39,66,.45) 100%)}
+.hero-in{position:relative;z-index:2;display:grid;gap:2rem;padding:3rem 0 3.4rem}
+.hero h1{font-size:clamp(2.7rem,8.5vw,5.4rem);max-width:12ch;text-wrap:balance}
+.hero p.lede{font-size:1.15rem;max-width:34rem;margin-top:1rem;color:#dbe6f2}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
 
-/* finder */
-.finder{margin-top:-1px}
-.finder-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;display:grid;gap:1rem;box-shadow:0 8px 28px rgba(14,42,77,.08);margin-top:-.9rem;position:relative;z-index:3}
-.finder-card h2{font-size:1.5rem}
-.finder-card p{color:var(--muted)}
-.finder-actions{display:grid;gap:.6rem}
-.finder-actions .btn{padding-left:.9rem;padding-right:.9rem}
+/* signature: shop switcher */
+.shop{background:var(--white);color:var(--ink);border-radius:6px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);max-width:460px;width:100%}
+.tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.tab{background:var(--snow);border:0;padding:.95rem .6rem;font-family:var(--head);font-size:1.25rem;font-weight:700;color:var(--muted);cursor:pointer;border-bottom:4px solid transparent;min-height:52px}
+.tab[aria-selected="true"]{background:var(--white);color:var(--navy);border-bottom-color:var(--sun)}
+.shop-photo{aspect-ratio:16/8;width:100%;object-fit:cover;background:var(--line)}
+.shop-body{padding:1.1rem 1.3rem 1.4rem}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.25rem .7rem;border-radius:99px;background:#e8f3ea;color:#1c6b35}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.status.closed{background:#f6e7e7;color:#8f1d22}
+.shop h3{margin-top:.7rem}
+.shop address{font-style:normal;color:var(--muted);margin-top:.2rem}
+.shop dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;margin:.9rem 0 1.1rem;font-size:.95rem}
+.shop dt{font-weight:600}
+.shop-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.shop-actions .btn{flex:1 1 130px;min-height:46px;padding:.5rem .8rem}
+@media(min-width:900px){
+  .hero-in{grid-template-columns:1.15fr .85fr;align-items:center;padding:4.6rem 0 5rem}
+  .shop{justify-self:end}
+}
 
 /* sections */
-.section{padding:3.5rem 0}
-.section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.section h2{font-size:clamp(1.75rem,4.4vw,2.5rem);max-width:22ch}
-.section .intro{margin-top:.9rem;max-width:40rem;color:var(--muted)}
+section.s{padding:4rem 0}
+.s-head{max-width:40rem;margin-bottom:2rem}
+.s-head p{color:var(--muted);margin-top:.6rem}
+.alt{background:var(--snow)}
 
-/* offers ledger */
-.ledger{list-style:none;margin:1.75rem 0 0;padding:0;border-top:2px solid var(--ridge)}
-.ledger li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
-.ledger a{text-decoration:none;font-weight:600}
-.ledger a:hover{text-decoration:underline}
-.ledger .amt{font-family:var(--head);font-weight:800;font-size:1.375rem;color:var(--ridge);white-space:nowrap}
-.fine{margin-top:1rem;font-size:.875rem;color:var(--muted)}
-.callout{margin-top:1.75rem;background:var(--ridge);color:#fff;border-radius:var(--radius);padding:1.25rem 1.4rem}
-.callout strong{font-family:var(--head);font-size:1.25rem}
-.callout p{margin-top:.35rem;color:#DCE6F3}
+/* tire finder */
+.finder{background:var(--blue);color:#fff;padding:1.6rem 0}
+.finder-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
+.finder h2{color:#fff;font-size:clamp(1.7rem,3.5vw,2.2rem)}
+.finder p{color:#dce9f7}
+.finder-links{display:flex;flex-wrap:wrap;gap:.6rem}
+.finder-links a{background:#fff;color:var(--navy);text-decoration:none;font-weight:600;padding:.7rem 1.1rem;border-radius:4px;min-height:46px;display:inline-flex;align-items:center}
+.finder-links a:hover{background:var(--sun)}
+
+/* offers */
+.offers{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.offer{background:#fff;border:1px solid var(--line);border-top:5px solid var(--sun);border-radius:4px;padding:1.2rem 1.2rem 1.3rem;text-decoration:none;display:block}
+.offer:hover{border-color:var(--blue);border-top-color:var(--sun)}
+.offer b{font-family:var(--head);font-size:2.8rem;color:var(--navy);display:block;line-height:1}
+.offer span{display:block;margin-top:.4rem;font-weight:600}
+.offer small{display:block;color:var(--muted);margin-top:.2rem;font-size:.85rem}
+.perks{margin-top:1.4rem;display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.perk{background:var(--navy);color:#fff;border-radius:4px;padding:1.1rem 1.3rem}
+.perk b{font-family:var(--head);font-size:1.5rem;display:block;color:var(--sun)}
 
 /* services */
-.svc-grid{display:grid;gap:2rem;margin-top:1.75rem}
-.svc h3{font-size:1.25rem;margin-bottom:.4rem}
-.svc p{color:var(--muted);margin-bottom:.6rem}
-.svc ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.svc li{border-bottom:1px solid var(--line)}
-.svc li a{display:block;padding:.7rem 0;text-decoration:none;font-weight:600}
-.svc li a:hover{color:var(--glow-dark)}
+.svc{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);grid-template-columns:repeat(2,1fr)}
+.svc a{background:#fff;text-decoration:none;text-align:center;padding:1.4rem .6rem;font-weight:600;color:var(--navy);display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.svc a:hover{background:var(--snow)}
+.svc img{height:64px;width:auto}
+@media(min-width:760px){.svc{grid-template-columns:repeat(4,1fr)}}
+.more{margin-top:2rem;display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.more div{border-left:4px solid var(--sun);padding-left:1rem}
+.more p{color:var(--muted);margin-top:.3rem;font-size:.97rem}
+.more ul{margin-top:.5rem;padding-left:1.1rem;color:var(--muted);font-size:.95rem}
+
+/* why */
+.why{display:grid;gap:2.2rem}
+.why-list{list-style:none;display:grid;gap:.9rem}
+.why-list li{padding-left:1.8rem;position:relative}
+.why-list li::before{content:"";position:absolute;left:0;top:.5rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px #fdecd0}
+.why-photo{border-radius:6px;aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--line)}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.badges span{border:1px solid var(--line);background:#fff;border-radius:99px;padding:.35rem .9rem;font-weight:600;font-size:.9rem;color:var(--navy)}
+@media(min-width:900px){.why{grid-template-columns:1fr 1fr;align-items:center;gap:3.5rem}}
 
 /* brands */
-.brands{list-style:none;margin:1.75rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
-.brands a{display:flex;align-items:center;justify-content:center;min-height:76px;padding:.6rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;font-weight:700;color:var(--ridge)}
-.brands a:hover{border-color:var(--ridge)}
+.brands{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 1.5rem;align-items:center}
+.brands a{display:flex;align-items:center;justify-content:center;min-height:64px;padding:.4rem}
 .brands img{max-height:44px;width:auto;object-fit:contain}
-.img-fallback{font-weight:700}
+@media(min-width:760px){.brands{grid-template-columns:repeat(5,1fr)}}
 
 /* reviews */
-.reviews{display:grid;gap:1rem;margin-top:1.75rem}
-.review{margin:0;background:var(--snow);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}
-.review blockquote{margin:0;font-size:1.125rem}
-.review figcaption{margin-top:.7rem;font-weight:700;color:var(--ridge)}
+.reviews{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.reviews blockquote{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1.3rem}
+.reviews cite{display:block;margin-top:.8rem;font-style:normal;font-weight:600;color:var(--navy)}
+.stars{color:var(--sun);letter-spacing:2px;font-size:1.1rem}
 
-/* shops */
-.shops{display:grid;gap:1.25rem;margin-top:1.75rem}
-.shop{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;border-top:6px solid var(--ridge)}
-.shop h3{font-size:1.5rem}
-.shop address{font-style:normal;margin-top:.7rem;color:var(--muted)}
-.shop .phone{display:inline-block;margin-top:.6rem;font-family:var(--head);font-weight:800;font-size:1.5rem;color:var(--ridge);text-decoration:none}
-.shop .links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
-.award{margin-top:.9rem;font-weight:600;color:var(--ridge)}
-.trust{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;padding:0;list-style:none}
-.trust li{border:1px solid var(--ridge);border-radius:999px;padding:.4rem .95rem;font-weight:700;color:var(--ridge);background:var(--paper)}
+/* locations */
+.locs{display:grid;gap:1.4rem}
+.loc{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.loc img{aspect-ratio:16/8;width:100%;object-fit:cover;background:var(--line)}
+.loc div.b{padding:1.2rem 1.3rem 1.4rem}
+.loc p{color:var(--muted);margin:.4rem 0 1rem}
+@media(min-width:800px){.locs{grid-template-columns:1fr 1fr}}
 
 /* quote band */
-.band{background:var(--ridge);color:#fff;padding:3rem 0}
-.band h2{color:#fff;font-size:clamp(1.6rem,4vw,2.25rem);max-width:24ch}
-.band .cta-row{margin-top:1.25rem}
+.quote{background:var(--navy);color:#fff;padding:3.4rem 0;text-align:center}
+.quote h2{color:#fff}
+.quote p{color:#cfdcea;margin:.6rem auto 1.5rem;max-width:34rem}
+.quote .hero-cta{justify-content:center}
 
-/* footer */
-.site-footer{background:#081B33;color:#C9D6E6;padding:2.5rem 0 5.5rem;font-size:.9375rem}
-.site-footer a{color:#fff}
-.foot-grid{display:grid;gap:1.5rem}
-.foot-grid h3{color:#fff;font-size:1rem;margin-bottom:.4rem}
-.foot-grid ul{list-style:none;margin:0;padding:0}
-.foot-grid li{padding:.2rem 0}
-.credit{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
-.credit .chip{background:#fff;border-radius:8px;padding:4px 8px;line-height:0}
-.credit img{height:36px;width:auto}
-.credit p{flex:1 1 260px}
-
-/* mobile call bar */
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ridge);padding:.6rem 1rem;box-shadow:0 -4px 16px rgba(0,0,0,.2)}
-.callbar a{display:flex;justify-content:center;width:100%}
-
-@media (min-width:640px){
-  .brands{grid-template-columns:repeat(3,1fr)}
-  .finder-actions{grid-template-columns:repeat(3,1fr)}
-  .reviews{grid-template-columns:repeat(2,1fr)}
-}
-@media (min-width:900px){
-  .nav-toggle{display:none}
-  .nav{display:block;position:static;border:0;padding:0;margin-left:auto}
-  .nav ul{display:flex;gap:1.6rem}
-  .nav a{border:0;padding:.4rem 0}
-  .btn.header-call{display:inline-flex;margin-left:1.5rem}
-  .hero-copy{padding-top:4rem}
-  .finder-card{grid-template-columns:1.1fr 1.4fr;align-items:center;padding:1.75rem 2rem;margin-top:-2.2rem}
-  .svc-grid{grid-template-columns:1fr 1fr 1fr;gap:2.5rem}
-  .brands{grid-template-columns:repeat(5,1fr)}
-  .reviews{grid-template-columns:repeat(4,1fr)}
-  .shops{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1.4fr 1fr 1fr}
-  .section{padding:5rem 0}
-  .callbar{display:none}
-  .site-footer{padding-bottom:2.5rem}
-}
+footer.site{background:#0a1b2e;color:#b9c8d8;padding:2.8rem 0 1.6rem;font-size:.95rem}
+.fgrid{display:grid;gap:1.8rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h3{color:#fff;font-size:1.25rem;margin-bottom:.5rem}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer ul{list-style:none}
+.fsoft{margin-top:2rem;padding-top:1.2rem;border-top:1px solid #1e3550;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;font-size:.82rem}
+.fsoft img{height:26px;width:auto;background:#fff;padding:3px 8px;border-radius:3px}
+.mcall{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--sun);color:var(--navy);text-align:center;font-weight:700;padding:.9rem;text-decoration:none;display:block;box-shadow:0 -4px 14px rgba(0,0,0,.2)}
+@media(min-width:960px){.mcall{display:none}}
+body{padding-bottom:3.2rem}
+@media(min-width:960px){body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
+<div class="demobar">Demonstration project prepared by Softosync</div>
+<div class="promo"><a href="https://www.avonautoandtruck.com/Coupons">Ask about our free alignment check and our buy one, get 50% off oil change special</a></div>
 
-<div class="demobar" role="note">Demonstration project prepared by Softosync</div>
-
-<div class="promo">
-  <a href="https://www.avonautoandtruck.com/Coupons">Ask about our free alignment check and our buy one, get 50% off oil change special</a>
-</div>
-
-<header class="site-header">
-  <div class="wrap bar">
-    <a class="brand" href="https://www.avonautoandtruck.com/" aria-label="Avon Auto &amp; Truck and Alpine Tire Co. home">
-      <img src="https://www.avonautoandtruck.com/Portals/37/logo.png" width="190" height="48" alt="Avon Auto &amp; Truck" onerror="imgFail(this)">
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="nav" id="nav" aria-label="Main">
+<header class="site">
+  <div class="wrap hbar">
+    <a class="logo" href="https://www.avonautoandtruck.com/"><img src="https://www.avonautoandtruck.com/Portals/37/logo.png" alt="Avon Auto & Truck logo with a mountain ridge"></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="main" id="mainnav" aria-label="Main">
       <ul>
         <li><a href="https://www.avonautoandtruck.com/Tires">Tires</a></li>
         <li><a href="https://www.avonautoandtruck.com/Automotive-Services">Automotive services</a></li>
@@ -230,223 +199,226 @@ p{margin:0}
         <li><a href="https://www.avonautoandtruck.com/Locations">Locations</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary header-call" data-call href="tel:+19707902886">Call (970) 790-2886</a>
+    <a class="btn btn-sun hcall" href="tel:+19707902886">Call (970) 790-2886</a>
   </div>
 </header>
 
 <main id="main">
-
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero-copy">
-      <h1 id="hero-title">Small enough to know you, large enough to service you.</h1>
-      <p class="lede">Tires, auto repair and fleet service from two shops in Colorado: Avon Auto &amp; Truck in Avon and Alpine Tire Co. in Glenwood Springs.</p>
-
-      <div class="switch" role="group" aria-label="Choose your shop">
-        <button type="button" data-shop="avon" aria-pressed="true">Avon</button>
-        <button type="button" data-shop="glenwood" aria-pressed="false">Glenwood Springs</button>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn btn-primary" id="callBtn" data-call href="tel:+19707902886">Call Avon Auto &amp; Truck (970) 790-2886</a>
-        <a class="btn btn-ghost" href="https://www.avonautoandtruck.com/Automotive-Services/Free-Service-Quote">Get a free service quote</a>
-      </div>
-      <p class="shopline" aria-live="polite"><span id="shopAddr">147 Nottingham Rd., Avon, CO 81620</span><br><a id="shopLink" href="https://www.avonautoandtruck.com/Locations/Mode/1/147-Nottingham-Rd-Avon-CO-81620/details">Hours and shop details</a></p>
-    </div>
-
-    <svg class="scene" viewBox="0 0 1200 380" role="img" aria-labelledby="sceneTitle sceneDesc" preserveAspectRatio="xMidYMax meet">
-      <title id="sceneTitle">Two shops, one valley</title>
-      <desc id="sceneDesc">A mountain ridgeline with a pin for the Avon shop on the left and a pin for the Glenwood Springs shop on the right, joined by a line.</desc>
-      <circle cx="610" cy="118" r="112" fill="#F28C1E" opacity=".16"/>
-      <circle cx="610" cy="118" r="56" fill="#F28C1E"/>
-      <path d="M0 250 L90 190 L170 235 L290 140 L380 215 L470 170 L560 240 L680 150 L790 230 L900 175 L1010 240 L1110 190 L1200 230 V380 H0Z" fill="#274E80"/>
-      <path d="M0 300 L120 250 L230 285 L360 215 L470 280 L590 235 L700 290 L830 225 L950 285 L1070 245 L1200 290 V380 H0Z" fill="#1A3C69"/>
-      <path d="M0 345 L150 312 L300 338 L470 308 L640 342 L820 310 L990 338 L1200 316 V380 H0Z" fill="#F6F8FB"/>
-      <path class="route" pathLength="1" d="M290 146 Q600 -50 900 171"/>
-      <g class="pin is-active" id="pin-avon" role="button" tabindex="0" aria-label="Select Avon Auto &amp; Truck, Avon">
-        <circle class="ring" cx="290" cy="146" r="26"/>
-        <circle class="dot" cx="290" cy="146" r="15"/>
-        <text x="290" y="222">Avon</text>
-      </g>
-      <g class="pin" id="pin-glenwood" role="button" tabindex="0" aria-label="Select Alpine Tire Co., Glenwood Springs">
-        <circle class="ring" cx="900" cy="171" r="26"/>
-        <circle class="dot" cx="900" cy="171" r="15"/>
-        <text x="900" y="247">Glenwood Springs</text>
-      </g>
-    </svg>
-  </section>
-
-  <section class="finder" aria-labelledby="finder-title">
-    <div class="wrap">
-      <div class="finder-card">
-        <div>
-          <h2 id="finder-title">Find tires for your vehicle</h2>
-          <p>Search the shop's tire finder by vehicle, tire size or license plate.</p>
-        </div>
-        <div class="finder-actions">
-          <a class="btn btn-dark" href="https://www.avonautoandtruck.com/Tires">By vehicle</a>
-          <a class="btn btn-dark" href="https://www.avonautoandtruck.com/Tires">By tire size</a>
-          <a class="btn btn-dark" href="https://www.avonautoandtruck.com/Tires">By license plate</a>
-        </div>
+<section class="hero" aria-labelledby="h1">
+  <img class="hero-photo" src="https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-avon-co.jpg" alt="Avon Auto & Truck shop building at 147 Nottingham Rd. in Avon, Colorado">
+  <div class="wrap hero-in">
+    <div>
+      <h1 id="h1">Small enough to know you, large enough to service you.</h1>
+      <p class="lede">Tires, auto repair and fleet service from two shops in Colorado: Avon Auto & Truck in Avon and Alpine Tire Co. in Glenwood Springs.</p>
+      <div class="hero-cta">
+        <a class="btn btn-sun" href="https://www.avonautoandtruck.com/Automotive-Services/Free-Service-Quote">Get a free service quote</a>
+        <a class="btn btn-line" href="https://www.avonautoandtruck.com/Tires">Shop tires</a>
       </div>
     </div>
-  </section>
 
-  <section class="section" aria-labelledby="offers-title">
-    <div class="wrap">
-      <h2 id="offers-title">Savings and rebates</h2>
-      <p class="intro">Current manufacturer offers as listed on the shop's website.</p>
-      <ul class="ledger">
-        <li><a href="https://www.avonautoandtruck.com/Coupons">Bridgestone prepaid Mastercard on a set of 4 eligible tires (valid 10.01.26 to 10.31.26)</a><span class="amt">$80</span></li>
-        <li><a href="https://www.avonautoandtruck.com/Coupons">Michelin fall promotion</a><span class="amt">$80</span></li>
-        <li><a href="https://www.avonautoandtruck.com/Coupons">BFGoodrich rebate</a><span class="amt">$80</span></li>
-        <li><a href="https://www.avonautoandtruck.com/Coupons">Cooper rebate</a><span class="amt">$70</span></li>
-        <li><a href="https://www.avonautoandtruck.com/Coupons">Firestone rebate</a><span class="amt">$70</span></li>
-        <li><a href="https://www.avonautoandtruck.com/Coupons">Goodyear credit card, money back</a><span class="amt">$200</span></li>
-      </ul>
-      <p class="fine">Terms and dates are on the Coupons page.</p>
-      <div class="callout">
-        <strong>Free alignment check</strong>
-        <p>Ask about it in the shop, along with the buy one, get 50% off oil change special.</p>
+    <div class="shop" id="shop">
+      <div class="tabs" role="tablist" aria-label="Choose a shop">
+        <button class="tab" role="tab" id="t-avon" aria-selected="true" aria-controls="panel" data-shop="avon">Avon</button>
+        <button class="tab" role="tab" id="t-glen" aria-selected="false" aria-controls="panel" data-shop="glen" tabindex="-1">Glenwood Springs</button>
       </div>
-    </div>
-  </section>
-
-  <section class="section alt" aria-labelledby="svc-title">
-    <div class="wrap">
-      <h2 id="svc-title">Repairs, maintenance and fleet work</h2>
-      <p class="intro">No service is too big or too small. We offer oil changes, brake repair, flat tire repair, preventative maintenance, wheel alignments, lift kits, tune-ups and more.</p>
-      <div class="svc-grid">
-        <div class="svc">
-          <h3>Everyday care</h3>
-          <ul>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Oil-Changes">Oil changes</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/cat/brake-repair">Brake repair</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/cat/wheel-alignment">Wheel alignments</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/cat/tire-services/svc/tire-purchase-tire-installation">Tire installation</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/cat/starting-charging-batteries">Batteries</a></li>
-          </ul>
-        </div>
-        <div class="svc">
-          <h3>Keeping it running</h3>
-          <ul>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Engine-Tune-Ups">Engine tune-ups</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/cat/belts-hoses">Belts and hoses</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/State-Inspections">State inspections</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Headlight-Restoration">Headlight restoration</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Lift-Kits">Lift kits</a></li>
-          </ul>
-        </div>
-        <div class="svc">
-          <h3>Fleets and trailers</h3>
-          <ul>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Fleet-Services">Fleet services</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Trailer-Repair-Tires">Trailer repair and tires</a></li>
-            <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/National-Account">National account</a></li>
-          </ul>
-          <p style="margin-top:.8rem">Expert fleet services and maintenance in Avon, Glenwood Springs and surrounding areas. Trailer repair, plus boat, utility, camper, horse and RV trailer tires.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="brands-title">
-    <div class="wrap">
-      <h2 id="brands-title">Tire brands</h2>
-      <p class="intro">A large stock of tires from brands you know and trust, backed by tire rotations, balancing and installation.</p>
-      <ul class="brands">
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/michelin-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Michelin.png" alt="Michelin" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/bfgoodrich-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_BFGoodrich.png" alt="BFGoodrich" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/goodyear-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Goodyear.png" alt="Goodyear" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/Cooper-Tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Cooper.png" alt="Cooper" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/toyo-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Toyo.png" alt="Toyo" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/uniroyal-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Uniroyal.png" alt="Uniroyal" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/hankook-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Hankook.png" alt="Hankook" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/general-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_General.png" alt="General" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/dunlop-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Dunlop.png" alt="Dunlop" onerror="imgFail(this)"></a></li>
-        <li><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/kelly-tires"><img loading="lazy" width="120" height="44" src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Kelly.png" alt="Kelly" onerror="imgFail(this)"></a></li>
-      </ul>
-      <p style="margin-top:1.5rem"><a class="btn btn-line" href="https://www.avonautoandtruck.com/Tires/Tire-Brands">See all tire brands</a></p>
-    </div>
-  </section>
-
-  <section class="section alt" aria-labelledby="rev-title">
-    <div class="wrap">
-      <h2 id="rev-title">What customers say</h2>
-      <div class="reviews">
-        <figure class="review">
-          <blockquote>Has serviced two Acura's for me. Now five years. Highly professional and very customer oriented. I would recommend.</blockquote>
-          <figcaption>T Jasper</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>Always friendly and helpful. Reasonably priced. Highly recommend.</blockquote>
-          <figcaption>Lisa</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>Excellent, quick service and very professional always.</blockquote>
-          <figcaption>Denise</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>Vlad got me in early to help with some low tires due to the cold. I was in and out quickly and he was very helpful and nice!</blockquote>
-          <figcaption>Kevin H</figcaption>
-        </figure>
-      </div>
-      <p style="margin-top:1.5rem"><a class="btn btn-line" href="https://www.avonautoandtruck.com/About/Read-Our-Reviews">Read more reviews</a></p>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="shops-title">
-    <div class="wrap">
-      <h2 id="shops-title">Two shops, one standard</h2>
-      <div class="shops">
-        <article class="shop">
-          <h3>Avon Auto &amp; Truck</h3>
-          <address>147 Nottingham Rd.<br>Avon, CO 81620</address>
-          <a class="phone" href="tel:+19707902886">(970) 790-2886</a>
-          <div class="links">
-            <a class="btn btn-dark" href="https://goo.gl/maps/h4h8rBYGSqQ3UAJY7">Directions</a>
-            <a class="btn btn-line" href="https://www.avonautoandtruck.com/Locations/Mode/1/147-Nottingham-Rd-Avon-CO-81620/details">Hours and shop details</a>
-            <a class="btn btn-line" href="https://www.facebook.com/avonautotruck/">Facebook</a>
+      <div id="panel" role="tabpanel" aria-labelledby="t-avon">
+        <img class="shop-photo" id="shopPhoto" src="https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-avon-co.jpg" alt="Avon Auto & Truck shop in Avon, Colorado">
+        <div class="shop-body">
+          <span class="status" id="status" aria-live="polite">Checking hours</span>
+          <h3 id="shopName">Avon Auto & Truck</h3>
+          <address id="shopAddr">147 Nottingham Rd., Avon, CO 81620</address>
+          <dl>
+            <dt>Mon to Fri</dt><dd>8:00 AM to 5:30 PM</dd>
+            <dt>Sat, Sun</dt><dd>Closed</dd>
+          </dl>
+          <div class="shop-actions">
+            <a class="btn btn-blue" id="shopCall" href="tel:+19707902886">Call (970) 790-2886</a>
+            <a class="btn btn-sun" id="shopDir" href="https://goo.gl/maps/h4h8rBYGSqQ3UAJY7">Directions</a>
           </div>
-        </article>
-        <article class="shop">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finder" aria-labelledby="fh">
+  <div class="wrap finder-in">
+    <div>
+      <h2 id="fh">Find tires for your vehicle</h2>
+      <p>Use the shop's tire finder to search by vehicle, tire size or license plate.</p>
+    </div>
+    <div class="finder-links">
+      <a href="https://www.avonautoandtruck.com/Tires">By vehicle</a>
+      <a href="https://www.avonautoandtruck.com/Tires">By tire size</a>
+      <a href="https://www.avonautoandtruck.com/Tires">By license plate</a>
+    </div>
+  </div>
+</section>
+
+<section class="s" aria-labelledby="oh">
+  <div class="wrap">
+    <div class="s-head">
+      <h2 id="oh">Savings and rebates</h2>
+      <p>Manufacturer offers as listed on the shop's website. Terms and dates are on the Coupons page.</p>
+    </div>
+    <div class="offers">
+      <a class="offer" href="https://www.avonautoandtruck.com/Coupons"><b>$80</b><span>Bridgestone</span><small>Prepaid Mastercard on a set of 4 eligible tires. Valid 10.01.26 to 10.31.26</small></a>
+      <a class="offer" href="https://www.avonautoandtruck.com/Coupons"><b>$80</b><span>Michelin</span><small>Fall promotion</small></a>
+      <a class="offer" href="https://www.avonautoandtruck.com/Coupons"><b>$80</b><span>BFGoodrich</span><small>Rebate</small></a>
+      <a class="offer" href="https://www.avonautoandtruck.com/Coupons"><b>$70</b><span>Cooper</span><small>Rebate</small></a>
+      <a class="offer" href="https://www.avonautoandtruck.com/Coupons"><b>$70</b><span>Firestone</span><small>Rebate</small></a>
+      <a class="offer" href="https://www.avonautoandtruck.com/Coupons"><b>$200</b><span>Goodyear credit card</span><small>Money back</small></a>
+    </div>
+    <div class="perks">
+      <div class="perk"><b>Free alignment check</b>Ask about it in the shop.</div>
+      <div class="perk"><b>Buy one, get 50% off an oil change</b>Ask about the current special.</div>
+    </div>
+  </div>
+</section>
+
+<section class="s alt" aria-labelledby="sh">
+  <div class="wrap">
+    <div class="s-head">
+      <h2 id="sh">Repairs, maintenance and fleet work</h2>
+      <p>No service is too big or too small. Oil changes, brake repair, flat tire repair, preventative maintenance, wheel alignments, lift kits, tune-ups and more.</p>
+    </div>
+    <div class="svc">
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/lube-oil-filter-change"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Oil-Changes.png" alt="Oil can icon">Oil changes</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/brake-repair"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Brake-repair.png" alt="Brake rotor and caliper icon">Brake repair</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/wheel-alignment"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Wheel-Alignments.png" alt="Wheel alignment icon">Wheel alignments</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/tire-services/svc/tire-purchase-tire-installation"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Tire-Installation.png" alt="Tire icon">Tire installation</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/starting-charging-batteries"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Batteries.png" alt="Car battery icon">Batteries</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/engine-diagnostics-and-performance/svc/engine-tune-up"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Tune-Up.png" alt="Car on a lift icon">Tune-ups</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services/cat/belts-hoses"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/Belts-Hoses.png" alt="Engine belt and pulleys icon">Belts & hoses</a>
+      <a href="https://www.avonautoandtruck.com/Automotive-Services"><img src="https://assets.netdrivenwebs.com/img/tcs-shared/service-icons/standard/View-All-Services.png" alt="Arrow icon for all services">View all services</a>
+    </div>
+    <div class="more">
+      <div>
+        <h3>Fleet services</h3>
+        <p>Expert fleet services and maintenance in Avon, Glenwood Springs and surrounding areas.</p>
+        <p><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Fleet-Services">Fleet services</a> · <a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/National-Account">National account</a></p>
+      </div>
+      <div>
+        <h3>Trailer repair and tires</h3>
+        <p>Trailer repair, plus tires for:</p>
+        <ul><li>Boat trailers</li><li>Utility trailers</li><li>Camper trailers</li><li>Horse trailers</li><li>RV trailers</li></ul>
+      </div>
+      <div>
+        <h3>Also in the shop</h3>
+        <ul>
+          <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/State-Inspections">State inspections</a></li>
+          <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Headlight-Restoration">Headlight restoration</a></li>
+          <li><a href="https://www.avonautoandtruck.com/Automotive-Services/Our-Services/Lift-Kits">Lift kits</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" aria-labelledby="wh">
+  <div class="wrap why">
+    <img class="why-photo" src="https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-glenwood-springs-co.jpg" alt="Alpine Tire Co. shop on S. Glen Avenue in Glenwood Springs, Colorado">
+    <div>
+      <h2 id="wh">Local shops, valley service</h2>
+      <ul class="why-list" style="margin-top:1.2rem">
+        <li><b>Avon Auto & Truck</b> has served Avon, Edwards and Vail for over 25 years.</li>
+        <li><b>Alpine Tire</b> has been locally family-owned and operated since 1980.</li>
+        <li><b>2-year / 24,000-mile</b> NAPA nationwide warranty on all auto repairs at Avon Auto & Truck.</li>
+        <li><b>Free local shuttle service</b>, pick-up and delivery at Avon Auto & Truck.</li>
+        <li><b>Free wireless internet</b> while you wait, and after-hours drop-offs at Alpine Tire.</li>
+      </ul>
+      <div class="badges" aria-label="Certifications">
+        <span>ASE-certified technicians</span><span>NAPA AutoCare Center</span><span>BBB Accredited Business</span><span>BusinessRate Best of 2026 (Alpine Tire Co.)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s alt" aria-labelledby="bh">
+  <div class="wrap">
+    <div class="s-head">
+      <h2 id="bh">Tire brands</h2>
+      <p>A large stock of brands you know and trust, backed by tire rotations, balancing and installation.</p>
+    </div>
+    <div class="brands">
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/michelin-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Michelin.png" alt="Michelin"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/bfgoodrich-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_BFGoodrich.png" alt="BFGoodrich"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/goodyear-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Goodyear.png" alt="Goodyear"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/Cooper-Tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Cooper.png" alt="Cooper"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/toyo-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Toyo.png" alt="Toyo"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/uniroyal-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Uniroyal.png" alt="Uniroyal"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/hankook-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Hankook.png" alt="Hankook"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/general-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_General.png" alt="General Tire"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/dunlop-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Dunlop.png" alt="Dunlop"></a>
+      <a href="https://www.avonautoandtruck.com/Tires/Tire-Brands/kelly-tires"><img src="https://assets.netdrivenwebs.com/tire_brands/logos/png/logo_Kelly.png" alt="Kelly Tires"></a>
+    </div>
+    <p style="margin-top:1.4rem"><a href="https://www.avonautoandtruck.com/Tires/Tire-Brands" class="btn btn-blue">See all tire brands</a></p>
+  </div>
+</section>
+
+<section class="s" aria-labelledby="rh">
+  <div class="wrap">
+    <div class="s-head"><h2 id="rh">What customers say</h2></div>
+    <div class="reviews">
+      <blockquote><span class="stars" aria-label="5 stars">★★★★★</span><p>Has serviced two Acura's for me. Now five years. Highly professional and very customer oriented. I would recommend.</p><cite>T Jasper</cite></blockquote>
+      <blockquote><span class="stars" aria-label="5 stars">★★★★★</span><p>Always friendly and helpful. Reasonably priced. Highly recommend.</p><cite>Lisa</cite></blockquote>
+      <blockquote><span class="stars" aria-label="5 stars">★★★★★</span><p>Excellent, quick service and very professional always.</p><cite>Denise</cite></blockquote>
+      <blockquote><span class="stars" aria-label="5 stars">★★★★★</span><p>Vlad got me in early to help with some low tires due to the cold. I was in and out quickly and he was very helpful and nice!</p><cite>Kevin H</cite></blockquote>
+    </div>
+    <p style="margin-top:1.4rem"><a class="btn btn-blue" href="https://www.avonautoandtruck.com/About/Read-Our-Reviews">Read more reviews</a></p>
+  </div>
+</section>
+
+<section class="s alt" aria-labelledby="lh">
+  <div class="wrap">
+    <div class="s-head"><h2 id="lh">Two shops, one standard</h2></div>
+    <div class="locs">
+      <article class="loc">
+        <img src="https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-avon-co.jpg" alt="Avon Auto & Truck shop in Avon, Colorado">
+        <div class="b">
+          <h3>Avon Auto & Truck</h3>
+          <p>147 Nottingham Rd., Avon, CO 81620<br>Mon to Fri, 8:00 AM to 5:30 PM</p>
+          <a class="btn btn-blue" href="tel:+19707902886">Call (970) 790-2886</a>
+          <a href="https://www.avonautoandtruck.com/Locations/Mode/1/147-Nottingham-Rd-Avon-CO-81620/details" style="margin-left:.8rem">Shop details</a>
+        </div>
+      </article>
+      <article class="loc">
+        <img src="https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-glenwood-springs-co.jpg" alt="Alpine Tire Co. shop in Glenwood Springs, Colorado">
+        <div class="b">
           <h3>Alpine Tire Co.</h3>
-          <address>2750 S. Glen Avenue<br>Glenwood Springs, CO 81601</address>
-          <a class="phone" href="tel:+19709456662">(970) 945-6662</a>
-          <p class="award">BusinessRate Best of 2026, tire shop, Glenwood Springs</p>
-          <div class="links">
-            <a class="btn btn-dark" href="https://goo.gl/maps/QvSNxzec89XfMsM58">Directions</a>
-            <a class="btn btn-line" href="https://www.avonautoandtruck.com/Locations/Mode/2/2750-S-Glen-Avenue-Glenwood-Springs-CO-81601/details">Hours and shop details</a>
-            <a class="btn btn-line" href="https://www.facebook.com/AlpineTire/">Facebook</a>
-          </div>
-        </article>
-      </div>
-      <ul class="trust" aria-label="Certifications and memberships">
-        <li>ASE Certified</li>
-        <li>NAPA AutoCare Center</li>
-        <li>BBB Accredited Business</li>
-      </ul>
+          <p>2750 S. Glen Avenue, Glenwood Springs, CO 81601<br>Mon to Fri, 8:00 AM to 5:30 PM</p>
+          <a class="btn btn-blue" href="tel:+19709456662">Call (970) 945-6662</a>
+          <a href="https://www.avonautoandtruck.com/Locations/Mode/2/2750-S-Glen-Avenue-Glenwood-Springs-CO-81601/details" style="margin-left:.8rem">Shop details</a>
+        </div>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="band" aria-labelledby="quote-title">
-    <div class="wrap">
-      <h2 id="quote-title">Get a free instant auto service repair quote</h2>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.avonautoandtruck.com/Automotive-Services/Free-Service-Quote">Get a free quote</a>
-        <a class="btn btn-ghost" data-call href="tel:+19707902886">Call Avon (970) 790-2886</a>
-      </div>
+<section class="quote" aria-labelledby="qh">
+  <div class="wrap">
+    <h2 id="qh">Get a free instant auto service repair quote</h2>
+    <p>Tell the shop what your vehicle needs and get a quote from the comfort of your phone or computer.</p>
+    <div class="hero-cta">
+      <a class="btn btn-sun" href="https://www.avonautoandtruck.com/Automotive-Services/Free-Service-Quote">Get a free quote</a>
+      <a class="btn btn-line" href="tel:+19707902886">Call Avon (970) 790-2886</a>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
+<footer class="site">
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="fgrid">
       <div>
-        <h3>Avon Auto &amp; Truck and Alpine Tire Co.</h3>
-        <p>147 Nottingham Rd., Avon, CO 81620<br>(970) 790-2886</p>
-        <p style="margin-top:.6rem">2750 S. Glen Avenue, Glenwood Springs, CO 81601<br>(970) 945-6662</p>
+        <h3>Avon Auto & Truck</h3>
+        <p>147 Nottingham Rd., Avon, CO 81620<br><a href="tel:+19707902886">(970) 790-2886</a></p>
+        <p style="margin-top:.8rem"><a href="https://www.facebook.com/avonautotruck/">Facebook</a> · <a href="https://www.yelp.com/biz/avon-auto-and-truck-avon">Yelp</a></p>
+      </div>
+      <div>
+        <h3>Alpine Tire Co.</h3>
+        <p>2750 S. Glen Avenue, Glenwood Springs, CO 81601<br><a href="tel:+19709456662">(970) 945-6662</a></p>
+        <p style="margin-top:.8rem"><a href="https://www.facebook.com/AlpineTire/">Facebook</a></p>
       </div>
       <div>
         <h3>Tires</h3>
@@ -457,7 +429,7 @@ p{margin:0}
         </ul>
       </div>
       <div>
-        <h3>Shop</h3>
+        <h3>More</h3>
         <ul>
           <li><a href="https://www.avonautoandtruck.com/Automotive-Services">Automotive services</a></li>
           <li><a href="https://www.avonautoandtruck.com/Coupons">Coupons</a></li>
@@ -465,47 +437,52 @@ p{margin:0}
         </ul>
       </div>
     </div>
-    <div class="credit">
-      <span class="chip"><img src="../softosync_logo.png" width="36" height="36" alt="Softosync logo"></span>
-      <p>Concept homepage designed by Softosync. All business details, offers and brand names belong to Avon Auto &amp; Truck and Alpine Tire Co.; please check avonautoandtruck.com for current offers and hours.</p>
+    <div class="fsoft">
+      <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo">
+      <span>Concept homepage designed by Softosync. All business details, offers and brand names belong to Avon Auto & Truck and Alpine Tire Co.; please check avonautoandtruck.com for current offers and hours.</span>
     </div>
   </div>
 </footer>
-
-<div class="callbar"><a class="btn btn-primary" data-call href="tel:+19707902886" id="callBarBtn">Call Avon Auto &amp; Truck</a></div>
+<a class="mcall" id="mcall" href="tel:+19707902886">Call Avon Auto & Truck (970) 790-2886</a>
 
 <script>
 (function(){
   var shops={
-    avon:{name:'Avon Auto & Truck',short:'Avon',phone:'(970) 790-2886',tel:'tel:+19707902886',addr:'147 Nottingham Rd., Avon, CO 81620',link:'https://www.avonautoandtruck.com/Locations/Mode/1/147-Nottingham-Rd-Avon-CO-81620/details'},
-    glenwood:{name:'Alpine Tire Co.',short:'Glenwood Springs',phone:'(970) 945-6662',tel:'tel:+19709456662',addr:'2750 S. Glen Avenue, Glenwood Springs, CO 81601',link:'https://www.avonautoandtruck.com/Locations/Mode/2/2750-S-Glen-Avenue-Glenwood-Springs-CO-81601/details'}
+    avon:{name:"Avon Auto & Truck",addr:"147 Nottingham Rd., Avon, CO 81620",tel:"+19707902886",tl:"(970) 790-2886",dir:"https://goo.gl/maps/h4h8rBYGSqQ3UAJY7",
+      img:"https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-avon-co.jpg",alt:"Avon Auto & Truck shop in Avon, Colorado"},
+    glen:{name:"Alpine Tire Co.",addr:"2750 S. Glen Avenue, Glenwood Springs, CO 81601",tel:"+19709456662",tl:"(970) 945-6662",dir:"https://goo.gl/maps/QvSNxzec89XfMsM58",
+      img:"https://www.avonautoandtruck.com/portals/37/tires-auto-repair-maintenance-services-glenwood-springs-co.jpg",alt:"Alpine Tire Co. shop in Glenwood Springs, Colorado"}
   };
-  var buttons=document.querySelectorAll('.switch button');
-  var pins={avon:document.getElementById('pin-avon'),glenwood:document.getElementById('pin-glenwood')};
-  function select(key){
-    var s=shops[key];
-    buttons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.shop===key));});
-    Object.keys(pins).forEach(function(k){pins[k].classList.toggle('is-active',k===key);});
-    document.querySelectorAll('[data-call]').forEach(function(a){
-      a.setAttribute('href',s.tel);
-      if(a.id==='callBtn'){a.textContent='Call '+s.name+' '+s.phone;}
-      else if(a.id==='callBarBtn'){a.textContent='Call '+s.name;}
-      else if(a.classList.contains('header-call')){a.textContent='Call '+s.phone;}
-      else{a.textContent='Call '+s.short+' '+s.phone;}
-    });
-    document.getElementById('shopAddr').textContent=s.addr;
-    document.getElementById('shopLink').setAttribute('href',s.link);
+  function openNow(){
+    try{
+      var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/Denver",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+      var d,h=0,m=0;p.forEach(function(x){if(x.type==="weekday")d=x.value;if(x.type==="hour")h=parseInt(x.value,10)%24;if(x.type==="minute")m=parseInt(x.value,10)});
+      var mins=h*60+m;
+      return ["Mon","Tue","Wed","Thu","Fri"].indexOf(d)>-1 && mins>=480 && mins<1050;
+    }catch(e){return null}
   }
-  buttons.forEach(function(b){b.addEventListener('click',function(){select(b.dataset.shop);});});
-  Object.keys(pins).forEach(function(k){
-    pins[k].addEventListener('click',function(){select(k);});
-    pins[k].addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(k);}});
+  var st=document.getElementById("status"),o=openNow();
+  if(o===null){st.style.display="none"}
+  else{st.textContent=o?"Open now (Mountain Time)":"Closed now. Opens Mon to Fri, 8:00 AM";st.className="status"+(o?"":" closed")}
+  var tabs=document.querySelectorAll(".tab");
+  function pick(k){
+    var s=shops[k];
+    tabs.forEach(function(t){var on=t.dataset.shop===k;t.setAttribute("aria-selected",on);t.tabIndex=on?0:-1});
+    document.getElementById("panel").setAttribute("aria-labelledby",k==="avon"?"t-avon":"t-glen");
+    document.getElementById("shopName").textContent=s.name;
+    document.getElementById("shopAddr").textContent=s.addr;
+    var c=document.getElementById("shopCall");c.href="tel:"+s.tel;c.textContent="Call "+s.tl;
+    document.getElementById("shopDir").href=s.dir;
+    var im=document.getElementById("shopPhoto");im.src=s.img;im.alt=s.alt;
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener("click",function(){pick(t.dataset.shop)});
+    t.addEventListener("keydown",function(e){
+      if(e.key==="ArrowRight"||e.key==="ArrowLeft"){var n=tabs[(i+1)%2];n.focus();pick(n.dataset.shop)}
+    });
   });
-  var toggle=document.querySelector('.nav-toggle'),nav=document.getElementById('nav');
-  toggle.addEventListener('click',function(){
-    var open=nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded',String(open));
-  });
+  var mb=document.getElementById("menuBtn"),nv=document.getElementById("mainnav");
+  mb.addEventListener("click",function(){var x=nv.classList.toggle("open");mb.setAttribute("aria-expanded",x)});
 })();
 </script>
 </body>
