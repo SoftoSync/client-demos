@@ -9,288 +9,355 @@
 <title>City of Alameda | Demo redesign of the home page</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --fog:#EFF0F4; --paper:#fff; --estuary:#0B3C5D; --deep:#082B43; --glass:#CFE6E2; --tide:#2E7F8C;
-  --ferry:#F4C20D; --ink:#13232F; --muted:#4A5B67; --line:#D3D8E0;
-  --head:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
-  --body:"Public Sans","Segoe UI",Arial,sans-serif;
+  --abyss:#061A27; --deep:#0A2C42; --estuary:#0F4864; --tide:#2F8C98; --glass:#BFE3DE; --mist:#EEF2F5;
+  --brass:#D8B25A; --brass2:#F1D894; --ink:#0D2231; --muted:#5A6D7A; --line:rgba(13,34,49,.12);
+  --head:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif; --body:"Manrope","Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font:400 1rem/1.6 var(--body);color:var(--ink);background:var(--fog)}
-a{color:var(--estuary)}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--ferry);outline-offset:2px}
-.skip{position:absolute;left:-999px;top:0;background:var(--ferry);color:var(--ink);padding:.6rem 1rem;z-index:50}
+body{margin:0;font:400 1rem/1.65 var(--body);color:var(--ink);background:var(--mist);-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--brass);color:var(--ink);padding:.6rem 1rem;z-index:99}
 .skip:focus{left:0}
-.wrap{width:min(1180px,92%);margin-inline:auto}
-.demo-bar{background:#000;color:#fff;font-size:.8rem;text-align:center;padding:.35rem .75rem}
-.demo-bar a{color:var(--ferry)}
-header.top{background:var(--paper);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.7rem 0}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
-.brand img{height:46px;width:auto}
-.brand b{font:700 1.15rem/1 var(--head)}
-.lang{margin-left:auto;display:flex;gap:.25rem;flex-wrap:wrap}
-.lang a{font-size:.82rem;padding:.25rem .55rem;border:1px solid var(--line);border-radius:99px;text-decoration:none;color:var(--ink)}
-.lang a[aria-current="true"]{background:var(--estuary);color:#fff;border-color:var(--estuary)}
-nav.main{background:var(--estuary)}
-nav.main .wrap{display:flex;gap:.2rem;flex-wrap:wrap}
-nav.main a{color:#fff;text-decoration:none;font-weight:500;padding:.8rem 1rem}
-nav.main a:hover{background:var(--deep)}
-.alert{background:var(--ferry);color:var(--ink);font-size:.95rem}
-.alert .wrap{display:flex;gap:.8rem;align-items:center;padding:.55rem 0;flex-wrap:wrap}
-.alert strong{font-family:var(--head)}
-.alert a{color:var(--ink);font-weight:600}
-/* hero: the island and the tide */
-.hero{position:relative;background:linear-gradient(180deg,var(--estuary) 0%,var(--deep) 100%);color:#fff;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding:3.2rem 0 6.5rem}
-.hero h1{font:700 clamp(2rem,4.6vw,3.6rem)/1.05 var(--head);margin:0 0 .8rem;letter-spacing:-.02em}
-.hero p.lead{color:#D9E8EE;max-width:52ch;margin:0 0 1.4rem;font-size:1.08rem}
-.find{display:flex;gap:.5rem;max-width:560px;margin-bottom:1rem}
-.find input{flex:1;min-width:0;font:inherit;padding:.85rem 1rem;border:0;border-radius:8px}
-.find button{font:600 1rem var(--body);padding:.85rem 1.2rem;border:0;border-radius:8px;background:var(--ferry);color:var(--ink);cursor:pointer}
+.wrap{width:min(1200px,92%);margin-inline:auto}
+.demo-bar{background:#000;color:#fff;font-size:.78rem;text-align:center;padding:.4rem .75rem;letter-spacing:.01em}
+.demo-bar a{color:var(--brass2)}
+/* header floats over hero */
+.hero{position:relative;color:#fff;background:linear-gradient(185deg,#0B2E45 0%,#0A2C42 38%,#103E55 62%,#1B5A6C 100%);overflow:hidden;isolation:isolate}
+.bar{position:relative;z-index:5;display:flex;align-items:center;gap:1.2rem;padding:1rem 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.75rem;color:#fff;text-decoration:none}
+.brand .logo{background:#fff;border-radius:12px;padding:5px;display:flex}
+.brand img{height:42px;width:auto;display:block}
+.brand b{font:800 1.2rem/1 var(--head);letter-spacing:-.01em}
+.menu{display:flex;gap:.2rem;margin-left:auto;flex-wrap:wrap}
+.menu button{background:none;border:0;color:#E4EEF3;padding:.55rem .9rem;border-radius:99px;font-weight:600;font-size:.95rem}
+.menu button:hover{background:rgba(255,255,255,.12)}
+.lang{display:flex;gap:.3rem;flex-wrap:wrap;align-items:center}
+.lang button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:99px;padding:.22rem .65rem;font-size:.8rem}
+.lang button[aria-pressed="true"]{background:var(--brass);color:var(--ink);border-color:var(--brass);font-weight:700}
+.alert{position:relative;z-index:5;margin:.4rem 0 0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;background:rgba(216,178,90,.14);border:1px solid rgba(216,178,90,.5);border-radius:14px;padding:.6rem 1rem;font-size:.93rem;color:#FBEFC9;backdrop-filter:blur(6px)}
+.alert i{width:9px;height:9px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 0 rgba(216,178,90,.7);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(216,178,90,0)}100%{box-shadow:0 0 0 0 rgba(216,178,90,0)}}
+.alert button{margin-left:auto;background:var(--brass);border:0;border-radius:99px;padding:.3rem .9rem;font-weight:700;color:var(--ink)}
+.stage{position:relative;z-index:3;display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center;padding:3.2rem 0 11rem}
+.stage h1{font:800 clamp(2.4rem,5.6vw,4.7rem)/.98 var(--head);letter-spacing:-.035em;margin:0 0 1.1rem}
+.stage h1 span{display:block;color:var(--glass);font-weight:400}
+.stage p.lead{font-size:1.12rem;color:#CFE1E8;max-width:50ch;margin:0 0 1.7rem}
+.finder{position:relative;max-width:600px}
+.finder .field{display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.96);color:var(--ink);border-radius:18px;padding:.5rem .6rem .5rem 1.1rem;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.finder svg{flex:none}
+.finder input{flex:1;min-width:0;border:0;background:none;font:500 1.05rem var(--body);padding:.8rem 0;color:var(--ink)}
+.finder input:focus-visible{outline:none}
+.finder .field:focus-within{box-shadow:0 0 0 3px var(--brass),0 18px 50px rgba(0,0,0,.35)}
+.finder kbd{font:600 .72rem var(--body);background:#E7ECF0;border-radius:6px;padding:.25rem .5rem;color:var(--muted)}
+.results{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;color:var(--ink);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.35);max-height:300px;overflow:auto;display:none;z-index:20}
+.results.on{display:block}
+.results button{display:flex;width:100%;text-align:left;gap:.7rem;align-items:center;background:none;border:0;border-bottom:1px solid var(--line);padding:.75rem 1.1rem}
+.results button:last-child{border:0}
+.results button:hover,.results button:focus-visible{background:#F1F5F7}
+.results small{margin-left:auto;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0 1.6rem}
+.chips button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:99px;padding:.4rem .9rem;font-size:.9rem;backdrop-filter:blur(4px)}
+.chips button:hover{background:rgba(255,255,255,.2)}
 .cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
-.btn{display:inline-block;padding:.75rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none}
-.btn.primary{background:var(--ferry);color:var(--ink)}
-.btn.ghost{border:2px solid #fff;color:#fff}
-.btn:hover{filter:brightness(1.06)}
-.island{width:100%;height:auto;display:block}
-.island .land{fill:var(--glass)}
-.island .land2{fill:#A9D2CB}
-.island .pin{fill:var(--ferry);stroke:var(--deep);stroke-width:2}
-.island text{font:600 13px var(--body);fill:#fff}
-.waves{position:absolute;left:0;right:0;bottom:-1px;height:90px;pointer-events:none}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:99px;font-weight:700;text-decoration:none;border:0;font-size:1rem}
+.btn.gold{background:linear-gradient(180deg,var(--brass2),var(--brass));color:var(--ink);box-shadow:0 8px 24px rgba(216,178,90,.35)}
+.btn.line{border:1.5px solid rgba(255,255,255,.7);color:#fff;background:none}
+.btn:hover{transform:translateY(-1px)}
+/* the scene */
+.scene{position:relative;width:100%;aspect-ratio:1/1;max-width:520px;margin-left:auto}
+.scene svg{width:100%;height:100%;display:block;overflow:visible}
+.sun{animation:rise 1.8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:translateY(60px);opacity:0}}
+.ferry{animation:sail 26s linear infinite}
+@keyframes sail{0%{transform:translateX(-160px)}100%{transform:translateX(640px)}}
+.bob{animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-3px)}}
+.tag{position:absolute;background:rgba(6,26,39,.62);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.78rem;font-weight:600;padding:.28rem .7rem;border-radius:99px;backdrop-filter:blur(6px)}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:120px;z-index:4;pointer-events:none}
 .waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
-.w1{animation:drift 22s linear infinite}
-.w2{animation:drift 34s linear infinite reverse;opacity:.6}
+.w1{animation:drift 24s linear infinite}.w2{animation:drift 38s linear infinite reverse;opacity:.55}
 @keyframes drift{to{transform:translateX(-50%)}}
-.wk{position:absolute;inset:auto 0 0 0}
-/* directory */
-section{padding:3.2rem 0}
-h2{font:700 clamp(1.5rem,3vw,2.1rem)/1.15 var(--head);margin:0 0 1.4rem;letter-spacing:-.01em}
-.tasks{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.tasks section{padding:1.6rem 1.6rem 1.4rem;border-right:1px solid var(--line)}
-.tasks section:last-child{border-right:0}
-.tasks h3{font:700 1.2rem var(--head);margin:0 0 .6rem}
-.tasks ul{list-style:none;margin:0;padding:0}
-.tasks li a{display:block;padding:.45rem 0;text-decoration:none;border-bottom:1px solid #EEF0F4;color:var(--ink)}
-.tasks li a:hover{color:var(--tide);padding-left:.25rem}
-.tasks li[hidden]{display:none}
-#none{display:none;margin:1rem 0 0;color:var(--muted)}
-/* news + events */
-.two{display:grid;grid-template-columns:1.4fr 1fr;gap:2.4rem}
-.news article{display:grid;grid-template-columns:92px 1fr;gap:1rem;padding:1rem 0;border-top:2px solid var(--estuary)}
-.news time{font:700 .95rem/1.2 var(--head);color:var(--tide)}
-.news h3{margin:0 0 .25rem;font:700 1.15rem/1.25 var(--head)}
-.news p{margin:0;color:var(--muted)}
-.events ol{list-style:none;margin:0;padding:0 0 0 1.2rem;border-left:3px solid var(--glass)}
-.events li{position:relative;padding:0 0 1.3rem}
-.events li::before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:.85rem;height:.85rem;border-radius:50%;background:var(--tide);border:3px solid var(--fog)}
-.events b{display:block;font-family:var(--head)}
-.events span{color:var(--muted);font-size:.92rem}
+/* sections */
+section.s{padding:4.2rem 0}
+h2{font:800 clamp(1.7rem,3.4vw,2.6rem)/1.05 var(--head);letter-spacing:-.025em;margin:0 0 .5rem}
+.sub{color:var(--muted);margin:0 0 2rem;max-width:56ch}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.tile{position:relative;border-radius:22px;padding:1.5rem;min-height:210px;display:flex;flex-direction:column;overflow:hidden;color:#fff;background:linear-gradient(160deg,var(--estuary),var(--abyss));box-shadow:0 14px 34px rgba(6,26,39,.18)}
+.tile.a{grid-column:span 3;grid-row:span 2;min-height:430px}
+.tile.b{grid-column:span 3}
+.tile.c{grid-column:span 2}
+.tile.light{background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(6,26,39,.08)}
+.tile.sea{background:linear-gradient(160deg,var(--tide),var(--estuary))}
+.tile h3{font:800 1.45rem/1.1 var(--head);letter-spacing:-.02em;margin:.2rem 0 .8rem}
+.tile.a h3{font-size:2rem}
+.tile .ic{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin-bottom:.7rem}
+.tile.light .ic{background:#E5F0F0}
+.tile ul{list-style:none;margin:auto 0 0;padding:0}
+.tile li button{display:flex;width:100%;justify-content:space-between;text-align:left;background:none;border:0;border-top:1px solid rgba(255,255,255,.18);color:inherit;padding:.6rem 0;font-weight:600}
+.tile.light li button{border-top-color:var(--line)}
+.tile li button::after{content:"\2192";opacity:.5;transition:.2s}
+.tile li button:hover::after{opacity:1;transform:translateX(4px)}
+.tile .glow{position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(216,178,90,.35),transparent 65%)}
+/* news */
+.two{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem}
+.lead-story{display:block;width:100%;text-align:left;border:0;border-radius:24px;padding:2rem;color:#fff;background:linear-gradient(150deg,var(--deep),var(--estuary) 70%,var(--tide));margin-bottom:1rem;box-shadow:0 18px 40px rgba(6,26,39,.2)}
+.lead-story time,.row time{font:700 .82rem var(--body);color:var(--brass2);letter-spacing:.02em}
+.lead-story h3{font:800 clamp(1.5rem,2.6vw,2.1rem)/1.08 var(--head);letter-spacing:-.02em;margin:.4rem 0 .6rem}
+.lead-story p{margin:0;color:#D5E5EA;max-width:52ch}
+.row{display:grid;grid-template-columns:110px 1fr;gap:1rem;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:1.1rem 0}
+.row time{color:var(--tide)}
+.row h3{font:700 1.15rem/1.25 var(--head);margin:0 0 .2rem}
+.row p{margin:0;color:var(--muted);font-size:.95rem}
+.events{background:#fff;border-radius:24px;padding:1.8rem;box-shadow:0 14px 34px rgba(6,26,39,.08)}
+.events h2{font-size:1.6rem}
+.ev{display:grid;grid-template-columns:62px 1fr;gap:1rem;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:1rem 0}
+.ev .d{background:var(--deep);color:#fff;border-radius:14px;text-align:center;padding:.5rem 0;font:800 1.5rem/1 var(--head)}
+.ev .d small{display:block;font:600 .7rem var(--body);color:var(--brass2);margin-bottom:.2rem}
+.ev b{display:block;font-family:var(--head)}
+.ev span{color:var(--muted);font-size:.9rem}
 /* measure L */
-.measure{background:var(--paper);border-left:8px solid var(--ferry);border-radius:0 14px 14px 0;padding:1.6rem 1.8rem;display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.measure h2{margin:0 0 .3rem}
-.measure p{margin:0;color:var(--muted);max-width:60ch}
-.measure .btn{background:var(--estuary);color:#fff}
+.measure{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(120deg,var(--abyss),var(--deep));color:#fff;padding:3rem;display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.measure::before{content:"";position:absolute;inset:auto -80px -120px auto;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(216,178,90,.4),transparent 65%)}
+.measure .big{font:800 clamp(3.5rem,9vw,7rem)/.9 var(--head);color:var(--brass2);letter-spacing:-.05em}
+.measure h2{margin:.2rem 0 .6rem}.measure p{margin:0;color:#C9DCE3;max-width:50ch}
+.measure>*{position:relative}
 /* numbers */
-.numbers{background:var(--deep);color:#fff}
-.numbers .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.numbers div{border-left:3px solid var(--ferry);padding-left:1rem}
-.numbers strong{display:block;font:700 2.4rem/1 var(--head)}
-.numbers span{color:#BFD3DC;font-size:.95rem}
-.officials ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
-.officials a{display:block;padding:.6rem 1rem;background:var(--paper);border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink)}
-.officials small{display:block;color:var(--muted)}
-footer{background:var(--ink);color:#C9D3DA;padding:2.4rem 0 1.6rem;font-size:.92rem}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.nums div{background:#fff;border-radius:22px;padding:1.5rem;box-shadow:0 14px 34px rgba(6,26,39,.07)}
+.nums strong{display:block;font:800 clamp(2rem,4vw,3.1rem)/1 var(--head);letter-spacing:-.03em;color:var(--estuary)}
+.nums span{color:var(--muted);font-size:.93rem}
+.off{display:flex;flex-wrap:wrap;gap:.8rem}
+.off button{display:flex;align-items:center;gap:.8rem;background:#fff;border:1px solid var(--line);border-radius:99px;padding:.5rem 1.2rem .5rem .5rem;text-align:left}
+.off i{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--estuary),var(--tide));color:#fff;display:grid;place-items:center;font:800 .95rem var(--head);font-style:normal}
+.off small{display:block;color:var(--muted);line-height:1.1}
+footer{background:var(--abyss);color:#B6C8D1;padding:3.2rem 0 1.6rem;font-size:.94rem}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.2rem}
+footer h3{font:800 1.05rem var(--head);color:#fff;margin:0 0 .6rem}
+footer button{display:block;background:none;border:0;color:#DCE8EE;padding:.15rem 0;text-align:left}
 footer a{color:#fff}
-footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
-footer h3{font:700 1rem var(--head);color:#fff;margin:0 0 .5rem}
-.made{display:flex;align-items:center;gap:.6rem;margin-top:1.6rem;padding-top:1rem;border-top:1px solid #2B3A45}
-.made img{height:34px;width:auto;background:#fff;border-radius:6px;padding:3px}
+.made{display:flex;align-items:center;gap:.8rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem}
+.made img{height:36px;width:auto;background:#fff;border-radius:8px;padding:3px}
+/* preview panel */
+.veil{position:fixed;inset:0;background:rgba(6,26,39,.55);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.25s;z-index:60}
+.veil.on{opacity:1;pointer-events:auto}
+.panel{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;z-index:61;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);padding:2rem;display:flex;flex-direction:column;gap:1rem;box-shadow:-20px 0 60px rgba(0,0,0,.3)}
+.panel.on{transform:none}
+.panel .k{font:700 .78rem var(--body);color:var(--tide)}
+.panel h3{font:800 1.9rem/1.05 var(--head);letter-spacing:-.02em;margin:0}
+.panel p{margin:0;color:var(--muted)}
+.panel .note{background:#F3F6F8;border-radius:14px;padding:1rem;font-size:.9rem}
+.panel .x{align-self:flex-end;background:#EEF2F5;border:0;border-radius:50%;width:40px;height:40px;font-size:1.2rem}
+.panel .btn{justify-content:center}
+.panel .btn.gold{color:var(--ink)}
 @media (max-width:900px){
-  .hero .wrap{grid-template-columns:1fr;padding-bottom:6rem}
-  .island{max-width:420px}
-  .tasks{grid-template-columns:1fr}
-  .tasks section{border-right:0;border-bottom:1px solid var(--line)}
+  .stage{grid-template-columns:1fr;padding-bottom:9rem}
+  .scene{max-width:380px;margin:0 auto}
+  .menu{display:none}
+  .bento{grid-template-columns:1fr}
+  .tile.a,.tile.b,.tile.c{grid-column:auto;grid-row:auto;min-height:0}
   .two{grid-template-columns:1fr}
-  .numbers .wrap{grid-template-columns:repeat(2,1fr)}
+  .nums{grid-template-columns:repeat(2,1fr)}
   footer .cols{grid-template-columns:1fr}
+  .measure{padding:2rem}
 }
-@media (max-width:480px){
-  .lang{margin-left:0}
-  .news article{grid-template-columns:1fr;gap:.2rem}
-  .find{flex-direction:column}
-}
-@media (prefers-reduced-motion:reduce){.w1,.w2{animation:none}html{scroll-behavior:auto}}
+@media (max-width:480px){.row{grid-template-columns:1fr;gap:.2rem}.lang{width:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<div class="demo-bar">Demonstration project prepared by <a href="https://softosync.com">Softosync</a> &middot; not an official City of Alameda page</div>
-
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="https://www.alamedaca.gov/Home">
-      <img src="https://www.alamedaca.gov/files/assets/public/v/1/alameda-logo.png?w=248&amp;h=215" alt="City of Alameda logo">
-      <b>City of Alameda</b>
-    </a>
-    <nav class="lang" aria-label="Language">
-      <a href="https://www.alamedaca.gov/Home?oc_lang=en-US" aria-current="true" hreflang="en" lang="en">English</a>
-      <a href="https://www.alamedaca.gov/Home?oc_lang=es" hreflang="es" lang="es">Español</a>
-      <a href="https://www.alamedaca.gov/Home?oc_lang=zh-CN" hreflang="zh" lang="zh-CN">中文</a>
-      <a href="https://www.alamedaca.gov/Home?oc_lang=tl" hreflang="tl" lang="tl">Tagalog</a>
-      <a href="https://www.alamedaca.gov/Home?oc_lang=vi" hreflang="vi" lang="vi">Tiếng Việt</a>
-      <a href="https://www.alamedaca.gov/Home?oc_lang=ko" hreflang="ko" lang="ko">한국어</a>
-      <a href="https://www.alamedaca.gov/Home?oc_lang=ar" hreflang="ar" lang="ar">العربية</a>
-    </nav>
-  </div>
-</header>
-<nav class="main" aria-label="Main">
-  <div class="wrap">
-    <a href="https://www.alamedaca.gov/RESIDENTS">Residents</a>
-    <a href="https://www.alamedaca.gov/BUSINESS">Business</a>
-    <a href="https://www.alamedaca.gov/GOVERNMENT">Your Government</a>
-    <a href="https://www.alamedaca.gov/CITYWIDE-PROJECTS">Citywide Projects</a>
-  </div>
-</nav>
-
-<div class="alert" role="region" aria-label="Current alert">
-  <div class="wrap"><strong>Heat wave:</strong> Cooling centers are open at all three libraries and at Mastick Senior Center during business hours. <a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/Cooling-Centers-Open-Saturday-October-3rd">Get information</a></div>
-</div>
+<div class="demo-bar">Demonstration project prepared by <a href="https://softosync.com">Softosync</a> &middot; not an official City of Alameda page &middot; links stay inside this demo</div>
 
 <div class="hero">
   <div class="wrap">
-    <div>
-      <h1>What do you need from the City today?</h1>
-      <p class="lead">Report a pothole, pay a parking citation, find a meeting agenda or start a permit. Type what you are looking for, or pick a service below.</p>
-      <form class="find" role="search" onsubmit="return false">
-        <label for="q" style="position:absolute;left:-999px">Find a City service</label>
-        <input id="q" type="search" placeholder="Try &ldquo;passport&rdquo;, &ldquo;permit&rdquo; or &ldquo;parking&rdquo;" autocomplete="off">
-        <button type="button" onclick="document.getElementById('services').scrollIntoView()">Find service</button>
-      </form>
-      <div class="cta-row">
-        <a class="btn primary" href="https://seeclickfix.com/us-ca-alameda/report">Report a problem</a>
-        <a class="btn ghost" href="tel:+15107477400">Call City Hall: (510) 747-7400</a>
+    <header class="bar">
+      <div class="brand">
+        <span class="logo"><img src="https://www.alamedaca.gov/files/assets/public/v/1/alameda-logo.png?w=248&amp;h=215" alt="City of Alameda logo"></span>
+        <b>City of Alameda</b>
+      </div>
+      <nav class="menu" aria-label="Main">
+        <button data-p="Residents|Services and information for people who live in Alameda.">Residents</button>
+        <button data-p="Business|Starting a business, licenses and permits, programs, and bids on City contracts.">Business</button>
+        <button data-p="Your Government|Elected officials, boards and commissions, meeting agendas and the strategic plan.">Your Government</button>
+        <button data-p="Citywide Projects|Programs and projects across the City, including the SAFER Alameda Act.">Citywide Projects</button>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button aria-pressed="true" lang="en">English</button><button aria-pressed="false" lang="es">Español</button><button aria-pressed="false" lang="zh-CN">中文</button><button aria-pressed="false" lang="tl">Tagalog</button><button aria-pressed="false" lang="vi">Tiếng Việt</button><button aria-pressed="false" lang="ko">한국어</button><button aria-pressed="false" lang="ar">العربية</button>
+      </div>
+    </header>
+    <div class="alert" role="region" aria-label="Current alert"><i></i><span><b>Heat wave:</b> cooling centers are open at all three libraries and at Mastick Senior Center during business hours.</span><button data-p="Cooling centers open during heat wave|The three libraries and Mastick Senior Center have cooling centers open during business hours.">Get information</button></div>
+
+    <div class="stage">
+      <div>
+        <h1>What do you need <span>from the City today?</span></h1>
+        <p class="lead">Report a pothole, pay a parking citation, find a meeting agenda or start a permit. Search, or choose a service below.</p>
+        <div class="finder">
+          <div class="field">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F4864" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <label for="q" style="position:absolute;left:-999px">Find a City service</label>
+            <input id="q" type="search" placeholder="Search services: passport, permit, parking" autocomplete="off">
+            <kbd>/</kbd>
+          </div>
+          <div class="results" id="results" role="listbox" aria-label="Matching services"></div>
+        </div>
+        <div class="chips" aria-label="Popular services">
+          <button data-p="Report a problem|Report potholes, graffiti and other problems to the City.">Report a problem</button>
+          <button data-p="Pay or contest a parking citation|Parking citations and enforcement.">Pay a parking citation</button>
+          <button data-p="Permit Center|Planning, building and transportation permits.">Permits</button>
+          <button data-p="Passports at City Hall|Passport services are provided by the City Clerk's Office.">Passports</button>
+          <button data-p="Meeting agendas, minutes and videos|City Council and board meeting information.">Meeting agendas</button>
+        </div>
+        <div class="cta-row">
+          <button class="btn gold" data-p="Report a problem|Report potholes, graffiti and other problems to the City.">Report a problem</button>
+          <a class="btn line" href="tel:+15107477400">Call City Hall (510) 747-7400</a>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="false">
+        <svg viewBox="0 0 520 520" role="img" aria-label="Stylized illustration of the island city at dusk with a ferry crossing the estuary">
+          <defs>
+            <radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F6DE9B"/><stop offset="1" stop-color="#D8B25A"/></radialGradient>
+            <linearGradient id="isl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE3DE"/><stop offset="1" stop-color="#5FA7A8"/></linearGradient>
+            <linearGradient id="wt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F8C98" stop-opacity=".9"/><stop offset="1" stop-color="#0A2C42"/></linearGradient>
+            <clipPath id="orb"><circle cx="260" cy="260" r="240"/></clipPath>
+          </defs>
+          <circle cx="260" cy="260" r="244" fill="none" stroke="rgba(255,255,255,.25)"/>
+          <g clip-path="url(#orb)">
+            <rect width="520" height="520" fill="#14506A"/>
+            <circle class="sun" cx="300" cy="215" r="74" fill="url(#sg)"/>
+            <path d="M0 300 C70 280 120 292 180 286 C250 276 330 290 390 282 C440 276 490 290 520 296 V520 H0Z" fill="url(#isl)"/>
+            <g fill="#0A2C42"><rect x="168" y="238" width="10" height="50"/><rect x="182" y="250" width="14" height="38"/><rect x="214" y="256" width="22" height="32"/><path d="M290 288 V246 L302 232 L314 246 V288Z"/><rect x="330" y="262" width="26" height="26"/><rect x="362" y="270" width="18" height="18"/></g>
+            <rect y="298" width="520" height="222" fill="url(#wt)"/>
+            <g stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round"><path d="M60 330h60M300 322h90M150 360h110M360 352h80M90 400h90M280 410h120"/></g>
+            <g class="ferry"><g class="bob"><path d="M20 316 h86 l-10 18 h-68z" fill="#F4F7F9"/><rect x="40" y="302" width="40" height="14" rx="3" fill="#F4F7F9"/><rect x="48" y="306" width="6" height="6" fill="#0F4864"/><rect x="60" y="306" width="6" height="6" fill="#0F4864"/><rect x="72" y="306" width="6" height="6" fill="#0F4864"/><path d="M20 326 h86" stroke="#D8B25A" stroke-width="3"/></g></g>
+          </g>
+        </svg>
+        <span class="tag" style="left:2%;top:46%">City Hall</span>
+        <span class="tag" style="right:0;top:60%">Ferry &amp; water shuttle</span>
       </div>
     </div>
-    <svg class="island" viewBox="0 0 420 300" role="img" aria-label="Stylized illustration of Alameda as an island surrounded by water">
-      <ellipse cx="210" cy="160" rx="196" ry="118" fill="#134B6E" opacity=".55"/>
-      <path class="land" d="M40 150 C46 112 98 96 150 100 C210 90 300 92 372 112 C392 120 392 150 372 164 C300 190 210 196 150 190 C98 198 44 186 40 150Z"/>
-      <path class="land2" d="M40 150 C46 112 98 96 150 100 L150 190 C98 198 44 186 40 150Z"/>
-      <circle class="pin" cx="150" cy="145" r="8"/><text x="164" y="132">Alameda Point</text>
-      <circle class="pin" cx="265" cy="140" r="8"/><text x="236" y="122">City Hall</text>
-      <circle class="pin" cx="345" cy="136" r="8"/><text x="306" y="214">Ferry &amp; water shuttle</text>
-      <path d="M345 144 L345 205" stroke="#F4C20D" stroke-width="2" stroke-dasharray="4 4"/>
-    </svg>
   </div>
   <div class="waves" aria-hidden="true">
-    <svg class="w2" viewBox="0 0 2400 90" preserveAspectRatio="none"><path fill="#CFE6E2" d="M0 40 Q150 10 300 40 T600 40 T900 40 T1200 40 T1500 40 T1800 40 T2100 40 T2400 40 V90 H0Z"/></svg>
-    <svg class="w1" viewBox="0 0 2400 90" preserveAspectRatio="none"><path fill="#EFF0F4" d="M0 55 Q150 25 300 55 T600 55 T900 55 T1200 55 T1500 55 T1800 55 T2100 55 T2400 55 V90 H0Z"/></svg>
+    <svg class="w2" viewBox="0 0 2400 120" preserveAspectRatio="none"><path fill="#BFE3DE" d="M0 55 Q150 20 300 55 T600 55 T900 55 T1200 55 T1500 55 T1800 55 T2100 55 T2400 55 V120 H0Z"/></svg>
+    <svg class="w1" viewBox="0 0 2400 120" preserveAspectRatio="none"><path fill="#EEF2F5" d="M0 75 Q150 40 300 75 T600 75 T900 75 T1200 75 T1500 75 T1800 75 T2100 75 T2400 75 V120 H0Z"/></svg>
   </div>
 </div>
 
 <main id="main">
-<section id="services" aria-labelledby="svc">
+<section class="s" aria-labelledby="svc">
   <div class="wrap">
-    <h2 id="svc">Services, grouped by what you want to do</h2>
-    <div class="tasks" id="tasks">
-      <section>
+    <h2 id="svc">Everything you came for, grouped by task</h2>
+    <p class="sub">Three doors instead of a long list of links: things residents do, things businesses do, and how the City works.</p>
+    <div class="bento">
+      <article class="tile a">
+        <span class="glow"></span>
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg></span>
         <h3>For residents</h3>
         <ul>
-          <li><a href="https://seeclickfix.com/us-ca-alameda/report">Report a problem (potholes, graffiti)</a></li>
-          <li><a href="https://www.alamedaca.gov/RESIDENTS/Auto-Parking-in-Alameda/Parking-Citations-and-Enforcement">Pay or contest a parking citation</a></li>
-          <li><a href="https://www.alamedaca.gov/Departments/Planning-Building-and-Transportation/Permit-Center">Permit Center</a></li>
-          <li><a href="https://www.alamedaca.gov/passports">Passports at City Hall</a></li>
-          <li><a href="https://www.alamedaca.gov/Departments/Recreation-Parks">Recreation &amp; Parks</a></li>
-          <li><a href="https://www.alamedaca.gov/RESIDENTS/Alameda-Ready">Alerts &amp; Be Alameda Ready</a></li>
-          <li><a href="https://www.alamedaca.gov/Departments/Planning-Building-and-Transportation/Transportation/Oakland-Alameda-Water-Shuttle">Water shuttle</a></li>
-          <li><a href="https://www.alamedaca.gov/RESIDENTS/Information-for-Residents/New-Resident-Guide">New resident guide</a></li>
+          <li><button data-p="Report a problem|Report potholes, graffiti and other problems to the City.">Report a problem (potholes, graffiti)</button></li>
+          <li><button data-p="Pay or contest a parking citation|Parking citations and enforcement.">Pay or contest a parking citation</button></li>
+          <li><button data-p="Permit Center|Planning, building and transportation permits.">Permit Center</button></li>
+          <li><button data-p="Passports at City Hall|Passport services are provided by the City Clerk's Office.">Passports at City Hall</button></li>
+          <li><button data-p="Recreation &amp; Parks|Recreation and parks programs and the activity guide.">Recreation &amp; Parks</button></li>
+          <li><button data-p="Alerts &amp; Be Alameda Ready|One alerts page, linked the same way everywhere.">Alerts &amp; Be Alameda Ready</button></li>
+          <li><button data-p="Water shuttle|The Oakland Alameda water shuttle.">Water shuttle</button></li>
+          <li><button data-p="New resident guide|A guide for people new to Alameda.">New resident guide</button></li>
         </ul>
-      </section>
-      <section>
+      </article>
+      <article class="tile b light">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F4864" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
         <h3>For business</h3>
         <ul>
-          <li><a href="https://www.alamedaca.gov/BUSINESS/Starting-a-Business-in-Alameda">Starting a business in Alameda</a></li>
-          <li><a href="https://www.alamedaca.gov/BUSINESS/Business-Licensing-Permits">Business license &amp; permits</a></li>
-          <li><a href="https://www.alamedaca.gov/BUSINESS/Programs-and-Information/Facade-Grant-Program">Facade grant program</a></li>
-          <li><a href="https://www.alamedaca.gov/BUSINESS/Bid-on-City-Contracts">Bid on City contracts</a></li>
-          <li><a href="https://www.alamedaca.gov/BUSINESS/Leasing-City-Owned-Properties">Leasing City-owned properties</a></li>
-          <li><a href="https://www.alamedaca.gov/BUSINESS/Employment-Resources">Employment resources</a></li>
-          <li><a href="https://www.governmentjobs.com/careers/alamedaca">Jobs: work for the City</a></li>
+          <li><button data-p="Starting a business in Alameda|Steps to open a business in Alameda.">Starting a business in Alameda</button></li>
+          <li><button data-p="Business license and permits|Business licenses are managed by the Finance Department.">Business license &amp; permits</button></li>
+          <li><button data-p="Bid on City contracts|All open bids in one filterable list instead of 17 menu items.">Bid on City contracts</button></li>
+          <li><button data-p="Facade grant program|A City program for business facades.">Facade grant program</button></li>
         </ul>
-      </section>
-      <section>
+      </article>
+      <article class="tile c sea">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></span>
         <h3>Your government</h3>
         <ul>
-          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Agendas-Minutes-Announcements">Meeting agendas, minutes &amp; videos</a></li>
-          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Public-Comment-and-City-Council-Meeting-Information">Public comment &amp; Council meeting information</a></li>
-          <li><a href="https://www.alamedaca.gov/Departments/City-Clerk/Public-Record-Requests">Public records requests</a></li>
-          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Boards-Commissions">Boards &amp; commissions</a></li>
-          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Strategic-Plan">Strategic plan</a></li>
-          <li><a href="https://www.alamedaca.gov/Departments/City-Clerk/Civil-Marriage-Ceremonies">Weddings</a></li>
-          <li><a href="https://www.alamedaca.gov/Departments">All City departments</a></li>
+          <li><button data-p="Meeting agendas, minutes and videos|City Council and board meeting information.">Meeting agendas &amp; videos</button></li>
+          <li><button data-p="Public records requests|Request public records from the City Clerk.">Public records requests</button></li>
+          <li><button data-p="Boards and commissions|Applications, appointments and vacancies.">Boards &amp; commissions</button></li>
         </ul>
-      </section>
+      </article>
+      <article class="tile c light">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F4864" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span>
+        <h3>Work for the City</h3>
+        <ul>
+          <li><button data-p="Jobs: work for the City|Open City positions.">Open positions</button></li>
+          <li><button data-p="Weddings|Civil marriage ceremonies at the City Clerk's office.">Weddings</button></li>
+        </ul>
+      </article>
     </div>
-    <p id="none">No service matches that search. Try a shorter word, or call City Hall at (510) 747-7400.</p>
   </div>
 </section>
 
-<section aria-labelledby="nw">
+<section class="s" style="padding-top:0" aria-labelledby="nw">
   <div class="wrap two">
-    <div class="news">
-      <h2 id="nw">News</h2>
-      <article><time datetime="2026-10-05">Oct 5, 2026</time><div><h3><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/Cooling-Centers-Open-During-Heat-Wave">Cooling centers open during heat wave</a></h3><p>The three libraries and Mastick Senior Center have cooling centers open during business hours.</p></div></article>
-      <article><time datetime="2026-10-06">Oct 6, 2026</time><div><h3><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/Event-Celebrates-Successful-“Rise-Up-Alameda”-Guaranteed-Income-Project">Event celebrates the Rise Up Alameda guaranteed income project</a></h3><p>On Tuesday, October 13, the City and Mayors for a Guaranteed Income host a celebration of the pilot, which gave 150 individuals $1,000 a month for 24 months.</p></div></article>
-      <article><time datetime="2026-09-28">Sep 28, 2026</time><div><h3><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/City-of-Alameda-Prepares-for-Active-El-Niño-Storm-Season">City prepares for an active El Niño storm season</a></h3><p>Free sandbags are available starting October 6, earlier than usual this year.</p></div></article>
-      <p><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media">View more news</a></p>
+    <div>
+      <h2 id="nw">Latest from the City</h2>
+      <p class="sub">Each notice has one page, so the same story never appears under two links.</p>
+      <button class="lead-story" data-p="Event celebrates the Rise Up Alameda guaranteed income project|On Tuesday, October 13, the City of Alameda, Mayor Marilyn Ezzy Ashcraft and Mayors for a Guaranteed Income host a celebration of Rise Up Alameda. The program gave 150 individuals an unconditional $1,000 a month for 24 months, from December 2023 through November 2025. Participants demonstrated stronger financial well-being.">
+        <time>October 6, 2026</time>
+        <h3>Event celebrates the Rise Up Alameda guaranteed income project</h3>
+        <p>150 individuals received $1,000 a month for 24 months. The celebration is Tuesday, October 13.</p>
+      </button>
+      <button class="row" data-p="Cooling centers open during heat wave|The three libraries and Mastick Senior Center have cooling centers open during business hours."><time>Oct 5, 2026</time><div><h3>Cooling centers open during heat wave</h3><p>The three libraries and Mastick Senior Center are open during business hours.</p></div></button>
+      <button class="row" data-p="City prepares for an active El Niño storm season|City of Alameda prepares for an active El Niño storm season and urges residents to get ready early. Free sandbags are available starting October 6, earlier than usual this year."><time>Sep 28, 2026</time><div><h3>City prepares for an active El Niño storm season</h3><p>Free sandbags are available starting October 6, earlier than usual this year.</p></div></button>
     </div>
-    <div class="events">
-      <h2>Coming up</h2>
-      <ol>
-        <li><b>Oct 12: Planning Board meeting</b><span>Public hearing on planning and development projects.</span></li>
-        <li><b>Oct 14: Commission on Persons With Disabilities</b><span>City projects, initiatives and accessibility in Alameda.</span></li>
-        <li><b>Oct 14: Apple Hill&rsquo;s High Hill Ranch (full)</b><span>Mastick Senior Center outing.</span></li>
-      </ol>
-      <p><a href="https://www.alamedaca.gov/Shortcut-Content/Events-Activities">View the full calendar</a></p>
-    </div>
+    <aside class="events" aria-labelledby="ev">
+      <h2 id="ev">Coming up</h2>
+      <button class="ev" data-p="Planning Board meeting|October 12, 2026. Public hearing to discuss planning and development projects."><span class="d"><small>OCT</small>12</span><div><b>Planning Board meeting</b><span>Public hearing on planning and development projects.</span></div></button>
+      <button class="ev" data-p="Commission on Persons With Disabilities|October 14, 2026. To discuss City projects, initiatives and other topics related to the disabled community and accessibility in Alameda."><span class="d"><small>OCT</small>14</span><div><b>Commission on Persons With Disabilities</b><span>City projects and accessibility in Alameda.</span></div></button>
+      <button class="ev" data-p="Apple Hill's High Hill Ranch (full)|October 14, 2026. A Mastick Senior Center outing: fish in the lake, browse handmade crafts and have apple pie. This trip is full."><span class="d"><small>OCT</small>14</span><div><b>Apple Hill&rsquo;s High Hill Ranch</b><span>Mastick Senior Center outing (full).</span></div></button>
+    </aside>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="s" style="padding-top:0">
   <div class="wrap">
     <div class="measure">
-      <div>
-        <h2>SAFER Alameda Act: Measure L, November 2026 ballot</h2>
+      <div class="big">L</div>
+      <div style="flex:1;min-width:240px">
+        <h2>SAFER Alameda Act on the November 2026 ballot</h2>
         <p>Voters will decide whether to invest in repairing and improving Alameda&rsquo;s aging infrastructure.</p>
       </div>
-      <a class="btn" href="https://www.alamedaca.gov/CITYWIDE-PROJECTS/The-SAFER-Alameda-Act-Measure-L-on-November-2026-Ballot">Read the details</a>
+      <button class="btn gold" data-p="SAFER Alameda Act: Measure L|Measure L is on the November 2026 ballot. Voters will decide whether to invest in repairing and improving Alameda's aging infrastructure. The City publishes a FAQ and a detailed project list.">Read the details</button>
     </div>
   </div>
 </section>
 
-<div class="numbers" aria-label="Alameda by the numbers">
-  <div class="wrap" style="padding:2.2rem 0">
-    <div><strong>80,000</strong><span>residents</span></div>
-    <div><strong>400</strong><span>acres of parks and recreational facilities</span></div>
-    <div><strong>500</strong><span>full-time City employees</span></div>
-    <div><strong>1854</strong><span>year incorporated</span></div>
+<section class="s" style="padding-top:0" aria-labelledby="nm">
+  <div class="wrap">
+    <h2 id="nm">Alameda by the numbers</h2>
+    <p class="sub">An island city with a long history.</p>
+    <div class="nums">
+      <div><strong data-n="80000">80,000</strong><span>residents</span></div>
+      <div><strong data-n="400">400</strong><span>acres of parks and recreational facilities</span></div>
+      <div><strong data-n="500">500</strong><span>full-time City employees</span></div>
+      <div><strong>1854</strong><span>year incorporated</span></div>
+    </div>
   </div>
-</div>
+</section>
 
-<section class="officials" aria-labelledby="eo">
+<section class="s" style="padding-top:0" aria-labelledby="eo">
   <div class="wrap">
     <h2 id="eo">Elected officials</h2>
-    <ul>
-      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Mayor-Ezzy-Ashcraft">Marilyn Ezzy Ashcraft<small>Mayor</small></a></li>
-      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Vice-Mayor-Michele-Pryor">Michele Pryor<small>Vice Mayor</small></a></li>
-      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Councilmember-Tony-Daysog">Tony Daysog<small>Councilmember</small></a></li>
-      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Councilmember-Greg-Boller">Greg Boller<small>Councilmember</small></a></li>
-      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Councilmember-Tracy-Jensen">Tracy Jensen<small>Councilmember</small></a></li>
-    </ul>
+    <p class="sub">&nbsp;</p>
+    <div class="off">
+      <button data-p="Mayor Marilyn Ezzy Ashcraft|Mayor of Alameda."><i>ME</i><span>Marilyn Ezzy Ashcraft<small>Mayor</small></span></button>
+      <button data-p="Vice Mayor Michele Pryor|Vice Mayor of Alameda."><i>MP</i><span>Michele Pryor<small>Vice Mayor</small></span></button>
+      <button data-p="Councilmember Tony Daysog|Councilmember."><i>TD</i><span>Tony Daysog<small>Councilmember</small></span></button>
+      <button data-p="Councilmember Greg Boller|Councilmember."><i>GB</i><span>Greg Boller<small>Councilmember</small></span></button>
+      <button data-p="Councilmember Tracy Jensen|Councilmember."><i>TJ</i><span>Tracy Jensen<small>Councilmember</small></span></button>
+    </div>
   </div>
 </section>
 </main>
@@ -300,41 +367,79 @@ footer h3{font:700 1rem var(--head);color:#fff;margin:0 0 .5rem}
     <div class="cols">
       <div>
         <h3>Contact us</h3>
-        City Hall<br>2263 Santa Clara Avenue<br>Alameda, CA 94501<br><a href="tel:+15107477400">(510) 747-7400</a><br>
-        <a href="https://www.alamedaca.gov/GOVERNMENT/Contact-Us-List">Phone directory</a>
+        City Hall<br>2263 Santa Clara Avenue<br>Alameda, CA 94501<br><a href="tel:+15107477400">(510) 747-7400</a>
       </div>
       <div>
         <h3>Read more</h3>
-        <a href="https://www.alamedaca.gov/Shortcut-Content/Events-Activities">Calendar</a><br>
-        <a href="https://www.alamedaca.gov/Shortcut-Content/News-Media">News</a><br>
-        <a href="https://www.alamedaca.gov/Subscribe">Subscribe</a><br>
-        <a href="https://www.alamedaca.gov/RESIDENTS/Alameda-Ready">Alerts</a>
+        <button data-p="Calendar|All City meetings and events.">Calendar</button>
+        <button data-p="News|All City news.">News</button>
+        <button data-p="Subscribe|Subscribe to City updates.">Subscribe</button>
+        <button data-p="Alerts|One alerts page, linked the same way everywhere.">Alerts</button>
       </div>
       <div>
-        <h3>Connect and access</h3>
-        <a href="https://www.facebook.com/cityofalameda/">Facebook</a><br>
-        <a href="https://www.instagram.com/loveourisland/">Instagram</a><br>
-        <a href="https://us.openforms.com/Form/7e338354-7abf-4852-886d-229f8c7019b9">Accommodation request</a><br>
-        <a href="https://www.alamedaca.gov/CITYWIDE-PROJECTS/Making-Alameda-Accessible">Accessibility &amp; ADA</a><br>
-        <a href="https://www.alamedaca.gov/System-pages/Privacy-Policy">Privacy policy</a>
+        <h3>Access and privacy</h3>
+        <button data-p="Accommodation request|Request an accommodation.">Accommodation request</button>
+        <button data-p="Accessibility and ADA|Making Alameda accessible.">Accessibility &amp; ADA</button>
+        <button data-p="Privacy policy|The City's privacy policy.">Privacy policy</button>
       </div>
     </div>
     <div class="made">
       <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo">
-      <span>Demo redesign by Softosync. Text, links and figures are taken from alamedaca.gov. The map is an illustration, and the photographs on the live site would replace it.</span>
+      <span>Demo redesign by Softosync. Text and figures come from alamedaca.gov; links to the live site are switched off so this demo stays self-contained. The scene is an illustration, and the City&rsquo;s own photographs would replace it.</span>
     </div>
   </div>
 </footer>
 
+<div class="veil" id="veil"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="pt" aria-hidden="true">
+  <button class="x" id="px" aria-label="Close preview">&times;</button>
+  <span class="k">Demo preview</span>
+  <h3 id="pt"></h3>
+  <p id="pb"></p>
+  <div class="note">In the redesigned site this opens its own page. To keep the demo self-contained, it does not leave this page.</div>
+  <a class="btn gold" href="tel:+15107477400">Call City Hall (510) 747-7400</a>
+</aside>
+
 <script>
 (function(){
-  var q=document.getElementById('q'),items=[].slice.call(document.querySelectorAll('#tasks li')),none=document.getElementById('none');
-  function run(){
-    var v=q.value.trim().toLowerCase(),shown=0;
-    items.forEach(function(li){var ok=!v||li.textContent.toLowerCase().indexOf(v)>-1;li.hidden=!ok;if(ok)shown++;});
-    none.style.display=shown?'none':'block';
+  var panel=document.getElementById('panel'),veil=document.getElementById('veil'),last=null;
+  function open(t,b,el){last=el;document.getElementById('pt').innerHTML=t;document.getElementById('pb').innerHTML=b;panel.classList.add('on');veil.classList.add('on');panel.setAttribute('aria-hidden','false');document.getElementById('px').focus();}
+  function close(){panel.classList.remove('on');veil.classList.remove('on');panel.setAttribute('aria-hidden','true');if(last)last.focus();}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-p]');
+    if(b){var p=b.getAttribute('data-p').split('|');open(p[0],p.slice(1).join('|'),b);}
+    if(e.target.closest('#px')||e.target===veil)close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')close();
+    if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();q.focus();}
+  });
+  // language pills stay inside the demo
+  [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){
+    [].forEach.call(document.querySelectorAll('.lang button'),function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    if(b.getAttribute('lang')!=='en')open('Seven languages stay','The live site offers English, Spanish, Chinese, Tagalog, Vietnamese, Korean and Arabic. This demo shows the language switcher in the redesigned header.',b);
+  });});
+  // search
+  var q=document.getElementById('q'),res=document.getElementById('results');
+  var items=[].slice.call(document.querySelectorAll('.tile [data-p]')).map(function(b){return {t:b.textContent.trim(),p:b.getAttribute('data-p'),g:b.closest('.tile').querySelector('h3').textContent}});
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase();res.innerHTML='';
+    if(!v){res.classList.remove('on');return;}
+    var m=items.filter(function(i){return i.t.toLowerCase().indexOf(v)>-1}).slice(0,6);
+    if(!m.length){res.innerHTML='<button type="button" style="cursor:default">No service matches. Call City Hall at (510) 747-7400.</button>';}
+    m.forEach(function(i){var b=document.createElement('button');b.type='button';b.setAttribute('data-p',i.p);b.innerHTML=i.t+'<small>'+i.g+'</small>';res.appendChild(b);});
+    res.classList.add('on');
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.finder'))res.classList.remove('on');});
+  // numbers count up once
+  var nums=[].slice.call(document.querySelectorAll('[data-n]'));
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;io.unobserve(en.target);
+      var el=en.target,to=+el.getAttribute('data-n'),t0=performance.now();
+      (function f(t){var k=Math.min(1,(t-t0)/1200),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=v.toLocaleString('en-US');if(k<1)requestAnimationFrame(f);})(t0);
+    });},{threshold:.5});nums.forEach(function(n){io.observe(n)});
   }
-  q.addEventListener('input',run);
 })();
 </script>
 </body>
