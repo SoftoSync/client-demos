@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demo homepage concept for Cadillac Marin, a Cadillac dealership in San Rafael, CA. Prepared by Softosync.">
+<title>Cadillac Marin | Demo homepage by Softosync</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#12151B; --ink:#0A0C10; --silver:#E4E8EE; --mist:#F2F4F7; --steel:#6F7887; --line:#D5DAE2;
+  --crest:#B5122E; --crest-hi:#D21A3A; --ice:#8FD0FF; --ice-soft:#DFF3FF; --white:#fff;
+  --head:"Archivo","Arial Narrow",Arial,sans-serif; --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--graphite);background:var(--white);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ice);outline-offset:3px}
+.wrap{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);font-variation-settings:"wdth" 118;font-weight:600;line-height:1.04;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4.4vw,3.1rem);margin-bottom:.9rem}
+h3{font-size:1.25rem}
+p{max-width:62ch}
+.skip{position:absolute;left:-999px;top:0;background:var(--ice);color:var(--ink);padding:.6rem 1rem;z-index:200}
+.skip:focus{left:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.75rem 1.5rem;border-radius:2px;font:600 1rem/1 var(--body);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.btn-crest{background:var(--crest);color:#fff}
+.btn-crest:hover{background:var(--crest-hi)}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-line:hover{background:#fff;color:var(--ink)}
+.btn-dark{background:var(--graphite);color:#fff}
+.btn-dark:hover{background:var(--ink)}
+.btn-ghost{border-color:var(--graphite);color:var(--graphite)}
+.btn-ghost:hover{background:var(--graphite);color:#fff}
+
+/* demo bar */
+.demobar{background:#05070A;color:#B9C2CF;font-size:.8rem;text-align:center;padding:.4rem 1rem}
+.demobar a{color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(10,12,16,.94);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:1rem}
+.mark{font-family:var(--head);font-variation-settings:"wdth" 125;font-weight:700;letter-spacing:.14em;text-decoration:none;font-size:1.02rem;display:flex;align-items:center;gap:.7rem}
+.mark i{display:block;width:3px;height:26px;background:linear-gradient(180deg,var(--ice-soft),var(--ice));box-shadow:0 0 12px var(--ice);border-radius:2px}
+nav ul{display:none;list-style:none;gap:1.7rem}
+nav a{text-decoration:none;font-size:.95rem;color:#D3DAE4}
+nav a:hover{color:#fff}
+.hdr-call{display:none}
+.burger{background:none;border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:2px;min-height:44px;padding:0 1rem;font:500 .95rem var(--body);cursor:pointer}
+.menu{position:fixed;inset:0;top:0;background:var(--ink);z-index:150;padding:1.2rem 1.5rem 2rem;display:none;flex-direction:column;gap:.2rem}
+.menu.open{display:flex}
+.menu a{font-family:var(--head);font-variation-settings:"wdth" 118;font-size:1.7rem;font-weight:600;text-decoration:none;color:#fff;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.menu .close{align-self:flex-end;margin-bottom:1rem}
+@media(min-width:960px){
+  nav ul{display:flex}
+  .burger{display:none}
+  .hdr-call{display:inline-flex;min-height:44px;padding:.5rem 1.2rem}
+}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 60%,rgba(143,208,255,.14),transparent 70%),linear-gradient(180deg,#0A0C10,#12151B);z-index:-3}
+.hero-media{position:absolute;inset:0 0 0 38%;z-index:-2;display:none}
+.hero-media img{width:100%;height:100%;object-fit:cover;opacity:.5;mask-image:linear-gradient(90deg,transparent,#000 45%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 45%)}
+.hero-grid{display:grid;gap:2rem;padding:clamp(2.5rem,7vw,6rem) 0 0;align-items:end}
+.hero h1{font-size:clamp(2.35rem,6.4vw,5rem);max-width:15ch;margin-bottom:1.3rem}
+.hero p.lead{font-size:clamp(1.02rem,1.6vw,1.2rem);color:#C4CCD8;max-width:46ch;margin-bottom:1.8rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.6rem}
+.status{display:inline-flex;align-items:center;gap:.6rem;font-size:.92rem;color:#C4CCD8;border:1px solid rgba(255,255,255,.16);padding:.45rem .9rem;border-radius:2px;margin-bottom:2.2rem}
+.dot{width:9px;height:9px;border-radius:50%;background:#7C8594;flex:none}
+.dot.on{background:#4ADE80;box-shadow:0 0 10px #4ADE80}
+.blades{display:flex;align-items:flex-end;gap:clamp(10px,3.2vw,26px);height:clamp(120px,22vw,190px);padding-bottom:0}
+.blade{width:clamp(3px,.7vw,6px);height:var(--h);background:linear-gradient(180deg,rgba(143,208,255,0),var(--ice-soft) 22%,var(--ice) 70%,rgba(143,208,255,0));border-radius:4px;box-shadow:0 0 22px 2px rgba(143,208,255,.4);transform-origin:bottom;opacity:0;animation:blade 1.2s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*120ms + 300ms)}
+@keyframes blade{0%{opacity:0;transform:scaleY(.08)}55%{opacity:1}100%{opacity:.92;transform:scaleY(1)}}
+.quick{border-top:1px solid rgba(255,255,255,.12);display:grid;grid-template-columns:1fr 1fr}
+.quick a{display:flex;flex-direction:column;justify-content:center;padding:1.1rem 1.1rem;text-decoration:none;border-right:1px solid rgba(255,255,255,.12);min-height:84px}
+.quick a:nth-child(2n){border-right:0}
+.quick a:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+.quick small{color:#98A3B3;font-size:.8rem}
+.quick strong{font-family:var(--head);font-variation-settings:"wdth" 112;font-weight:600;font-size:1.08rem}
+.quick a:hover{background:rgba(255,255,255,.05)}
+@media(min-width:900px){
+  .hero-media{display:block}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:3rem}
+  .blades{justify-content:flex-end;height:clamp(260px,30vw,380px);padding-right:2vw}
+  .status{margin-bottom:3rem}
+  .quick{grid-template-columns:repeat(4,1fr)}
+  .quick a{border-bottom:0!important;border-right:1px solid rgba(255,255,255,.12)!important}
+  .quick a:last-child{border-right:0!important}
+}
+
+/* sections */
+section{padding:clamp(3.2rem,7vw,6rem) 0}
+.sub{color:var(--steel);max-width:58ch;margin-bottom:2rem}
+
+/* find your cadillac */
+#find{background:var(--mist)}
+.tabs{display:flex;gap:0;border-bottom:1.5px solid var(--line);margin-bottom:0;overflow-x:auto}
+.tab{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:.9rem 1.2rem;font:600 1rem var(--body);color:var(--steel);cursor:pointer;white-space:nowrap;min-height:48px}
+.tab[aria-selected="true"]{color:var(--graphite);border-bottom-color:var(--crest)}
+.panel{display:none}
+.panel.on{display:block}
+.panel-intro{padding:1.4rem 0 .6rem;color:#444C59;max-width:64ch}
+.models{list-style:none}
+.models a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.05rem 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .2s,background .2s}
+.models .n{font-family:var(--head);font-variation-settings:"wdth" 122;font-weight:600;font-size:clamp(1.5rem,4.2vw,2.5rem);line-height:1.1}
+.models .v{font-size:.92rem;color:var(--steel);white-space:nowrap}
+.models a:hover{padding-left:.9rem;background:#fff}
+.models a:hover .v{color:var(--crest)}
+.find-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+
+/* offers */
+.ledger{border-top:2px solid var(--graphite)}
+.offer{display:grid;gap:.4rem 1.5rem;padding:1.3rem 0;border-bottom:1px solid var(--line);align-items:center}
+.offer h3{font-size:1.15rem}
+.offer p{color:var(--steel);font-size:.92rem}
+.offer .big{font-family:var(--head);font-variation-settings:"wdth" 118;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1}
+.offer .big small{font-family:var(--body);font-weight:500;font-size:.9rem;color:var(--steel);margin-left:.3rem}
+@media(min-width:800px){.offer{grid-template-columns:1.4fr 1fr 1fr}}
+.fine{font-size:.85rem;color:var(--steel);margin-top:1.4rem;max-width:80ch}
+.fine a{color:var(--graphite)}
+
+/* service */
+#service{background:var(--ink);color:#fff}
+#service .sub{color:#AEB8C6}
+.split{display:grid;gap:2.5rem}
+.split>*,.two>*,.fin>*{min-width:0}
+.photo{position:relative;aspect-ratio:4/3;background:radial-gradient(70% 60% at 50% 100%,rgba(143,208,255,.16),transparent 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 1px,transparent 1px 26px),linear-gradient(135deg,#1B2029,#0F1217);border-radius:2px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--ice),transparent);opacity:.7}
+.svc-links{list-style:none;margin:1.4rem 0 1.8rem;border-top:1px solid rgba(255,255,255,.14)}
+.svc-links a{display:flex;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.14);text-decoration:none;color:#E4E8EE}
+.svc-links a:hover{color:var(--ice)}
+.svc-links span{color:#98A3B3;font-size:.9rem}
+.notes{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:2.4rem;border:1px solid rgba(255,255,255,.14)}
+.notes div{background:var(--graphite);padding:1.3rem 1.4rem}
+.notes h3{margin-bottom:.4rem}
+.notes p{color:#AEB8C6;font-size:.95rem}
+@media(min-width:800px){.split{grid-template-columns:1fr 1fr;align-items:center;gap:4rem}.notes{grid-template-columns:1fr 1fr}}
+
+/* cpo */
+.two{display:grid;gap:2.5rem}
+.check{list-style:none;border-top:1px solid var(--line)}
+.check li{padding:.85rem 0 .85rem 2rem;border-bottom:1px solid var(--line);position:relative}
+.check li::before{content:"";position:absolute;left:.2rem;top:1.35rem;width:11px;height:6px;border-left:2px solid var(--crest);border-bottom:2px solid var(--crest);transform:rotate(-45deg)}
+.photo.light{background:radial-gradient(70% 60% at 50% 100%,rgba(143,208,255,.35),transparent 70%),repeating-linear-gradient(90deg,rgba(10,12,16,.05) 0 1px,transparent 1px 26px),linear-gradient(135deg,#E6EAF0,#CBD2DC);border-color:var(--line)}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr;gap:4rem;align-items:center}}
+
+/* finance */
+#finance{background:var(--mist)}
+.fin{display:grid;gap:2rem;align-items:center}
+.fin .photo{aspect-ratio:16/10}
+@media(min-width:800px){.fin{grid-template-columns:1.1fr .9fr;gap:4rem}}
+
+/* visit */
+#visit{background:var(--graphite);color:#fff}
+.hours{width:100%;border-collapse:collapse;margin:1.2rem 0 1.6rem;font-size:.95rem}
+.hours th,.hours td{text-align:left;padding:.75rem .5rem .75rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-weight:400;vertical-align:top}
+.hours th{font-weight:600}
+.hours td{white-space:nowrap}
+.hours th .st{display:block;color:#AEB8C6;font-size:.8rem;font-weight:400;margin-top:.2rem;white-space:normal}
+.hours .st .dot{display:inline-block;margin-right:.4rem}
+.hours td[data-l]::before{content:attr(data-l) " ";color:#8C97A8;font-size:.82rem;margin-right:.4rem}
+@media(max-width:699px){
+  .hours thead{position:absolute;left:-999px}
+  .hours,.hours tbody,.hours tr,.hours th,.hours td{display:block;width:100%}
+  .hours tr{padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .hours th,.hours td{border:0;padding:.12rem 0}
+  .hours th{font-size:1.05rem;margin-bottom:.15rem}
+  .hours .st{margin-top:.35rem}
+}
+@media(min-width:700px){.hours td[data-l]::before{display:none}}
+.contact-list{list-style:none;margin:1.2rem 0 1.8rem}
+.contact-list li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.contact-list a{text-decoration:none;font-weight:600}
+.contact-list a:hover{color:var(--ice)}
+.social{display:flex;gap:1.2rem;margin-top:1.4rem}
+.social a{color:#C4CCD8}
+
+/* footer */
+footer{background:var(--ink);color:#98A3B3;font-size:.88rem;padding:2rem 0}
+.foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+.foot a{color:#C4CCD8}
+.softo{display:flex;align-items:center;gap:.6rem;background:#fff;border-radius:2px;padding:.35rem .7rem;color:#444C59;font-size:.78rem;text-decoration:none}
+.softo img{width:24px;height:24px}
+
+/* mobile action bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:grid;grid-template-columns:1.2fr 1fr 1fr;background:var(--ink);border-top:1px solid rgba(255,255,255,.14)}
+.mbar a{display:flex;align-items:center;justify-content:center;min-height:56px;text-decoration:none;color:#fff;font-weight:600;font-size:.92rem;border-right:1px solid rgba(255,255,255,.12)}
+.mbar a:first-child{background:var(--crest)}
+.mbar a:last-child{border-right:0}
+footer{padding-bottom:5.2rem}
+@media(min-width:900px){.mbar{display:none}footer{padding-bottom:2rem}}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .blade{animation:none;opacity:.9}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demobar">Demo project prepared by <a href="https://softosync.com" rel="noopener">Softosync</a></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Cadillac Marin home"><i aria-hidden="true"></i>CADILLAC MARIN</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#find">New &amp; pre-owned</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#service">Service &amp; parts</a></li>
+        <li><a href="#finance">Finance</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-crest hdr-call" href="tel:4158707429">Call Sales (415) 870-7429</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-label="Site menu">
+  <button class="burger close" id="close">Close</button>
+  <a href="#find">New &amp; pre-owned</a>
+  <a href="#offers">Offers</a>
+  <a href="#service">Service &amp; parts</a>
+  <a href="#finance">Finance</a>
+  <a href="#visit">Visit &amp; hours</a>
+</div>
+
+<main id="main">
+<div class="hero" id="top">
+  <div class="hero-media" aria-hidden="false">
+    <img src="https://di-uploads-pod1.dealerinspire.com/cadillacmarin/uploads/2025/10/CadillacMarin-Homepage-hero.webp" alt="New Cadillac vehicles at Cadillac Marin, San Rafael" width="1600" height="900" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Your trusted Cadillac dealership in San Rafael, CA</h1>
+        <p class="lead">New, certified pre-owned and used Cadillacs, flexible financing, and a full service bay with trained technicians. Find us at 475 Francisco Boulevard East.</p>
+        <div class="cta-row">
+          <a class="btn btn-crest" href="tel:4158707429">Call Sales (415) 870-7429</a>
+          <a class="btn btn-line" href="https://www.cadillacmarin.com/service/schedule-appointment/" rel="noopener">Schedule service</a>
+        </div>
+        <div class="status" aria-live="polite"><span class="dot" id="hdot"></span><span id="hstat">Checking showroom hours…</span></div>
+      </div>
+      <div class="blades" aria-hidden="true">
+        <span class="blade" style="--i:0;--h:46%"></span><span class="blade" style="--i:1;--h:70%"></span><span class="blade" style="--i:2;--h:92%"></span><span class="blade" style="--i:3;--h:100%"></span><span class="blade" style="--i:4;--h:92%"></span><span class="blade" style="--i:5;--h:70%"></span><span class="blade" style="--i:6;--h:46%"></span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="quick">
+      <a href="tel:4158707429"><small>Sales</small><strong>(415) 870-7429</strong></a>
+      <a href="tel:4158898500"><small>Service &amp; parts</small><strong>(415) 889-8500</strong></a>
+      <a href="https://www.cadillacmarin.com/ev-test-drive-cadillac/" rel="noopener"><small>Electric</small><strong>Book an EV test drive</strong></a>
+      <a href="https://www.google.com/maps/place/Cadillac+Marin/@37.9678965,-122.5173258,15z/data=!4m6!3m5!1s0x80859be4931dd625:0xb882cdbbce6546e8!8m2!3d37.9678965!4d-122.5173258!16s%2Fg%2F11l5q9nldz?hl=en&entry=ttu" rel="noopener"><small>475 Francisco Blvd E</small><strong>Get directions</strong></a>
+    </div>
+  </div>
+</div>
+
+<section id="find">
+  <div class="wrap">
+    <h2>Find your Cadillac</h2>
+    <p class="sub">Browse the current lineup by body style. Every model opens its inventory on cadillacmarin.com.</p>
+    <div class="tabs" role="tablist" aria-label="Vehicle type">
+      <button class="tab" role="tab" id="t-ev" aria-selected="true" aria-controls="p-ev">Electric</button>
+      <button class="tab" role="tab" id="t-sed" aria-selected="false" aria-controls="p-sed" tabindex="-1">Sedans</button>
+      <button class="tab" role="tab" id="t-suv" aria-selected="false" aria-controls="p-suv" tabindex="-1">Crossovers &amp; SUVs</button>
+    </div>
+
+    <div class="panel on" role="tabpanel" id="p-ev" aria-labelledby="t-ev">
+      <p class="panel-intro">Ready to switch to a luxury EV? The Cadillac LYRIQ is fully electric, with cutting-edge technology, impressive performance and unmistakable styling.</p>
+      <ul class="models">
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/lyriq/" rel="noopener"><span class="n">LYRIQ</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/lyriq-v/" rel="noopener"><span class="n">LYRIQ-V</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/optiq/" rel="noopener"><span class="n">OPTIQ</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/optiq-v/" rel="noopener"><span class="n">OPTIQ-V</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/vistiq/" rel="noopener"><span class="n">VISTIQ</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/escalade-iq/" rel="noopener"><span class="n">ESCALADE IQ</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/escalade-iql/" rel="noopener"><span class="n">ESCALADE IQL</span><span class="v">View inventory</span></a></li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-sed" aria-labelledby="t-sed" hidden>
+      <p class="panel-intro">The CT4 and CT5 blend aggressively good looks with luxurious features. For high performance, ask about the CT4-V and CT5-V.</p>
+      <ul class="models">
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/ct4/" rel="noopener"><span class="n">CT4</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/ct4-v/" rel="noopener"><span class="n">CT4-V</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/ct4-v-blackwing/" rel="noopener"><span class="n">CT4-V Blackwing</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/ct5/" rel="noopener"><span class="n">CT5</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/ct5-v/" rel="noopener"><span class="n">CT5-V</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/ct5-v-blackwing/" rel="noopener"><span class="n">CT5-V Blackwing</span><span class="v">View inventory</span></a></li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-suv" aria-labelledby="t-suv" hidden>
+      <p class="panel-intro">The XT5 blends practicality and style. The Escalade offers enormous cargo and passenger space with premium amenities.</p>
+      <ul class="models">
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/xt5/" rel="noopener"><span class="n">XT5</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/escalade/" rel="noopener"><span class="n">ESCALADE</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/escalade-v/" rel="noopener"><span class="n">ESCALADE V</span><span class="v">View inventory</span></a></li>
+        <li><a href="https://www.cadillacmarin.com/new-vehicles/escalade-esv/" rel="noopener"><span class="n">ESCALADE ESV</span><span class="v">View inventory</span></a></li>
+      </ul>
+    </div>
+
+    <div class="find-actions">
+      <a class="btn btn-dark" href="https://www.cadillacmarin.com/new-vehicles/" rel="noopener">All new vehicles</a>
+      <a class="btn btn-ghost" href="https://www.cadillacmarin.com/used-vehicles/certified-pre-owned-vehicles/" rel="noopener">Certified pre-owned</a>
+      <a class="btn btn-ghost" href="https://www.cadillacmarin.com/used-vehicles/" rel="noopener">All pre-owned</a>
+    </div>
+  </div>
+</section>
+
+<section id="offers">
+  <div class="wrap">
+    <h2>Current offers</h2>
+    <p class="sub">As listed on cadillacmarin.com on October 11, 2026. Specials change often, so confirm details with the team.</p>
+    <div class="ledger">
+      <div class="offer">
+        <div><h3>2027 OPTIQ RWD Luxury lease</h3><p>Ultra-low mileage lease for well-qualified lessees, 24 months.</p></div>
+        <div class="big">$509<small>per month</small></div>
+        <p>$4,899 due at signing after all offers.</p>
+      </div>
+      <div class="offer">
+        <div><h3>2027 LYRIQ AWD Luxury lease</h3><p>Ultra-low mileage lease for well-qualified lessees, 24 months.</p></div>
+        <div class="big">$679<small>per month</small></div>
+        <p>$4,979 due at signing after all offers.</p>
+      </div>
+      <div class="offer">
+        <div><h3>2027 VISTIQ AWD Luxury lease</h3><p>Ultra-low mileage lease for well-qualified lessees, 24 months.</p></div>
+        <div class="big">$889<small>per month</small></div>
+        <p>$7,369 due at signing after all offers.</p>
+      </div>
+      <div class="offer">
+        <div><h3>2026 and 2027 VISTIQ financing</h3><p>Finance through Cadillac Financial. Some customers may not qualify.</p></div>
+        <div class="big">0.9%<small>APR for 72 months</small></div>
+        <p>Plus a $2,000 purchase allowance.</p>
+      </div>
+      <div class="offer">
+        <div><h3>Select certified pre-owned LYRIQ and OPTIQ</h3><p>Finance through Cadillac Financial.</p></div>
+        <div class="big">4.9%<small>APR for 60 months</small></div>
+        <p>Excludes 2026 and 2027 LYRIQ and OPTIQ models.</p>
+      </div>
+      <div class="offer">
+        <div><h3>Tires with installation</h3><p>Select tires, at participating U.S. GM dealers.</p></div>
+        <div class="big">Buy 3<small>get 1 for $1</small></div>
+        <p>Offer ends November 30, 2026.</p>
+      </div>
+    </div>
+    <p class="fine">Lease payments are for 2027 models with new retail delivery by 11/2/26. Cadillac Financial/GM Financial must approve the lease. Offers are available at participating dealers. Full terms, eligibility and mileage limits are on the dealership's <a href="https://www.cadillacmarin.com/current-offers/" rel="noopener">current offers page</a>.</p>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2>Service your Cadillac with certified technicians</h2>
+        <p class="sub">A full service bay with the staff, equipment and expertise for routine upkeep and in-depth repairs. Book an oil change, tire rotation, transmission service or brake inspection.</p>
+        <ul class="svc-links">
+          <li><a href="https://www.cadillacmarin.com/service/schedule-appointment/" rel="noopener">Schedule service <span>Online</span></a></li>
+          <li><a href="https://www.cadillacmarin.com/oil-change-service/" rel="noopener">Oil change <span>Service</span></a></li>
+          <li><a href="https://www.cadillacmarin.com/tire-center/" rel="noopener">Tire service &amp; installation <span>Tires</span></a></li>
+          <li><a href="https://www.cadillacmarin.com/certified-service-brakes/" rel="noopener">Brakes service &amp; replacement <span>Service</span></a></li>
+          <li><a href="https://www.cadillacmarin.com/parts/partsorderform/" rel="noopener">Order parts <span>Parts</span></a></li>
+        </ul>
+        <a class="btn btn-crest" href="tel:4158898500">Call Service (415) 889-8500</a>
+      </div>
+      <div class="photo">
+        <img src="https://di-uploads-pod1.dealerinspire.com/cadillacmarin/uploads/2025/10/CadillacMarin-Homepage-L6.webp" alt="Service department at Cadillac Marin in San Rafael" width="1200" height="900" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="notes">
+      <div><h3>Premium pick up and delivery</h3><p>Convenience is the ultimate luxury. Available where allowed under state law.</p></div>
+      <div><h3>Service hours</h3><p>Monday to Friday 7:00 AM to 5:00 PM, Saturday 8:00 AM to 5:00 PM. Closed Sunday.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cpo">
+  <div class="wrap two">
+    <div class="photo light">
+      <img src="https://di-uploads-pod1.dealerinspire.com/cadillacmarin/uploads/2025/10/CadillacMarin-Homepage-L2.webp" alt="Certified pre-owned Cadillac vehicles at Cadillac Marin" width="1200" height="900" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+    </div>
+    <div>
+      <h2>Certified pre-owned, backed by Cadillac</h2>
+      <p class="sub">A changing selection that often includes the Escalade, CT5 and XT4. Each vehicle comes with the Cadillac Certified Pre-Owned benefits.</p>
+      <ul class="check">
+        <li>Remainder of original bumper-to-bumper warranty</li>
+        <li>1-year, unlimited-mile warranty</li>
+        <li>24-hour roadside assistance</li>
+        <li>Courtesy transportation</li>
+        <li>SiriusXM 3-month trial</li>
+        <li>My Cadillac Rewards</li>
+      </ul>
+      <p class="fine">Warranty terms, restrictions and exclusions apply. Ask the dealership for complete details.</p>
+      <div class="find-actions"><a class="btn btn-dark" href="https://www.cadillacmarin.com/used-vehicles/certified-pre-owned-vehicles/" rel="noopener">Browse certified pre-owned</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="finance">
+  <div class="wrap fin">
+    <div>
+      <h2>Start your financing from home</h2>
+      <p class="sub">Complete a secure finance application online to save time at the dealership. Trading in? The Value Your Trade tool gives you an estimate to put toward your next purchase or lease.</p>
+      <div class="find-actions" style="margin-top:0">
+        <a class="btn btn-crest" href="https://www.cadillacmarin.com/finance/apply-for-financing/" rel="noopener">Apply for financing</a>
+        <a class="btn btn-ghost" href="https://www.cadillacmarin.com/#tradeIn" rel="noopener">Value your trade</a>
+      </div>
+    </div>
+    <div class="photo light">
+      <img src="https://di-uploads-pod1.dealerinspire.com/cadillacmarin/uploads/2025/10/CadillacMarin-Homepage-L5.webp" alt="Cadillac Marin finance team discussing financing and leasing options" width="1200" height="750" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <h2>Visit the showroom</h2>
+      <p class="sub" style="color:#AEB8C6">475 Francisco Boulevard East, San Rafael, CA 94901. Whether you're shopping for your first new Cadillac or your latest, the team is here to help.</p>
+      <ul class="contact-list">
+        <li><span>Main</span><a href="tel:4158898500">(415) 889-8500</a></li>
+        <li><span>Sales</span><a href="tel:4158707429">(415) 870-7429</a></li>
+        <li><span>Service</span><a href="tel:4158898500">(415) 889-8500</a></li>
+        <li><span>Parts</span><a href="tel:4158898500">(415) 889-8500</a></li>
+      </ul>
+      <div class="cta-row" style="margin-bottom:0">
+        <a class="btn btn-crest" href="https://www.google.com/maps/place/Cadillac+Marin/@37.9678965,-122.5173258,15z/data=!4m6!3m5!1s0x80859be4931dd625:0xb882cdbbce6546e8!8m2!3d37.9678965!4d-122.5173258!16s%2Fg%2F11l5q9nldz?hl=en&entry=ttu" rel="noopener">Get directions</a>
+        <a class="btn btn-line" href="https://www.cadillacmarin.com/contactusform/" rel="noopener">Send a message</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/CadillacMarin" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/cadillacmarin" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div>
+      <h3>Hours (Pacific time)</h3>
+      <table class="hours">
+        <thead><tr><th scope="col">Department</th><th scope="col">Mon–Fri</th><th scope="col">Sat</th><th scope="col">Sun</th></tr></thead>
+        <tbody id="hrows"></tbody>
+      </table>
+      <div class="photo" style="aspect-ratio:16/9">
+        <img src="https://di-uploads-pod1.dealerinspire.com/cadillacmarin/uploads/2025/10/CadillacMarin-Homepage-L7.webp" alt="Cadillac Marin dealership in San Rafael" width="1200" height="675" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Copyright © 2026 Cadillac Marin. Demo concept only; not the live website.</span>
+    <a href="https://www.cadillacmarin.com/contactusform/" rel="noopener">Contact us</a>
+    <a class="softo" href="https://softosync.com" rel="noopener"><img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" width="24" height="24">Demo by Softosync</a>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick contact">
+  <a href="tel:4158707429">Call Sales</a>
+  <a href="tel:4158898500">Service</a>
+  <a href="https://www.google.com/maps/place/Cadillac+Marin/@37.9678965,-122.5173258,15z/data=!4m6!3m5!1s0x80859be4931dd625:0xb882cdbbce6546e8!8m2!3d37.9678965!4d-122.5173258!16s%2Fg%2F11l5q9nldz?hl=en&entry=ttu" rel="noopener">Directions</a>
+</nav>
+
+<script>
+(function(){
+  /* tabs */
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function pick(t){
+    tabs.forEach(function(b){
+      var on=b===t; b.setAttribute('aria-selected',on); b.tabIndex=on?0:-1;
+      var p=document.getElementById(b.getAttribute('aria-controls')); p.classList.toggle('on',on); p.hidden=!on;
+    });
+  }
+  tabs.forEach(function(b,i){
+    b.addEventListener('click',function(){pick(b)});
+    b.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i+tabs.length-1)%tabs.length];
+      if(n){pick(n);n.focus();e.preventDefault()}
+    });
+  });
+  /* menu */
+  var m=document.getElementById('menu'),bg=document.getElementById('burger');
+  function setM(o){m.classList.toggle('open',o);bg.setAttribute('aria-expanded',o)}
+  bg.addEventListener('click',function(){setM(true)});
+  document.getElementById('close').addEventListener('click',function(){setM(false)});
+  [].forEach.call(m.querySelectorAll('a'),function(a){a.addEventListener('click',function(){setM(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setM(false)});
+
+  /* live hours, Pacific time. Hours are those listed on cadillacmarin.com */
+  var H={
+    'Sales':{0:[10,18],1:[9,18],2:[9,18],3:[9,18],4:[9,18],5:[9,18],6:[9,18]},
+    'Concierge':{0:null,1:[7,18],2:[7,18],3:[7,18],4:[7,18],5:[7,18],6:[7,18]},
+    'Service':{0:null,1:[7,17],2:[7,17],3:[7,17],4:[7,17],5:[7,17],6:[8,17]},
+    'Parts':{0:null,1:[7,17],2:[7,17],3:[7,17],4:[7,17],5:[7,17],6:[8,17]}
+  };
+  var label={'Sales':['9 AM–6 PM','9 AM–6 PM','10 AM–6 PM'],'Concierge':['7 AM–6 PM','7 AM–6 PM','Closed'],'Service':['7 AM–5 PM','8 AM–5 PM','Closed'],'Parts':['7 AM–5 PM','8 AM–5 PM','Closed']};
+  function now(){
+    try{
+      var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()),o={};
+      p.forEach(function(x){o[x.type]=x.value});
+      var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];
+      return {d:d,min:(+o.hour)*60+(+o.minute)};
+    }catch(e){var n=new Date();return {d:n.getDay(),min:n.getHours()*60+n.getMinutes()}}
+  }
+  function fmt(h){var s=h>=12?'PM':'AM',x=h%12||12;return x+':00 '+s}
+  function state(dep,t){
+    var r=H[dep][t.d];
+    if(r&&t.min>=r[0]*60&&t.min<r[1]*60)return {open:true,txt:'Open now, until '+fmt(r[1])};
+    for(var k=0;k<8;k++){
+      var dd=(t.d+k)%7,rr=H[dep][dd];
+      if(!rr)continue;
+      if(k===0&&t.min<rr[0]*60)return {open:false,txt:'Opens today at '+fmt(rr[0])};
+      if(k>0)return {open:false,txt:(k===1?'Opens tomorrow at ':'Opens '+['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dd]+' at ')+fmt(rr[0])};
+    }
+    return {open:false,txt:'Closed'};
+  }
+  function render(){
+    var t=now(),s=state('Sales',t);
+    document.getElementById('hdot').className='dot'+(s.open?' on':'');
+    document.getElementById('hstat').textContent='Showroom: '+s.txt;
+    var rows='';
+    Object.keys(H).forEach(function(dep){
+      var st=state(dep,t),l=label[dep];
+      rows+='<tr><th scope="row">'+dep+'<span class="st"><span class="dot'+(st.open?' on':'')+'" style="display:inline-block;margin-right:.4rem"></span>'+st.txt+'</span></th><td data-l="Mon–Fri">'+l[0]+'</td><td data-l="Sat">'+l[1]+'</td><td data-l="Sun">'+l[2]+'</td></tr>';
+    });
+    document.getElementById('hrows').innerHTML=rows;
+  }
+  render();setInterval(render,60000);
+})();
+</script>
+</body>
+</html>
