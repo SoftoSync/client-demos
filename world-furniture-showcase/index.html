@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>World Furniture Showcase | Fremont, California (Demo)</title>
+<meta name="description" content="Designer brand furniture at warehouse prices in Fremont, California.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#edf0ec; --forest:#16322d; --forest2:#21443d; --kraft:#d8bf95; --oak:#b9803f; --ink:#14201e; --string:#b3261e; --white:#fff;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--stone);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--oak);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+.demo-bar{background:var(--ink);color:#e9efec;font-size:13px;text-align:center;padding:7px 12px}
+
+header.top{background:var(--stone);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(20,32,30,.12)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{font-family:var(--head);font-weight:700;font-size:20px;text-decoration:none;line-height:1.1}
+.brand small{display:block;font-family:var(--body);font-weight:500;font-size:12px;color:#4d5d59}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav ul a{text-decoration:none;font-weight:500}
+.nav ul a:hover{color:var(--oak)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--forest);background:var(--forest);color:#fff;transition:background .2s,color .2s}
+.btn:hover{background:var(--oak);border-color:var(--oak)}
+.btn.ghost{background:transparent;color:var(--forest)}
+.btn.ghost:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+.btn.sm{padding:9px 18px;font-size:15px}
+
+/* hero */
+.hero{overflow:hidden;position:relative;padding:clamp(36px,6vw,80px) 0 clamp(60px,8vw,110px)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(38px,6.4vw,76px);line-height:1.02;letter-spacing:-.02em;color:var(--forest)}
+.hero p.lead{margin-top:22px;font-size:clamp(17px,2vw,20px);max-width:34em;color:#33443f}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .where{margin-top:18px;font-size:15px;color:#4d5d59}
+.stage{position:relative;min-height:420px;display:flex;justify-content:center}
+.sofa{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,112%)}
+.hanger{position:absolute;top:-6px;left:50%;width:0;height:0;transform-origin:50% 0;animation:swing 4.5s ease-in-out infinite alternate}
+.tag{position:absolute;left:-95px;top:0;width:190px;transform-origin:50% 0}
+@keyframes swing{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+@media (prefers-reduced-motion:reduce){.hanger{animation:none}}
+
+/* sections */
+section{padding:clamp(54px,8vw,100px) 0}
+h2{font-family:var(--head);font-weight:700;font-size:clamp(28px,4vw,46px);line-height:1.1;letter-spacing:-.01em;color:var(--forest);max-width:20em}
+.sub{margin-top:14px;max-width:36em;color:#3d4e49}
+.rooms{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.room{background:var(--white);border-radius:6px 28px 6px 28px;padding:26px 22px;text-decoration:none;border:1px solid rgba(20,32,30,.1);transition:transform .2s,border-color .2s}
+.room:hover{transform:translateY(-4px);border-color:var(--oak)}
+.room svg{width:100%;height:92px;margin-bottom:14px}
+.room h3{font-family:var(--head);font-size:21px;font-weight:700;color:var(--forest)}
+.room p{font-size:15px;color:#4d5d59;margin-top:4px}
+
+.why{background:var(--forest);color:#eaf0ed}
+.why h2{color:#fff}
+.why .grid{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.25)}
+.why .item{padding:26px 26px 6px 0}
+.why .item+.item{padding-left:26px;border-left:1px solid rgba(255,255,255,.25)}
+.why h3{font-family:var(--head);font-size:23px;color:var(--kraft)}
+.why p{margin-top:8px;color:#cfdad6}
+
+.gallery{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{aspect-ratio:4/3;border-radius:6px 28px 6px 28px;overflow:hidden;background:linear-gradient(160deg,#dfe5e0,#cfd8d2);display:grid;place-items:center}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile svg{width:62%}
+.gallery-note{margin-top:18px}
+
+.visit .box{background:var(--kraft);border-radius:6px 40px 6px 40px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.visit h2{color:var(--ink)}
+.visit .links{display:flex;flex-direction:column;gap:12px}
+.visit .links .btn{width:100%}
+.visit .btn.ghost{border-color:var(--ink);color:var(--ink)}
+.visit .btn.ghost:hover{background:var(--ink);color:#fff}
+
+footer{background:var(--ink);color:#b9c6c1;padding:34px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+footer .by{display:flex;align-items:center;gap:10px}
+footer .by img{height:22px;width:auto;background:#fff;padding:3px 6px;border-radius:4px}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .stage{min-height:360px;order:-1}
+  .rooms{grid-template-columns:repeat(2,1fr)}
+  .why .grid{grid-template-columns:1fr}
+  .why .item+.item{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.25);margin-top:22px;padding-top:22px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .visit .box{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .nav ul{display:none}
+  .btn{width:100%}
+  .btn.sm{width:auto}
+  .hero .cta{flex-direction:column}
+  .rooms{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .tag{left:-80px;width:160px}
+  .stage{min-height:320px}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo project prepared by Softosync</div>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top">World Furniture Showcase<small>Fremont, California</small></a>
+    <ul>
+      <li><a href="#rooms">Shop by room</a></li>
+      <li><a href="#why">Why us</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn sm" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">Message us</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Designer brand furniture at warehouse prices.</h1>
+      <p class="lead">World Furniture Showcase helps Fremont families furnish the whole home with name-brand design, without the showroom markup.</p>
+      <div class="cta">
+        <a class="btn" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">Message us on Facebook</a>
+        <a class="btn ghost" href="tel:+15103720917">Call (510) 372-0917</a>
+      </div>
+      <p class="where">Serving Fremont and the Bay Area</p>
+    </div>
+    <div class="stage" aria-label="Illustration of a sofa with a hanging price tag">
+      <svg class="sofa" viewBox="0 0 520 230" role="img" aria-label="Illustration of a modern sofa">
+        <rect x="40" y="70" width="440" height="100" rx="26" fill="#21443d"/>
+        <rect x="14" y="96" width="70" height="92" rx="24" fill="#16322d"/>
+        <rect x="436" y="96" width="70" height="92" rx="24" fill="#16322d"/>
+        <rect x="86" y="104" width="170" height="64" rx="16" fill="#2c5a51"/>
+        <rect x="264" y="104" width="170" height="64" rx="16" fill="#2c5a51"/>
+        <rect x="70" y="186" width="14" height="30" rx="5" fill="#b9803f"/>
+        <rect x="436" y="186" width="14" height="30" rx="5" fill="#b9803f"/>
+        <rect x="0" y="218" width="520" height="6" rx="3" fill="#14201e" opacity=".15"/>
+      </svg>
+      <div class="hanger" aria-hidden="true">
+        <svg class="tag" viewBox="0 0 190 250">
+          <path d="M95 0 V58" stroke="#b3261e" stroke-width="3" fill="none"/>
+          <path d="M40 58 H150 L170 82 V236 Q170 244 162 244 H28 Q20 244 20 236 V82 Z" fill="#d8bf95"/>
+          <circle cx="95" cy="82" r="9" fill="#edf0ec" stroke="#b3261e" stroke-width="3"/>
+          <text x="95" y="132" text-anchor="middle" font-family="Bricolage Grotesque,Trebuchet MS,sans-serif" font-weight="700" font-size="19" fill="#14201e">Designer</text>
+          <text x="95" y="156" text-anchor="middle" font-family="Bricolage Grotesque,Trebuchet MS,sans-serif" font-weight="700" font-size="19" fill="#14201e">brands</text>
+          <path d="M44 174 H146" stroke="#14201e" stroke-width="2" stroke-dasharray="4 4"/>
+          <text x="95" y="203" text-anchor="middle" font-family="Bricolage Grotesque,Trebuchet MS,sans-serif" font-weight="700" font-size="19" fill="#b3261e">Warehouse</text>
+          <text x="95" y="226" text-anchor="middle" font-family="Bricolage Grotesque,Trebuchet MS,sans-serif" font-weight="700" font-size="19" fill="#b3261e">prices</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rooms">
+  <div class="wrap">
+    <h2>Start with the room you are furnishing</h2>
+    <p class="sub">Pick a room and message the team to see what is on the floor right now.</p>
+    <div class="rooms">
+      <a class="room" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 160 92" aria-hidden="true"><rect x="14" y="30" width="132" height="38" rx="12" fill="#21443d"/><rect x="4" y="38" width="26" height="40" rx="10" fill="#16322d"/><rect x="130" y="38" width="26" height="40" rx="10" fill="#16322d"/><rect x="34" y="42" width="44" height="24" rx="7" fill="#2c5a51"/><rect x="82" y="42" width="44" height="24" rx="7" fill="#2c5a51"/></svg>
+        <h3>Living room</h3><p>Sofas, chairs and tables</p>
+      </a>
+      <a class="room" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 160 92" aria-hidden="true"><rect x="22" y="28" width="116" height="12" rx="5" fill="#b9803f"/><rect x="34" y="40" width="9" height="42" fill="#b9803f"/><rect x="117" y="40" width="9" height="42" fill="#b9803f"/><rect x="2" y="48" width="18" height="26" rx="6" fill="#21443d"/><rect x="140" y="48" width="18" height="26" rx="6" fill="#21443d"/></svg>
+        <h3>Dining room</h3><p>Dining tables and chairs</p>
+      </a>
+      <a class="room" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 160 92" aria-hidden="true"><rect x="20" y="12" width="14" height="66" rx="4" fill="#b9803f"/><rect x="20" y="42" width="124" height="30" rx="8" fill="#21443d"/><rect x="40" y="30" width="40" height="18" rx="8" fill="#2c5a51"/><rect x="132" y="42" width="12" height="40" rx="4" fill="#b9803f"/></svg>
+        <h3>Bedroom</h3><p>Beds and storage</p>
+      </a>
+      <a class="room" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 160 92" aria-hidden="true"><path d="M80 6 L108 40 H52 Z" fill="#d8bf95"/><rect x="78" y="40" width="4" height="34" fill="#14201e"/><rect x="56" y="74" width="48" height="8" rx="4" fill="#21443d"/></svg>
+        <h3>Home accents</h3><p>Lighting and decor</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <h2>Good design should not need a showroom budget</h2>
+    <div class="grid">
+      <div class="item"><h3>Designer brands</h3><p>Name-brand pieces chosen for style and build quality.</p></div>
+      <div class="item"><h3>Warehouse prices</h3><p>Priced like a warehouse, so more of your budget goes into the furniture.</p></div>
+      <div class="item"><h3>Local to Fremont</h3><p>See the pieces in person and talk to the team that sells them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2>A look at the floor</h2>
+    <p class="sub">Photos from the showroom, straight from the team's Facebook page.</p>
+    <div class="gallery" id="g"></div>
+    <p class="gallery-note"><a class="btn ghost sm" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">See the latest arrivals on Facebook</a></p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2>Come see it in person</h2>
+        <p class="sub" style="color:#2d3a36">Message the team to ask about a piece, check availability or plan a visit to the Fremont showroom.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://www.facebook.com/worldfurnitureshowcase/" target="_blank" rel="noopener">Message us on Facebook</a>
+        <a class="btn ghost" href="tel:+15103720917">Call (510) 372-0917</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 World Furniture Showcase, Fremont, California</span>
+    <span class="by">Demo by <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo"></span>
+  </div>
+</footer>
+
+<script>
+/* Real showroom photos go here (file names or URLs). Empty = illustrated tiles. */
+var PHOTOS = [];
+var ALT = "Furniture on display at World Furniture Showcase in Fremont";
+var tiles = [
+  '<svg viewBox="0 0 160 92" aria-hidden="true"><rect x="14" y="30" width="132" height="38" rx="12" fill="#21443d"/><rect x="4" y="38" width="26" height="40" rx="10" fill="#16322d"/><rect x="130" y="38" width="26" height="40" rx="10" fill="#16322d"/></svg>',
+  '<svg viewBox="0 0 160 92" aria-hidden="true"><rect x="22" y="28" width="116" height="12" rx="5" fill="#b9803f"/><rect x="34" y="40" width="9" height="42" fill="#b9803f"/><rect x="117" y="40" width="9" height="42" fill="#b9803f"/></svg>',
+  '<svg viewBox="0 0 160 92" aria-hidden="true"><path d="M80 6 L108 40 H52 Z" fill="#b9803f"/><rect x="78" y="40" width="4" height="34" fill="#14201e"/><rect x="56" y="74" width="48" height="8" rx="4" fill="#21443d"/></svg>'
+];
+var g = document.getElementById("g"), html = "";
+if (PHOTOS.length) {
+  PHOTOS.slice(0, 6).forEach(function (p) { html += '<div class="tile"><img src="' + p + '" alt="' + ALT + '" loading="lazy"></div>'; });
+} else {
+  for (var i = 0; i < 3; i++) html += '<div class="tile" role="img" aria-label="' + ALT + '">' + tiles[i] + '</div>';
+}
+g.innerHTML = html;
+</script>
+</body>
+</html>
