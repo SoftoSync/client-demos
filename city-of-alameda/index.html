@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Demonstration redesign of the City of Alameda home page, prepared by Softosync.">
+<title>City of Alameda | Demo redesign of the home page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fog:#EFF0F4; --paper:#fff; --estuary:#0B3C5D; --deep:#082B43; --glass:#CFE6E2; --tide:#2E7F8C;
+  --ferry:#F4C20D; --ink:#13232F; --muted:#4A5B67; --line:#D3D8E0;
+  --head:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --body:"Public Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 1rem/1.6 var(--body);color:var(--ink);background:var(--fog)}
+a{color:var(--estuary)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--ferry);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ferry);color:var(--ink);padding:.6rem 1rem;z-index:50}
+.skip:focus{left:0}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.demo-bar{background:#000;color:#fff;font-size:.8rem;text-align:center;padding:.35rem .75rem}
+.demo-bar a{color:var(--ferry)}
+header.top{background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.brand img{height:46px;width:auto}
+.brand b{font:700 1.15rem/1 var(--head)}
+.lang{margin-left:auto;display:flex;gap:.25rem;flex-wrap:wrap}
+.lang a{font-size:.82rem;padding:.25rem .55rem;border:1px solid var(--line);border-radius:99px;text-decoration:none;color:var(--ink)}
+.lang a[aria-current="true"]{background:var(--estuary);color:#fff;border-color:var(--estuary)}
+nav.main{background:var(--estuary)}
+nav.main .wrap{display:flex;gap:.2rem;flex-wrap:wrap}
+nav.main a{color:#fff;text-decoration:none;font-weight:500;padding:.8rem 1rem}
+nav.main a:hover{background:var(--deep)}
+.alert{background:var(--ferry);color:var(--ink);font-size:.95rem}
+.alert .wrap{display:flex;gap:.8rem;align-items:center;padding:.55rem 0;flex-wrap:wrap}
+.alert strong{font-family:var(--head)}
+.alert a{color:var(--ink);font-weight:600}
+/* hero: the island and the tide */
+.hero{position:relative;background:linear-gradient(180deg,var(--estuary) 0%,var(--deep) 100%);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding:3.2rem 0 6.5rem}
+.hero h1{font:700 clamp(2rem,4.6vw,3.6rem)/1.05 var(--head);margin:0 0 .8rem;letter-spacing:-.02em}
+.hero p.lead{color:#D9E8EE;max-width:52ch;margin:0 0 1.4rem;font-size:1.08rem}
+.find{display:flex;gap:.5rem;max-width:560px;margin-bottom:1rem}
+.find input{flex:1;min-width:0;font:inherit;padding:.85rem 1rem;border:0;border-radius:8px}
+.find button{font:600 1rem var(--body);padding:.85rem 1.2rem;border:0;border-radius:8px;background:var(--ferry);color:var(--ink);cursor:pointer}
+.cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none}
+.btn.primary{background:var(--ferry);color:var(--ink)}
+.btn.ghost{border:2px solid #fff;color:#fff}
+.btn:hover{filter:brightness(1.06)}
+.island{width:100%;height:auto;display:block}
+.island .land{fill:var(--glass)}
+.island .land2{fill:#A9D2CB}
+.island .pin{fill:var(--ferry);stroke:var(--deep);stroke-width:2}
+.island text{font:600 13px var(--body);fill:#fff}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:90px;pointer-events:none}
+.waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
+.w1{animation:drift 22s linear infinite}
+.w2{animation:drift 34s linear infinite reverse;opacity:.6}
+@keyframes drift{to{transform:translateX(-50%)}}
+.wk{position:absolute;inset:auto 0 0 0}
+/* directory */
+section{padding:3.2rem 0}
+h2{font:700 clamp(1.5rem,3vw,2.1rem)/1.15 var(--head);margin:0 0 1.4rem;letter-spacing:-.01em}
+.tasks{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tasks section{padding:1.6rem 1.6rem 1.4rem;border-right:1px solid var(--line)}
+.tasks section:last-child{border-right:0}
+.tasks h3{font:700 1.2rem var(--head);margin:0 0 .6rem}
+.tasks ul{list-style:none;margin:0;padding:0}
+.tasks li a{display:block;padding:.45rem 0;text-decoration:none;border-bottom:1px solid #EEF0F4;color:var(--ink)}
+.tasks li a:hover{color:var(--tide);padding-left:.25rem}
+.tasks li[hidden]{display:none}
+#none{display:none;margin:1rem 0 0;color:var(--muted)}
+/* news + events */
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:2.4rem}
+.news article{display:grid;grid-template-columns:92px 1fr;gap:1rem;padding:1rem 0;border-top:2px solid var(--estuary)}
+.news time{font:700 .95rem/1.2 var(--head);color:var(--tide)}
+.news h3{margin:0 0 .25rem;font:700 1.15rem/1.25 var(--head)}
+.news p{margin:0;color:var(--muted)}
+.events ol{list-style:none;margin:0;padding:0 0 0 1.2rem;border-left:3px solid var(--glass)}
+.events li{position:relative;padding:0 0 1.3rem}
+.events li::before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:.85rem;height:.85rem;border-radius:50%;background:var(--tide);border:3px solid var(--fog)}
+.events b{display:block;font-family:var(--head)}
+.events span{color:var(--muted);font-size:.92rem}
+/* measure L */
+.measure{background:var(--paper);border-left:8px solid var(--ferry);border-radius:0 14px 14px 0;padding:1.6rem 1.8rem;display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.measure h2{margin:0 0 .3rem}
+.measure p{margin:0;color:var(--muted);max-width:60ch}
+.measure .btn{background:var(--estuary);color:#fff}
+/* numbers */
+.numbers{background:var(--deep);color:#fff}
+.numbers .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.numbers div{border-left:3px solid var(--ferry);padding-left:1rem}
+.numbers strong{display:block;font:700 2.4rem/1 var(--head)}
+.numbers span{color:#BFD3DC;font-size:.95rem}
+.officials ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.officials a{display:block;padding:.6rem 1rem;background:var(--paper);border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink)}
+.officials small{display:block;color:var(--muted)}
+footer{background:var(--ink);color:#C9D3DA;padding:2.4rem 0 1.6rem;font-size:.92rem}
+footer a{color:#fff}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
+footer h3{font:700 1rem var(--head);color:#fff;margin:0 0 .5rem}
+.made{display:flex;align-items:center;gap:.6rem;margin-top:1.6rem;padding-top:1rem;border-top:1px solid #2B3A45}
+.made img{height:34px;width:auto;background:#fff;border-radius:6px;padding:3px}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding-bottom:6rem}
+  .island{max-width:420px}
+  .tasks{grid-template-columns:1fr}
+  .tasks section{border-right:0;border-bottom:1px solid var(--line)}
+  .two{grid-template-columns:1fr}
+  .numbers .wrap{grid-template-columns:repeat(2,1fr)}
+  footer .cols{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .lang{margin-left:0}
+  .news article{grid-template-columns:1fr;gap:.2rem}
+  .find{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){.w1,.w2{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demo-bar">Demonstration project prepared by <a href="https://softosync.com">Softosync</a> &middot; not an official City of Alameda page</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://www.alamedaca.gov/Home">
+      <img src="https://www.alamedaca.gov/files/assets/public/v/1/alameda-logo.png?w=248&amp;h=215" alt="City of Alameda logo">
+      <b>City of Alameda</b>
+    </a>
+    <nav class="lang" aria-label="Language">
+      <a href="https://www.alamedaca.gov/Home?oc_lang=en-US" aria-current="true" hreflang="en" lang="en">English</a>
+      <a href="https://www.alamedaca.gov/Home?oc_lang=es" hreflang="es" lang="es">Español</a>
+      <a href="https://www.alamedaca.gov/Home?oc_lang=zh-CN" hreflang="zh" lang="zh-CN">中文</a>
+      <a href="https://www.alamedaca.gov/Home?oc_lang=tl" hreflang="tl" lang="tl">Tagalog</a>
+      <a href="https://www.alamedaca.gov/Home?oc_lang=vi" hreflang="vi" lang="vi">Tiếng Việt</a>
+      <a href="https://www.alamedaca.gov/Home?oc_lang=ko" hreflang="ko" lang="ko">한국어</a>
+      <a href="https://www.alamedaca.gov/Home?oc_lang=ar" hreflang="ar" lang="ar">العربية</a>
+    </nav>
+  </div>
+</header>
+<nav class="main" aria-label="Main">
+  <div class="wrap">
+    <a href="https://www.alamedaca.gov/RESIDENTS">Residents</a>
+    <a href="https://www.alamedaca.gov/BUSINESS">Business</a>
+    <a href="https://www.alamedaca.gov/GOVERNMENT">Your Government</a>
+    <a href="https://www.alamedaca.gov/CITYWIDE-PROJECTS">Citywide Projects</a>
+  </div>
+</nav>
+
+<div class="alert" role="region" aria-label="Current alert">
+  <div class="wrap"><strong>Heat wave:</strong> Cooling centers are open at all three libraries and at Mastick Senior Center during business hours. <a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/Cooling-Centers-Open-Saturday-October-3rd">Get information</a></div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>What do you need from the City today?</h1>
+      <p class="lead">Report a pothole, pay a parking citation, find a meeting agenda or start a permit. Type what you are looking for, or pick a service below.</p>
+      <form class="find" role="search" onsubmit="return false">
+        <label for="q" style="position:absolute;left:-999px">Find a City service</label>
+        <input id="q" type="search" placeholder="Try &ldquo;passport&rdquo;, &ldquo;permit&rdquo; or &ldquo;parking&rdquo;" autocomplete="off">
+        <button type="button" onclick="document.getElementById('services').scrollIntoView()">Find service</button>
+      </form>
+      <div class="cta-row">
+        <a class="btn primary" href="https://seeclickfix.com/us-ca-alameda/report">Report a problem</a>
+        <a class="btn ghost" href="tel:+15107477400">Call City Hall: (510) 747-7400</a>
+      </div>
+    </div>
+    <svg class="island" viewBox="0 0 420 300" role="img" aria-label="Stylized illustration of Alameda as an island surrounded by water">
+      <ellipse cx="210" cy="160" rx="196" ry="118" fill="#134B6E" opacity=".55"/>
+      <path class="land" d="M40 150 C46 112 98 96 150 100 C210 90 300 92 372 112 C392 120 392 150 372 164 C300 190 210 196 150 190 C98 198 44 186 40 150Z"/>
+      <path class="land2" d="M40 150 C46 112 98 96 150 100 L150 190 C98 198 44 186 40 150Z"/>
+      <circle class="pin" cx="150" cy="145" r="8"/><text x="164" y="132">Alameda Point</text>
+      <circle class="pin" cx="265" cy="140" r="8"/><text x="236" y="122">City Hall</text>
+      <circle class="pin" cx="345" cy="136" r="8"/><text x="306" y="214">Ferry &amp; water shuttle</text>
+      <path d="M345 144 L345 205" stroke="#F4C20D" stroke-width="2" stroke-dasharray="4 4"/>
+    </svg>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg class="w2" viewBox="0 0 2400 90" preserveAspectRatio="none"><path fill="#CFE6E2" d="M0 40 Q150 10 300 40 T600 40 T900 40 T1200 40 T1500 40 T1800 40 T2100 40 T2400 40 V90 H0Z"/></svg>
+    <svg class="w1" viewBox="0 0 2400 90" preserveAspectRatio="none"><path fill="#EFF0F4" d="M0 55 Q150 25 300 55 T600 55 T900 55 T1200 55 T1500 55 T1800 55 T2100 55 T2400 55 V90 H0Z"/></svg>
+  </div>
+</div>
+
+<main id="main">
+<section id="services" aria-labelledby="svc">
+  <div class="wrap">
+    <h2 id="svc">Services, grouped by what you want to do</h2>
+    <div class="tasks" id="tasks">
+      <section>
+        <h3>For residents</h3>
+        <ul>
+          <li><a href="https://seeclickfix.com/us-ca-alameda/report">Report a problem (potholes, graffiti)</a></li>
+          <li><a href="https://www.alamedaca.gov/RESIDENTS/Auto-Parking-in-Alameda/Parking-Citations-and-Enforcement">Pay or contest a parking citation</a></li>
+          <li><a href="https://www.alamedaca.gov/Departments/Planning-Building-and-Transportation/Permit-Center">Permit Center</a></li>
+          <li><a href="https://www.alamedaca.gov/passports">Passports at City Hall</a></li>
+          <li><a href="https://www.alamedaca.gov/Departments/Recreation-Parks">Recreation &amp; Parks</a></li>
+          <li><a href="https://www.alamedaca.gov/RESIDENTS/Alameda-Ready">Alerts &amp; Be Alameda Ready</a></li>
+          <li><a href="https://www.alamedaca.gov/Departments/Planning-Building-and-Transportation/Transportation/Oakland-Alameda-Water-Shuttle">Water shuttle</a></li>
+          <li><a href="https://www.alamedaca.gov/RESIDENTS/Information-for-Residents/New-Resident-Guide">New resident guide</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>For business</h3>
+        <ul>
+          <li><a href="https://www.alamedaca.gov/BUSINESS/Starting-a-Business-in-Alameda">Starting a business in Alameda</a></li>
+          <li><a href="https://www.alamedaca.gov/BUSINESS/Business-Licensing-Permits">Business license &amp; permits</a></li>
+          <li><a href="https://www.alamedaca.gov/BUSINESS/Programs-and-Information/Facade-Grant-Program">Facade grant program</a></li>
+          <li><a href="https://www.alamedaca.gov/BUSINESS/Bid-on-City-Contracts">Bid on City contracts</a></li>
+          <li><a href="https://www.alamedaca.gov/BUSINESS/Leasing-City-Owned-Properties">Leasing City-owned properties</a></li>
+          <li><a href="https://www.alamedaca.gov/BUSINESS/Employment-Resources">Employment resources</a></li>
+          <li><a href="https://www.governmentjobs.com/careers/alamedaca">Jobs: work for the City</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Your government</h3>
+        <ul>
+          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Agendas-Minutes-Announcements">Meeting agendas, minutes &amp; videos</a></li>
+          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Public-Comment-and-City-Council-Meeting-Information">Public comment &amp; Council meeting information</a></li>
+          <li><a href="https://www.alamedaca.gov/Departments/City-Clerk/Public-Record-Requests">Public records requests</a></li>
+          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Boards-Commissions">Boards &amp; commissions</a></li>
+          <li><a href="https://www.alamedaca.gov/GOVERNMENT/Strategic-Plan">Strategic plan</a></li>
+          <li><a href="https://www.alamedaca.gov/Departments/City-Clerk/Civil-Marriage-Ceremonies">Weddings</a></li>
+          <li><a href="https://www.alamedaca.gov/Departments">All City departments</a></li>
+        </ul>
+      </section>
+    </div>
+    <p id="none">No service matches that search. Try a shorter word, or call City Hall at (510) 747-7400.</p>
+  </div>
+</section>
+
+<section aria-labelledby="nw">
+  <div class="wrap two">
+    <div class="news">
+      <h2 id="nw">News</h2>
+      <article><time datetime="2026-10-05">Oct 5, 2026</time><div><h3><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/Cooling-Centers-Open-During-Heat-Wave">Cooling centers open during heat wave</a></h3><p>The three libraries and Mastick Senior Center have cooling centers open during business hours.</p></div></article>
+      <article><time datetime="2026-10-06">Oct 6, 2026</time><div><h3><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/Event-Celebrates-Successful-“Rise-Up-Alameda”-Guaranteed-Income-Project">Event celebrates the Rise Up Alameda guaranteed income project</a></h3><p>On Tuesday, October 13, the City and Mayors for a Guaranteed Income host a celebration of the pilot, which gave 150 individuals $1,000 a month for 24 months.</p></div></article>
+      <article><time datetime="2026-09-28">Sep 28, 2026</time><div><h3><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media/City-of-Alameda-Prepares-for-Active-El-Niño-Storm-Season">City prepares for an active El Niño storm season</a></h3><p>Free sandbags are available starting October 6, earlier than usual this year.</p></div></article>
+      <p><a href="https://www.alamedaca.gov/Shortcut-Content/News-Media">View more news</a></p>
+    </div>
+    <div class="events">
+      <h2>Coming up</h2>
+      <ol>
+        <li><b>Oct 12: Planning Board meeting</b><span>Public hearing on planning and development projects.</span></li>
+        <li><b>Oct 14: Commission on Persons With Disabilities</b><span>City projects, initiatives and accessibility in Alameda.</span></li>
+        <li><b>Oct 14: Apple Hill&rsquo;s High Hill Ranch (full)</b><span>Mastick Senior Center outing.</span></li>
+      </ol>
+      <p><a href="https://www.alamedaca.gov/Shortcut-Content/Events-Activities">View the full calendar</a></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="measure">
+      <div>
+        <h2>SAFER Alameda Act: Measure L, November 2026 ballot</h2>
+        <p>Voters will decide whether to invest in repairing and improving Alameda&rsquo;s aging infrastructure.</p>
+      </div>
+      <a class="btn" href="https://www.alamedaca.gov/CITYWIDE-PROJECTS/The-SAFER-Alameda-Act-Measure-L-on-November-2026-Ballot">Read the details</a>
+    </div>
+  </div>
+</section>
+
+<div class="numbers" aria-label="Alameda by the numbers">
+  <div class="wrap" style="padding:2.2rem 0">
+    <div><strong>80,000</strong><span>residents</span></div>
+    <div><strong>400</strong><span>acres of parks and recreational facilities</span></div>
+    <div><strong>500</strong><span>full-time City employees</span></div>
+    <div><strong>1854</strong><span>year incorporated</span></div>
+  </div>
+</div>
+
+<section class="officials" aria-labelledby="eo">
+  <div class="wrap">
+    <h2 id="eo">Elected officials</h2>
+    <ul>
+      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Mayor-Ezzy-Ashcraft">Marilyn Ezzy Ashcraft<small>Mayor</small></a></li>
+      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Vice-Mayor-Michele-Pryor">Michele Pryor<small>Vice Mayor</small></a></li>
+      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Councilmember-Tony-Daysog">Tony Daysog<small>Councilmember</small></a></li>
+      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Councilmember-Greg-Boller">Greg Boller<small>Councilmember</small></a></li>
+      <li><a href="https://www.alamedaca.gov/GOVERNMENT/Elected-Officials/Councilmember-Tracy-Jensen">Tracy Jensen<small>Councilmember</small></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Contact us</h3>
+        City Hall<br>2263 Santa Clara Avenue<br>Alameda, CA 94501<br><a href="tel:+15107477400">(510) 747-7400</a><br>
+        <a href="https://www.alamedaca.gov/GOVERNMENT/Contact-Us-List">Phone directory</a>
+      </div>
+      <div>
+        <h3>Read more</h3>
+        <a href="https://www.alamedaca.gov/Shortcut-Content/Events-Activities">Calendar</a><br>
+        <a href="https://www.alamedaca.gov/Shortcut-Content/News-Media">News</a><br>
+        <a href="https://www.alamedaca.gov/Subscribe">Subscribe</a><br>
+        <a href="https://www.alamedaca.gov/RESIDENTS/Alameda-Ready">Alerts</a>
+      </div>
+      <div>
+        <h3>Connect and access</h3>
+        <a href="https://www.facebook.com/cityofalameda/">Facebook</a><br>
+        <a href="https://www.instagram.com/loveourisland/">Instagram</a><br>
+        <a href="https://us.openforms.com/Form/7e338354-7abf-4852-886d-229f8c7019b9">Accommodation request</a><br>
+        <a href="https://www.alamedaca.gov/CITYWIDE-PROJECTS/Making-Alameda-Accessible">Accessibility &amp; ADA</a><br>
+        <a href="https://www.alamedaca.gov/System-pages/Privacy-Policy">Privacy policy</a>
+      </div>
+    </div>
+    <div class="made">
+      <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo">
+      <span>Demo redesign by Softosync. Text, links and figures are taken from alamedaca.gov. The map is an illustration, and the photographs on the live site would replace it.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q=document.getElementById('q'),items=[].slice.call(document.querySelectorAll('#tasks li')),none=document.getElementById('none');
+  function run(){
+    var v=q.value.trim().toLowerCase(),shown=0;
+    items.forEach(function(li){var ok=!v||li.textContent.toLowerCase().indexOf(v)>-1;li.hidden=!ok;if(ok)shown++;});
+    none.style.display=shown?'none':'block';
+  }
+  q.addEventListener('input',run);
+})();
+</script>
+</body>
+</html>
