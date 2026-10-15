@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>Canvas &amp; Cafe | Paint and Sip Team Events in Foster City, Burlingame and San Francisco (demo)</title>
+<meta name="description" content="Demo redesign of the Canvas &amp; Cafe home page, prepared by Softosync.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#3F5249;--sage2:#2C3B34;--sand:#E8DCCB;--sand2:#F4EEE4;--clay:#B8644F;--ink:#1F2723;--r:18px;--serif:'Marcellus',Georgia,serif;--sans:'Figtree',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font:17px/1.6 var(--sans);color:var(--ink);background:var(--sand2);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.bar{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:6px 12px}
+header{position:sticky;top:0;z-index:20;background:rgba(244,238,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid #d9cdb9}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 20px}
+.logo{font:26px var(--serif);color:var(--sage);text-decoration:none;margin-right:auto}
+.nav a.l{font-size:15px;text-decoration:none;display:none}.nav a.l:hover{color:var(--clay)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:99px;font-weight:700;text-decoration:none;border:2px solid var(--clay);background:var(--clay);color:#fff;transition:transform .15s,background .15s;min-height:48px}
+.btn:hover{transform:translateY(-2px);background:#a3533f}.btn.o{background:transparent;color:var(--sage);border-color:var(--sage)}.btn.o:hover{background:var(--sage);color:#fff}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+.hero{display:grid;gap:32px;padding:44px 20px 56px;max-width:1180px;margin:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--sage);line-height:1.12}
+h1{font-size:clamp(34px,7vw,64px);margin-bottom:18px}h2{font-size:clamp(28px,4.5vw,42px);margin-bottom:14px}h3{font-size:22px;margin-bottom:6px}
+.hero p{max-width:56ch;margin-bottom:14px}.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.ph{border-radius:var(--r);overflow:hidden;box-shadow:0 18px 40px -22px #2c3b34}.ph img{width:100%;height:100%;object-fit:cover}
+.hero .ph{aspect-ratio:4/3.4}
+.pick{background:var(--sage);color:#fff;padding:64px 0}.pick h2{color:#fff}.pick .lead{max-width:60ch;opacity:.9;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.chip{font:inherit;font-weight:500;padding:11px 20px;border-radius:99px;border:1.5px solid #ffffff80;background:transparent;color:#fff;cursor:pointer;min-height:46px}
+.chip:hover{background:#ffffff1f}.chip[aria-pressed=true]{background:var(--sand);color:var(--sage2);border-color:var(--sand)}
+.panel{display:grid;gap:24px;background:var(--sage2);border-radius:var(--r);padding:20px}
+.panel .ph{aspect-ratio:16/10;box-shadow:none}.panel img{transition:opacity .35s}.panel h3{color:#fff;font-size:30px}
+.panel p{max-width:46ch;margin-bottom:18px;opacity:.92}
+.occ{padding:64px 0}.grid{display:grid;gap:22px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid #e3d8c6}
+.card .ph{border-radius:0;box-shadow:none;aspect-ratio:3/2}.card div{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card p{font-size:15.5px}.card a.btn{margin-top:auto;align-self:flex-start;padding:10px 20px;min-height:44px}
+.trust{background:var(--sand);padding:52px 0;text-align:center}.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 30px;margin-top:26px}
+.logos img{height:30px;width:auto;opacity:.85}
+.say{padding:64px 0}.quotes{display:grid;gap:22px}
+blockquote{background:#fff;border-radius:var(--r);padding:26px;border-left:6px solid var(--clay);font:21px/1.45 var(--serif);color:var(--sage2)}
+blockquote cite{display:flex;align-items:center;gap:10px;margin-top:14px;font:600 15px var(--sans);font-style:normal;color:var(--ink)}
+blockquote cite img{height:22px;width:auto}
+.yelp{display:flex;align-items:center;gap:18px;margin-top:30px;background:var(--sand);padding:20px;border-radius:var(--r)}.yelp img{width:96px;flex:none}
+.loc{background:var(--sage);color:#fff;padding:64px 0}.loc h2,.loc h3{color:#fff}.loc .card{background:var(--sage2);border-color:#ffffff22}
+.loc .card div{gap:6px}.loc a{color:var(--sand)}
+.contact{padding:64px 0;text-align:center}.contact p{max-width:52ch;margin:0 auto 10px}
+footer{background:var(--ink);color:#cfd6d1;padding:36px 0;font-size:14.5px}
+.foot{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}.foot img{height:40px;background:#fff;border-radius:8px;padding:4px}
+.foot nav{display:flex;flex-wrap:wrap;gap:16px}
+.sticky{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 10px 24px -8px #0008}
+@media(min-width:720px){.grid{grid-template-columns:repeat(2,1fr)}.quotes{grid-template-columns:repeat(3,1fr)}.panel{grid-template-columns:1fr 1.1fr;padding:30px;align-items:center}}
+@media(min-width:1000px){.sticky{display:none}.nav a.l{display:inline}.hero{grid-template-columns:1fr 1.05fr;align-items:center;padding-top:64px}.grid.g3{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<div class="bar">Demo project prepared by Softosync</div>
+<header><div class="nav"><a class="logo" href="#top">Canvas &amp; Cafe</a>
+<a class="l" href="https://www.canvasandcafe.com/gallery">Gallery</a><a class="l" href="https://www.canvasandcafe.com/birthdays">Birthdays</a><a class="l" href="https://www.canvasandcafe.com/rentals">Rentals</a><a class="l" href="https://www.canvasandcafe.com/menu">Menu</a><a class="l" href="https://www.canvasandcafe.com/about">About</a><a class="l" href="https://www.canvasandcafe.com/faq">FAQ</a>
+<a class="btn" href="tel:+16507733587">Call 650-773-3587</a></div></header>
+<main id="top">
+<section class="hero"><div><h1>Voted #1 in Bay Area for Corporate Team Events.</h1>
+<p>Canvas and Cafe is the Bay Area's top paint and sip studio, where friends, families, and coworkers come together to get creative and have fun. We combine art, food, and wine for an unforgettable experience.</p>
+<p>Enjoy step-by-step painting classes, locally roasted coffee, house-made snacks, and a selection of wine and cocktails. No experience needed.</p>
+<div class="cta"><a class="btn" href="https://www.canvasandcafe.com/contact">Plan your event</a><a class="btn o" href="tel:+16507733587">Call 650-773-3587</a></div></div>
+<div class="ph"><img src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/34a1d524-929f-42f0-ae48-6168bd2a682a/IMG_7149.jpg" alt="Group of guests at a painting session at Canvas and Cafe in Foster City, enjoying wine together"></div></section>
+
+<section class="pick" aria-labelledby="pt"><div class="wrap"><h2 id="pt">Pick your workshop</h2>
+<p class="lead">Eight ways to get creative with your team, your friends or your family. Choose one and see what it looks like.</p>
+<div class="chips" id="chips" role="group" aria-label="Workshop types"></div>
+<div class="panel"><div class="ph"><img id="pimg" src="" alt=""></div><div><h3 id="ptitle"></h3><p id="ptext"></p><a class="btn" id="pcta" href="https://www.canvasandcafe.com/contact">Plan this workshop</a></div></div></div></section>
+
+<section class="occ"><div class="wrap"><h2>Turn any occasion into a masterpiece</h2>
+<p style="max-width:60ch;margin-bottom:28px">Each design is fully customized to match your group's vision and occasion. For prices and availability, use the links on each card.</p>
+<div class="grid g3">
+<article class="card"><div class="ph"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/7c89b578-1025-4a93-addf-ceea6daf0b4c/25443283_777759852407831_6547401107759050149_n.jpg" alt="Corporate team painting session with wine and guided instruction at the studio"></div><div><h3>Corporate Events in Studio</h3><p>Team-building events featuring step-by-step lessons, food, drinks and customizable in-studio art experiences.</p><a class="btn o" href="https://www.canvasandcafe.com/contact">Contact us to reserve</a></div></article>
+<article class="card"><div class="ph"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/f6fa94f0-28e8-455e-99ef-0299056cd27c/IMG_8606.jpg" alt="Bay Area business team enjoying an onsite art workshop with art and wine"></div><div><h3>Corporate Events Onsite</h3><p>Bring creativity to your workplace with an engaging onsite corporate event featuring guided art activities, wine, and team bonding.</p><a class="btn o" href="https://www.canvasandcafe.com/contact">Contact us to reserve</a></div></article>
+<article class="card"><div class="ph"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/f58b63a1-43c7-48dd-bfc4-e812b4b046ef/sgeld5ibxmbvc55ftpny.webp" alt="Group attending a presentation in the bright studio workspace with drinks on the tables"></div><div><h3>Workspace Rental</h3><p>A bright, flexible studio workspace for all teams. Ideal for meetings, workshops, and collaborative sessions.</p><a class="btn o" href="https://www.canvasandcafe.com/rentals">See rentals</a></div></article>
+<article class="card"><div class="ph"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/47ca6cf7-bcba-4d25-8759-126247616496/Birthday1.jpg" alt="Children's birthday party table with balloons, decorations and a cake"></div><div><h3>Birthday Parties</h3><p>Celebrate your special day with a fun and creative birthday party, featuring painting, food, drinks, and a unique experience.</p><a class="btn o" href="https://www.canvasandcafe.com/birthdays">See birthdays</a></div></article>
+<article class="card"><div class="ph"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/0ac7a7ba-4f61-4eaa-812d-f685671b153a/IMG_5278-1.jpg" alt="Paint night at Canvas and Cafe with painting, wine and friends"></div><div><h3>Paint Nights</h3><p>Tap into your creativity with a fun, social night of painting. Bring your friends or come solo.</p><a class="btn o" href="https://www.canvasandcafe.com/schedule">Schedule an event</a></div></article>
+<article class="card"><div class="ph"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/413a5cf4-63a8-479c-847d-144b75a7999a/IMG_3667.jpeg" alt="Private celebration at Canvas and Cafe with a custom art party setup"></div><div><h3>Private Rental Space</h3><p>A private venue perfect for celebrations, family events, and gatherings in a stylish setting.</p><a class="btn o" href="https://www.canvasandcafe.com/rentals">See the space</a></div></article>
+</div></div></section>
+
+<section class="trust"><div class="wrap"><h2>Trusted by 100+ companies across the Bay Area</h2><div class="logos">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/e0b22451-7423-4759-a1cd-ca40872b0d6c/google.png" alt="Google logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/66a62cb7-fb63-48d7-a461-7a33e82e1c8a/meta.png" alt="Meta logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/96fdd466-4803-4176-be73-460a7e56cd68/amazon.png" alt="Amazon logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/bb586e76-d717-4446-9eed-e5574f9663bb/apple.png" alt="Apple logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/4fb671f1-dcee-485f-ae61-812cf6c6e6be/microsoft.png" alt="Microsoft logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/1b7efdf5-ce88-43be-ba4b-44bf91ec0dd5/stripe.png" alt="Stripe logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/f7528e09-07ad-496c-af21-535f825a14b6/stanford.png" alt="Stanford Medicine logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/f7192e18-ccef-495d-a5ab-c5fadbb09311/intuit.png" alt="Intuit logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/c67486e6-bc39-4010-9677-97b1075f6f7d/docusign.png" alt="Docusign logo">
+<img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/231f1872-20bd-41e1-8b3c-ba5436e0c972/genentech.png" alt="Genentech logo"></div></div></section>
+
+<section class="say"><div class="wrap"><h2>What teams say after their event</h2><div class="quotes">
+<blockquote>I wish I could give higher than 5 stars because this studio delivered an exceptional experience!<cite><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/094ba1ac-ae21-40d6-8763-617ad6daa45e/ey.png" alt="EY logo">Frank at Ernst Young CA</cite></blockquote>
+<blockquote>It was an absolutely fun learning experience. The venue was clean and organized, with lots of snacks and drinks prepared.<cite><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/66a62cb7-fb63-48d7-a461-7a33e82e1c8a/meta.png" alt="Meta logo">Ivy S. at Meta</cite></blockquote>
+<blockquote>We were greeted with snacks and beverages and were treated to a 2-hour painting class which was full of learnings, laughs, and memories made.<cite><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/e0b22451-7423-4759-a1cd-ca40872b0d6c/google.png" alt="Google logo">Brian L at Google CA</cite></blockquote></div>
+<div class="yelp"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/4e6f99ed-50b0-4779-bde9-724d64feef83/yelp.png" alt="People Love Us on Yelp badge"><p><strong>Yelp Award for Excellence, 2023 and 2024.</strong> Canvas and Cafe was awarded Yelp's Badge of Excellence, recognizing it as one of the top-rated paint and sip experiences in the Bay Area.</p></div></div></section>
+
+<section class="loc" id="visit"><div class="wrap"><h2>Easy to reach from anywhere in the Bay Area</h2><div class="grid g3" style="margin-top:24px">
+<article class="card"><div><h3>Foster City</h3><p>750 Alma Ln, STE 110<br>Foster City, CA 94404</p><p>Just off Highway 92 and U.S. Route 101, with plenty of parking.</p></div></article>
+<article class="card"><div><h3>Burlingame</h3><p>1419 Burlingame Avenue, Suite #M<br>Burlingame, CA 94010</p><p>In the heart of downtown Burlingame, steps from shops and cafes, with easy access to Highway 101.</p></div></article>
+<article class="card"><div><h3>San Francisco</h3><p>Club Fugazi, 678 Green Street</p><p>Near the intersection with Mason Street, minutes from US-101 via Lombard Street or Van Ness Avenue.</p></div></article></div></div></section>
+
+<section class="contact"><div class="wrap"><h2>Let's plan your event</h2><p>Talk to Deepa Menon, the owner.</p><p><a href="tel:+16507733587">650-773-3587</a> &nbsp;|&nbsp; <a href="mailto:Canvasandcafe@gmail.com">Canvasandcafe@gmail.com</a></p>
+<div class="cta" style="justify-content:center"><a class="btn" href="https://www.canvasandcafe.com/schedule">Schedule an event</a><a class="btn o" href="https://www.canvasandcafe.com/faq">Read the FAQ</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><nav><a href="https://www.instagram.com/canvasandcafe1419/">Instagram</a><a href="https://www.facebook.com/canvasandcafe">Facebook</a><a href="https://www.canvasandcafe.com/">Original site</a></nav>
+<span>Demo redesign by Softosync</span><a href="https://softosync.com"><img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo"></a></div></footer>
+<a class="btn sticky" href="tel:+16507733587">Call us</a>
+<script>
+const W=[["Canvas Painting","Step-by-step painting class. No experience needed.","34a1d524-929f-42f0-ae48-6168bd2a682a/IMG_7149.jpg"],
+["Resin Art","A hands-on art workshop for your group.","0ac7a7ba-4f61-4eaa-812d-f685671b153a/IMG_5278-1.jpg"],
+["Tote Bag Painting","Paint your own tote bag and take it home.","34a1d524-929f-42f0-ae48-6168bd2a682a/IMG_7149.jpg"],
+["Ceramic Painting","Paint ceramics alongside coffee, snacks and wine.","cd2ac638-624c-4ffa-8610-e76a2b23efd5/vabtcvkaxonax4cyeg1k.webp"],
+["Jewelry Making","A creative workshop for friends and teams.","cd626a48-e627-4762-a77e-714a5f7f9cf7/IMG_7367.jpg"],
+["Neon Painting","A neon painting experience for your group.","bac3c950-616f-4c11-b9ee-e54be6949567/IMG_9223.jpg"],
+["Mosaic Lamp","Build a mosaic lamp. Turkish Mosaic sessions run in Burlingame.","2f73fbb1-40a2-4c99-9a60-42a657c8a3b8/IMG_3635.jpg"],
+["Candle and Soap Making","Make candles and soap in a guided workshop.","697c84ef-83e3-476f-8c8e-aa8cd6f58daf/IMG_5268.jpg"]];
+const B="https://images.squarespace-cdn.com/content/v1/65b882f4a9957f77dc35eb51/";
+const alts=["Guests holding their finished canvas paintings","Friends enjoying a creative night together","Guests holding painted tote bags","Guests working on glass or ceramic art with colorful supplies","Paint night at Canvas and Cafe with friends and cocktails","Interactive team building painting experience with wine","Corporate team painting workshop at the studio","House-made snacks served during art sessions"];
+const c=document.getElementById('chips');
+function sel(i){[...c.children].forEach((b,j)=>b.setAttribute('aria-pressed',j==i));
+const x=W[i],im=document.getElementById('pimg');im.style.opacity=0;
+setTimeout(()=>{im.src=B+x[2];im.alt=alts[i];im.style.opacity=1},150);
+document.getElementById('ptitle').textContent=x[0];document.getElementById('ptext').textContent=x[1]+" Food and drinks included in our events; ask us for details."}
+W.forEach((x,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=x[0];b.onclick=()=>sel(i);c.appendChild(b)});
+sel(0);
+</script></body></html>
