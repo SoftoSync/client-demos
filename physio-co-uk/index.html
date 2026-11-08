@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Physio.co.uk | Concept homepage (demo by Softosync)</title>
+<meta name="description" content="Concept homepage for Physio.co.uk prepared by Softosync. Not the live website.">
+<style>
+:root{--ink:#10303a;--teal:#0b6b78;--teal-d:#084e58;--mint:#e4f3f2;--sand:#f7f5f0;--coral:#e8603c;--line:#d5e3e3;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.55;font-size:16px}
+img{max-width:100%;display:block}
+a{color:var(--teal-d)}
+.demo-bar{background:#10303a;color:#fff;text-align:center;font-size:13px;padding:6px 12px;letter-spacing:.2px}
+header.site{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 18px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.brand{font-weight:800;font-size:20px;color:var(--teal-d);text-decoration:none;letter-spacing:-.3px}
+.brand span{color:var(--coral)}
+.nav ul{display:none;list-style:none;gap:22px}
+.nav ul a{text-decoration:none;font-weight:600;font-size:15px;color:var(--ink)}
+.btn{display:inline-block;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:999px;border:0;font-size:15px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--teal-d);border:2px solid var(--teal)}
+.btn.sm{padding:9px 16px;font-size:14px}
+.hero{background:linear-gradient(160deg,var(--mint),var(--sand));padding:34px 0 40px}
+.hero .grid{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+.eyebrow{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--teal)}
+h1{font-size:clamp(30px,7vw,52px);line-height:1.08;margin:8px 0 14px;letter-spacing:-.8px}
+.lead{font-size:18px;max-width:560px;color:#2b4b55}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.hero-img{border-radius:20px;overflow:hidden;background:var(--white);box-shadow:0 12px 34px rgba(16,48,58,.16)}
+.hero-img img{width:100%;height:300px;object-fit:cover}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 14px;max-width:560px}
+.dot{width:12px;height:12px;border-radius:50%;background:#9aa;flex:none}
+.dot.open{background:#2a9d5b;box-shadow:0 0 0 4px rgba(42,157,91,.18)}
+.dot.closed{background:#c0392b}
+.status b{display:block;font-size:15px}
+.status small{color:#4c6770}
+section{padding:46px 0}
+h2{font-size:clamp(24px,5vw,34px);letter-spacing:-.5px;margin-bottom:8px}
+.sub{color:#4c6770;max-width:640px;margin-bottom:24px}
+.finder{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:9px 15px;font-weight:600;font-size:14px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.result{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.result>*,.two>*,.hero .grid>*,.cards>*,.box>*{min-width:0}
+.result img{border-radius:14px;width:100%;height:210px;object-fit:cover;background:var(--mint)}
+.result h3{font-size:22px;margin-bottom:6px}
+.cards{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.card{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--white)}
+.card h3{font-size:19px;margin-bottom:4px}
+.card p{color:#3a5963;font-size:15px}
+.card .tel{display:inline-block;margin-top:10px;font-weight:700}
+.band{background:var(--teal-d);color:#fff}
+.band h2{color:#fff}
+.band .sub{color:#c9e2e3}
+.hours{display:grid;gap:6px;margin-top:6px;max-width:360px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.22);padding:7px 0}
+.hours .today{font-weight:800;color:#ffd9cc}
+.two{display:grid;gap:28px;grid-template-columns:minmax(0,1fr)}
+.quote{background:var(--sand);border-radius:16px;padding:20px;margin-bottom:14px}
+.quote p{font-size:17px}
+.quote cite{display:block;margin-top:8px;font-style:normal;font-weight:700;color:var(--teal-d);font-size:14px}
+.insurers{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.insurers span{border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:700;font-size:14px;background:var(--white)}
+.contact{background:var(--mint)}
+.contact .box{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+footer{background:#0b2229;color:#b9d0d3;padding:28px 0;font-size:14px}
+footer .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+footer img{height:30px;width:auto;background:#fff;border-radius:6px;padding:3px 6px}
+footer a{color:#fff}
+@media(min-width:768px){
+ .nav ul{display:flex}
+ .hero .grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}
+ .hero-img img{height:400px}
+ .result{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .contact .box{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:1280px){
+ .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
+ section{padding:62px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo project prepared by Softosync</div>
+<header class="site">
+ <div class="wrap nav">
+  <a class="brand" href="#top">Physio<span>.co.uk</span></a>
+  <ul>
+   <li><a href="#services">Services</a></li>
+   <li><a href="#clinics">Clinics</a></li>
+   <li><a href="#insurers">Insurers</a></li>
+   <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn sm" href="tel:03300887800">Call 0330 088 7800</a>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="wrap grid">
+  <div>
+   <p class="eyebrow">Physiotherapy in Greater Manchester, Cheshire and Merseyside</p>
+   <h1>Specialist physiotherapy, booked in one call or one click.</h1>
+   <p class="lead">Musculoskeletal, neurological and paediatric physiotherapists, with clinics in Sale, Salford and Stockport and home visits across Manchester and Liverpool.</p>
+   <div class="cta-row">
+    <a class="btn" href="tel:03300887800">Call 0330 088 7800</a>
+    <a class="btn alt" href="mailto:office@physio.co.uk?subject=Appointment%20enquiry">Email office@physio.co.uk</a>
+   </div>
+   <div class="status" aria-live="polite">
+    <span class="dot" id="dot"></span>
+    <div><b id="stat-main">Checking opening hours</b><small id="stat-sub">Mon to Fri 8am to 8pm, Sat 9am to 5pm, Sun 9am to 4pm (UK time)</small></div>
+   </div>
+  </div>
+  <div class="hero-img">
+   <img src="https://www.physio.co.uk/home-assets/app/images/banner-img/msk-01.png" alt="Physio.co.uk client receiving treatment on an affected area from a trained physiotherapist" width="640" height="400">
+  </div>
+ </div>
+</div>
+
+<section id="services">
+ <div class="wrap">
+  <h2>Find the right service</h2>
+  <p class="sub">Choose what you need help with. Every service below is one Physio.co.uk already provides.</p>
+  <div class="finder">
+   <div class="chips" role="group" aria-label="Choose a service">
+    <button class="chip" type="button" data-k="msk" aria-pressed="true">Muscle, bone and joint</button>
+    <button class="chip" type="button" data-k="neuro" aria-pressed="false">Neurological</button>
+    <button class="chip" type="button" data-k="paeds" aria-pressed="false">Children</button>
+    <button class="chip" type="button" data-k="vest" aria-pressed="false">Dizziness and balance</button>
+    <button class="chip" type="button" data-k="massage" aria-pressed="false">Sports massage</button>
+   </div>
+   <div class="result">
+    <img id="r-img" src="https://www.physio.co.uk/home-assets/app/images/banner-img/msk-01.png" alt="Physio.co.uk client receiving treatment on an affected area from a trained physiotherapist" width="560" height="210">
+    <div>
+     <h3 id="r-title">MSK Physiotherapy Service</h3>
+     <p id="r-text">Your therapist focuses on the body's main structures of bone, muscle, ligaments and tendons. Treatment is tailored to you after an initial assessment, with exercise plans and advice given after treatment.</p>
+     <p style="margin-top:14px"><a class="btn sm" id="r-cta" href="mailto:office@physio.co.uk?subject=MSK%20physiotherapy%20enquiry">Ask about this service</a></p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="clinics" style="background:var(--sand)">
+ <div class="wrap">
+  <h2>Clinics and home visits</h2>
+  <p class="sub">Tap a number to call the clinic directly.</p>
+  <div class="cards">
+   <div class="card"><h3>Sale</h3><p>17 Claremont Road, Sale, Cheshire, M33 7DZ</p><a class="tel" href="tel:01618830077">0161 883 0077</a></div>
+   <div class="card"><h3>Salford</h3><p>Water's Edge, 2 Hagley Road, Salford, M5 3EY</p><a class="tel" href="tel:01618830077">0161 883 0077</a></div>
+   <div class="card"><h3>Stockport</h3><p>9 Mealhouse Brow, Stockport, Cheshire, SK1 1JP</p><a class="tel" href="tel:01618830640">0161 883 0640</a></div>
+   <div class="card"><h3>Home visits</h3><p>Home visits throughout Manchester and Liverpool.</p><a class="tel" href="tel:01618830077">0161 883 0077</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap two">
+  <div>
+   <h2>Opening hours</h2>
+   <p class="sub">Clinics are open seven days a week.</p>
+   <div class="hours" id="hours">
+    <div data-d="1"><span>Monday</span><span>8am to 8pm</span></div>
+    <div data-d="2"><span>Tuesday</span><span>8am to 8pm</span></div>
+    <div data-d="3"><span>Wednesday</span><span>8am to 8pm</span></div>
+    <div data-d="4"><span>Thursday</span><span>8am to 8pm</span></div>
+    <div data-d="5"><span>Friday</span><span>8am to 8pm</span></div>
+    <div data-d="6"><span>Saturday</span><span>9am to 5pm</span></div>
+    <div data-d="0"><span>Sunday</span><span>9am to 4pm</span></div>
+   </div>
+  </div>
+  <div id="insurers">
+   <h2>Insurers we work with</h2>
+   <p class="sub">Listed on the Physio.co.uk homepage.</p>
+   <div class="insurers"><span>Aviva</span><span>Bupa</span><span>Cigna</span><span>AXA</span><span>Pru Health</span><span>Simply Health</span><span>WPA</span></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap two">
+  <div>
+   <h2>What patients say</h2>
+   <div class="quote"><p>"I never expected to recover from my knee injury as quickly as I did. I learnt a lot about preventing the same injury from happening again."</p><cite>Mohammed, Manchester</cite></div>
+   <div class="quote"><p>"I think my son forgets he's having physiotherapy sometimes - he has that much fun playing!"</p><cite>Jess, Manchester</cite></div>
+  </div>
+  <div>
+   <img src="https://www.physio.co.uk/home-assets/app/images/banner-img/paeds-01.png" alt="A client gets a walkthrough of their treatment from an experienced Physio.co.uk physiotherapist" width="560" height="380" style="border-radius:16px;width:100%;height:100%;min-height:240px;object-fit:cover">
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <h2>Book an appointment</h2>
+  <p class="sub">Speak to the team or send a message and they will come back to you.</p>
+  <div class="box">
+   <div class="card"><h3>Call</h3><p>Mon to Fri 8am to 8pm, weekends shorter hours.</p><a class="tel" href="tel:03300887800">0330 088 7800</a></div>
+   <div class="card"><h3>Email</h3><p>Tell us what you need help with and which clinic suits you.</p><a class="tel" href="mailto:office@physio.co.uk?subject=Appointment%20enquiry">office@physio.co.uk</a></div>
+   <div class="card"><h3>Not sure where to start?</h3><p>Choose a service above, then ask about it by email or phone.</p><a class="tel" href="#services">Find a service</a></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap row">
+  <span>Concept by Softosync using content from physio.co.uk. Not the live website.</span>
+  <a href="https://softosync.com"><img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" height="30"></a>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var S={
+  msk:{t:"MSK Physiotherapy Service",d:"Your therapist focuses on the body's main structures of bone, muscle, ligaments and tendons. Treatment is tailored to you after an initial assessment, with exercise plans and advice given after treatment.",i:"https://www.physio.co.uk/home-assets/app/images/banner-img/msk-01.png",a:"Physio.co.uk client receiving treatment on an affected area from a trained physiotherapist",s:"MSK physiotherapy enquiry"},
+  neuro:{t:"Neuro Physiotherapy Service",d:"Neurological physiotherapists experienced in neurological conditions and symptoms, serving Greater Manchester, Cheshire, Lancashire and Merseyside.",i:"https://www.physio.co.uk/home-assets/app/images/banner-img/neuro-01.png",a:"Elderly man receiving neurological physiotherapy from a trained Physio.co.uk physiotherapist",s:"Neurological physiotherapy enquiry"},
+  paeds:{t:"Paediatric Physiotherapy Service",d:"Assessment and treatment for children of all ages, helping them build independence and reach their potential with everyday tasks.",i:"https://www.physio.co.uk/home-assets/app/images/banner-img/paeds-01.png",a:"A client gets a walkthrough of their treatment from an experienced Physio.co.uk physiotherapist",s:"Paediatric physiotherapy enquiry"},
+  vest:{t:"Vestibular Physiotherapy Service",d:"Assessment and treatment for vertigo, dizziness, nausea, room spin and loss of balance, with a rehabilitation programme designed around your condition.",i:"https://www.physio.co.uk/home-assets/app/images/value-blocks/08.png",a:"Elderly male patient receiving a walking aid from a trained physiotherapist",s:"Vestibular physiotherapy enquiry"},
+  massage:{t:"Sports Massage Service",d:"Not only for athletes. Sports massage suits anyone who needs remedial or soft tissue work, including after surgery or alongside other treatment.",i:"https://www.physio.co.uk/home-assets/app/images/banner-img/massage-02.png",a:"Trained Physio.co.uk physiotherapist applying a leg massage using props to aid recovery",s:"Sports massage enquiry"}
+ };
+ var chips=document.querySelectorAll(".chip");
+ function show(k){
+  var o=S[k];
+  document.getElementById("r-title").textContent=o.t;
+  document.getElementById("r-text").textContent=o.d;
+  var im=document.getElementById("r-img");im.src=o.i;im.alt=o.a;
+  document.getElementById("r-cta").href="mailto:office@physio.co.uk?subject="+encodeURIComponent(o.s);
+  for(var j=0;j<chips.length;j++){chips[j].setAttribute("aria-pressed",chips[j].getAttribute("data-k")===k?"true":"false");}
+ }
+ for(var i=0;i<chips.length;i++){chips[i].addEventListener("click",function(){show(this.getAttribute("data-k"));});}
+ var H={1:[8,20],2:[8,20],3:[8,20],4:[8,20],5:[8,20],6:[9,17],0:[9,16]};
+ function fmt(h){var s=h>=12?"pm":"am";var x=h%12;if(x===0)x=12;return x+s;}
+ function tick(){
+  var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+  var map={};for(var i=0;i<f.length;i++){map[f[i].type]=f[i].value;}
+  var days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  var d=days[map.weekday];var hr=parseInt(map.hour,10)%24;var mn=parseInt(map.minute,10);
+  var t=hr+mn/60;var w=H[d];
+  var dot=document.getElementById("dot"),m=document.getElementById("stat-main"),s=document.getElementById("stat-sub");
+  if(t>=w[0]&&t<w[1]){dot.className="dot open";m.textContent="Open now";s.textContent="Today until "+fmt(w[1])+" (UK time)";}
+  else{dot.className="dot closed";m.textContent="Closed right now";s.textContent=(t<w[0]?"Opens today at "+fmt(w[0]):"Opens tomorrow at "+fmt(H[(d+1)%7][0]))+" (UK time)";}
+  var rows=document.querySelectorAll("#hours div");
+  for(var k=0;k<rows.length;k++){rows[k].className=(parseInt(rows[k].getAttribute("data-d"),10)===d)?"today":"";}
+ }
+ tick();setInterval(tick,60000);
+})();
+</script>
+</body>
+</html>
