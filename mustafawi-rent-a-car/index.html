@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Mustafawi Rent a Car | Doha car rental since 1976 (design demo)</title>
+<style>
+:root{--ink:#0f1b2d;--ink2:#1c2b44;--gold:#c8923a;--gold2:#e4b76a;--bg:#f6f3ee;--card:#fff;--mut:#5b6678;--line:#e5dfd4;--r:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit}
+.demo{background:#000;color:#fff;font-size:12px;text-align:center;padding:6px 10px;letter-spacing:.02em}
+header{position:sticky;top:0;z-index:20;background:rgba(15,27,45,.96);backdrop-filter:blur(8px);color:#fff}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
+.brand img{height:38px;width:auto;background:#fff;border-radius:6px;padding:2px}
+.brand span{font-size:15px;line-height:1.1}
+nav ul{display:none;list-style:none;gap:22px}
+nav a{text-decoration:none;font-size:14px;opacity:.9}
+nav a:hover{color:var(--gold2)}
+.btn{display:inline-block;background:var(--gold);color:#1a1205;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:999px;font-size:15px;border:2px solid var(--gold);transition:.2s}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.sm{padding:9px 14px;font-size:13px;width:100%;text-align:center}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#2a4066 0,transparent 60%),linear-gradient(160deg,var(--ink),#13243d 60%,#0b1422);color:#fff;position:relative;overflow:hidden}
+.hero .in{max-width:1180px;margin:auto;padding:56px 18px 64px;display:grid;gap:34px}
+.since{position:absolute;right:-10px;top:10px;font-size:150px;font-weight:800;color:rgba(255,255,255,.05);line-height:1;pointer-events:none}
+.eyebrow{color:var(--gold2);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+h1{font-size:clamp(32px,7vw,56px);line-height:1.08;margin:10px 0 16px;font-weight:800}
+.lead{max-width:560px;color:#cdd6e4;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.counter{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:20px;max-width:420px}
+.counter b{color:var(--gold2)}
+.counter .live{display:flex;align-items:center;gap:8px;font-weight:700;margin-bottom:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.7);animation:p 2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}html{scroll-behavior:auto}}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px}
+.stats div b{display:block;font-size:30px;color:var(--gold2)}
+.stats div{font-size:13px;color:#b9c4d6}
+section{max-width:1180px;margin:auto;padding:56px 18px}
+h2{font-size:clamp(26px,5vw,36px);margin-bottom:8px}
+.sub{color:var(--mut);max-width:620px;margin-bottom:26px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.chip{border:1.5px solid var(--line);background:#fff;color:var(--ink);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
+.car{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.car:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(15,27,45,.12)}
+.car img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#e9e4da;display:block}
+.cb{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cb h3{font-size:18px}
+.cb ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;flex:1;align-content:flex-start}
+.cb li{font-size:12px;background:var(--bg);border-radius:999px;padding:4px 10px;color:var(--mut)}
+.band{background:var(--ink);color:#fff}
+.band section{padding-top:52px;padding-bottom:52px}
+.band .sub{color:#b9c4d6}
+.svc{display:grid;grid-template-columns:1fr;gap:12px}
+.svc div{background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 18px;font-weight:600}
+.svc small{display:block;color:var(--gold2);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.offices{display:grid;grid-template-columns:1fr;gap:16px}
+.office{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.office h3{margin-bottom:8px}
+.office p{color:var(--mut);font-size:14px;margin-bottom:4px}
+.office a{color:var(--ink);font-weight:600}
+.note{background:#fff6e5;border:1px dashed var(--gold);border-radius:12px;padding:14px 16px;font-size:14px;margin-top:22px}
+footer{background:#09111d;color:#a9b4c6;font-size:13px}
+footer .in{max-width:1180px;margin:auto;padding:28px 18px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+footer img{height:28px;width:auto;background:#fff;border-radius:6px;padding:3px}
+.fab{position:fixed;right:14px;bottom:14px;z-index:30;background:#25d366;color:#05230f;font-weight:800;text-decoration:none;padding:13px 18px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.25);font-size:14px}
+@media(min-width:768px){
+ nav ul{display:flex}
+ .hero .in{grid-template-columns:1.25fr .75fr;align-items:center;padding:84px 18px 92px}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .svc{grid-template-columns:repeat(2,1fr)}
+ .offices{grid-template-columns:repeat(2,1fr)}
+ .since{font-size:260px}
+}
+@media(min-width:1280px){
+ .grid{grid-template-columns:repeat(4,1fr)}
+ .svc{grid-template-columns:repeat(3,1fr)}
+ .offices{grid-template-columns:repeat(4,1fr)}
+ .since{font-size:340px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project prepared by Softosync</div>
+<header>
+<div class="nav">
+<a class="brand" href="#top"><img src="https://www.mustafawi.qa/images/mustafawi_logo.jpg" alt="Mustafawi Rent a Car logo"><span>Mustafawi<br>Rent a Car</span></a>
+<nav aria-label="Main"><ul>
+<li><a href="#fleet">Fleet</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.mustafawi.qa/ar/Default.aspx">العربية</a></li>
+</ul></nav>
+<a class="btn" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20book%20a%20car.">Book on WhatsApp</a>
+</div>
+</header>
+<main id="top">
+<div class="hero">
+<div class="since" aria-hidden="true">1976</div>
+<div class="in">
+<div>
+<p class="eyebrow">Doha, Qatar &middot; Since 1976</p>
+<h1>One of Qatar&rsquo;s first car rental companies, now one tap away.</h1>
+<p class="lead">Standard and luxury cars, a limousine service, and a Hamad International Airport counter that runs round the clock, seven days a week.</p>
+<div class="cta">
+<a class="btn" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20book%20a%20car.">Book on WhatsApp</a>
+<a class="btn ghost" href="tel:+97444621542">Call +974 4462 1542</a>
+</div>
+<div class="stats"><div><b>40</b>years in business</div><div><b>24/7</b>airport counter</div><div><b>16</b>cars shown below</div></div>
+</div>
+<aside class="counter" aria-label="Airport counter">
+<div class="live"><span class="dot" aria-hidden="true"></span>Hamad International Airport</div>
+<p>Counter No. <b>6</b>, open 24 hours.</p>
+<p>Tel <a href="tel:+97444621542">(+974) 44621542</a><br>Mob <a href="tel:+97455566490">(+974) 55566490</a></p>
+</aside>
+</div>
+</div>
+
+<section id="fleet">
+<h2>Choose your car</h2>
+<p class="sub">Every car below is from Mustafawi&rsquo;s own fleet page. Pick one and your WhatsApp message opens with the car name already written.</p>
+<div class="chips" role="group" aria-label="Filter by seats">
+<button class="chip" data-f="all" aria-pressed="true">All cars</button>
+<button class="chip" data-f="s4" aria-pressed="false">4 seats</button>
+<button class="chip" data-f="s5" aria-pressed="false">5 seats</button>
+<button class="chip" data-f="s7" aria-pressed="false">7&ndash;8 seats</button>
+</div>
+<div class="grid" id="grid">
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/IMG_0133202608020739209519942.jpg" alt="Nissan Sunny available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Nissan Sunny</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.5L, 4 cylinder</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Nissan%20Sunny.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/Nissan_Sunny_2016201705041029450442574202112220847393899739.jpg" alt="Nissan Sunny 2022 available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Nissan Sunny 2022</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.5, 4 cylinder</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Nissan%20Sunny%202022.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/YARIS_ME_2208_207_CLK202312050534168118480.jpg" alt="Toyota Yaris available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Toyota Yaris</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.6L, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Toyota%20Yaris.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/IMG-20210708-WA0000202108040438449708129.jpg" alt="Toyota Corolla available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Toyota Corolla</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.6L, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Toyota%20Corolla.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/k5202303050317092735408.jpg" alt="Kia K5 available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Kia K5</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.6, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Kia%20K5.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/creta202303050311047055901.jpg" alt="Hyundai Creta available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Hyundai Creta</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.5</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Hyundai%20Creta.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/rush202303050313391053233.jpg" alt="Toyota Rush available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Toyota Rush</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>1.5, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Toyota%20Rush.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/IMG-20210802-WA0006202108020542447933146.jpg" alt="Mitsubishi Outlander available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Mitsubishi Outlander</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>2.4L, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Mitsubishi%20Outlander.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/camary%20-%20%202013201510110343294921830.jpg" alt="Toyota Camry available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Toyota Camry</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>2.5L, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Toyota%20Camry.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/mitsubishi-pajero-8059202112220843454984109.jpg" alt="Mitsubishi Pajero available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Mitsubishi Pajero</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>3L, 6 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Mitsubishi%20Pajero.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s4">
+<img src="https://www.mustafawi.qa/Uploads/IMG-20210630-WA0002202106300916305554964.jpg" alt="Mini Cooper 2022 available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Mini Cooper 2022</h3>
+<ul><li>4 passengers</li><li>2 doors</li><li>Automatic</li><li>1.5L, 3 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Mini%20Cooper%202022.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s4">
+<img src="https://www.mustafawi.qa/Uploads/mini202303070345493604081.jpeg" alt="Mini Cooper 2023 available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Mini Cooper 2023</h3>
+<ul><li>4 passengers</li><li>4 doors</li><li>Automatic</li><li>1.5L, 3 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Mini%20Cooper%202023.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s7">
+<img src="https://www.mustafawi.qa/Uploads/toyota_land_cruiser201705091247153715165.jpg" alt="Land Cruiser Gxr available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Land Cruiser Gxr</h3>
+<ul><li>8 passengers</li><li>4 doors</li><li>Automatic</li><li>4.5L, 6 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Land%20Cruiser%20Gxr.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s7">
+<img src="https://www.mustafawi.qa/Uploads/IMG_0085202608020734341511290.jpg" alt="Nissan Platinum available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Nissan Platinum</h3>
+<ul><li>7 passengers</li><li>5 doors</li><li>Automatic</li><li>3.8L, 4 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Nissan%20Platinum.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/IMG_0063202608020730470052045.jpg" alt="Defender 90 Hse P300 available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Defender 90 Hse P300</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>3.0, 6 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Defender%2090%20Hse%20P300.">Reserve on WhatsApp</a></div></article>
+<article class="car" data-g="s5">
+<img src="https://www.mustafawi.qa/Uploads/DSC_3624202608010748531041547.jpg" alt="Range Rover Hse available for rent from Mustafawi Rent a Car in Doha" loading="lazy" width="400" height="300">
+<div class="cb"><h3>Range Rover Hse</h3>
+<ul><li>5 passengers</li><li>4 doors</li><li>Automatic</li><li>4.5, 6 cylinders</li></ul>
+<a class="btn sm" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20reserve%20the%20Range%20Rover%20Hse.">Reserve on WhatsApp</a></div></article>
+</div>
+</section>
+
+<div class="band" id="services">
+<section>
+<h2>Included with every rental</h2>
+<p class="sub">The services Mustafawi lists on its own site, grouped so they are easy to scan on a phone.</p>
+<div class="svc">
+<div><small>Service</small>24 hours airport rental facilities</div>
+<div><small>Service</small>24 hour roadside assistance and vehicle replacement</div>
+<div><small>Service</small>Comprehensive insurance with passenger coverage</div>
+<div><small>Service</small>Online reservation facility</div>
+<div><small>Service</small>Regular vehicle service</div>
+<div><small>No extra charge</small>Transferring the vehicle door to door</div>
+<div><small>No extra charge</small>Open mileage</div>
+<div><small>No extra charge</small>Additional driver</div>
+<div><small>No extra charge</small>Airport services</div>
+<div><small>No extra charge</small>Traffic assistance</div>
+<div><small>On request</small>Infant seat</div>
+<div><small>On request</small>GPS</div>
+</div>
+</section>
+</div>
+
+<section id="about">
+<h2>Forty years on Doha&rsquo;s roads</h2>
+<p class="sub">Mustafawi Rent a Car was established in 1976 and serves business travellers and leisure visitors. The main office is on C-Ring Road, Al-Hilal. Chauffeur-driven cars come from Mustafawi Limousine, and the group also handles real estate rentals and sales.</p>
+<div class="note">Demo note: the live site still shows a Kuwait National Day banner (&ldquo;20% discount from 20th until 29th feb&rdquo;). In this concept the offers area is a single editable strip, so old promotions are easy to retire.</div>
+</section>
+
+<section id="contact">
+<h2>Talk to Mustafawi</h2>
+<p class="sub">Contact details exactly as published on mustafawi.qa.</p>
+<div class="offices">
+<div class="office"><h3>Main office</h3><p>C-Ring Road, Al-Hilal<br>P.O. Box 4832, Doha, Qatar</p><p>Tel <a href="tel:+97444671007">(+974) 44671007</a></p><p>WhatsApp <a href="https://wa.me/97455568196">(+974) 55568196</a></p><p><a href="mailto:info@mustafawi.qa">info@mustafawi.qa</a></p></div>
+<div class="office"><h3>Hamad International Airport</h3><p>Counter No. 6</p><p>Tel <a href="tel:+97444621542">(+974) 44621542</a></p><p>Mob <a href="tel:+97455566490">(+974) 55566490</a></p><p><a href="mailto:hia@mustafawi.qa">hia@mustafawi.qa</a></p></div>
+<div class="office"><h3>Mustafawi Limousine</h3><p>Chauffeur-driven luxury cars</p><p>Tel <a href="tel:+97444671148">(+974) 44671148</a></p><p>Mob <a href="tel:+97455568107">(+974) 55568107</a></p><p><a href="mailto:limousine@mustafawi.qa">limousine@mustafawi.qa</a></p></div>
+<div class="office"><h3>Mustafawi Real Estate</h3><p>Villas, flats, land and property</p><p>Tel <a href="tel:+97444674588">(+974) 44674588</a></p><p>Mob <a href="tel:+97455801219">(+974) 55801219</a></p><p><a href="mailto:realestate@mustafawi.qa">realestate@mustafawi.qa</a></p></div>
+</div>
+</section>
+</main>
+<footer><div class="in">
+<span>Design concept for Mustafawi Rent a Car. Not the official website. Photos and text belong to Mustafawi.</span>
+<span style="display:flex;align-items:center;gap:10px">Prepared by <img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo"></span>
+</div></footer>
+<a class="fab" href="https://wa.me/97455568196?text=Hello%20Mustafawi%2C%20I%20would%20like%20to%20book%20a%20car.">WhatsApp</a>
+<script>
+(function(){
+var chips=document.querySelectorAll('.chip'),cars=document.querySelectorAll('.car');
+chips.forEach(function(c){c.addEventListener('click',function(){
+chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
+var f=c.getAttribute('data-f');
+cars.forEach(function(k){k.style.display=(f==='all'||k.getAttribute('data-g')===f)?'':'none'});
+})});
+})();
+</script>
+</body>
+</html>
