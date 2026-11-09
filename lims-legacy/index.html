@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Demo homepage concept for LIMS Legacy Singapore, prepared by Softosync.">
+<title>LIMS Legacy Singapore | Demo concept by Softosync</title>
+<link rel="preconnect" href="https://www.limslegacy.com">
+<link rel="preload" as="image" href="https://www.limslegacy.com/cdn/shop/files/Lims-WebBanner-5_1080x.jpg?v=1643290855" imagesrcset="https://www.limslegacy.com/cdn/shop/files/Lims-WebBanner-5_540x.jpg?v=1643290855 540w, https://www.limslegacy.com/cdn/shop/files/Lims-WebBanner-5_1080x.jpg?v=1643290855 1080w" imagesizes="(min-width:900px) 560px, 92vw" fetchpriority="high">
+<style>
+:root{--ink:#2a1d16;--teak:#4a2f20;--lac:#8c2f2b;--brass:#b88a44;--cream:#f7f0e4;--paper:#fffaf2;--line:#e4d6bf;--wash:#4f7fa8;--r:14px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+img{max-width:100%;height:auto;display:block}a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em;color:var(--teak)}
+h1{font-size:clamp(2.2rem,6vw,3.9rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.2rem}
+.wrap{width:min(1160px,92%);margin-inline:auto}section{padding:clamp(3rem,7vw,5.5rem) 0}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:.5rem 1rem;z-index:99}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.demo{background:#1d1410;color:#f3e6d0;font-size:.82rem;text-align:center;padding:.4rem 1rem}
+.demo a{color:var(--brass)}
+.note{background:var(--lac);color:#fff;text-align:center;font-size:.92rem;padding:.55rem 1rem}
+.note a{color:#fff;font-weight:600}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+.nav nav{display:flex;gap:.2rem;flex-wrap:wrap}
+.nav nav a{text-decoration:none;padding:.7rem .8rem;font-weight:600;font-size:.95rem;border-radius:8px}
+.nav nav a:hover{background:var(--cream)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--lac);background:var(--lac);color:#fff;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:#6f2420}.btn.alt{background:transparent;color:var(--lac)}.btn.alt:hover{background:var(--cream)}
+.hero{display:grid;gap:2.5rem;align-items:center;padding-top:clamp(2rem,5vw,4rem)}
+.since{letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;color:var(--brass);font-weight:700}
+.hero p{max-width:34em;font-size:1.1rem}.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.frame{border-radius:var(--r);overflow:hidden;box-shadow:0 24px 60px -24px rgba(74,47,32,.55);border:6px solid #fff;aspect-ratio:1080/719;background:var(--cream)}
+.frame img{width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.hero{grid-template-columns:1fr 1fr}}
+.cols{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));margin-top:2rem}
+.col{display:flex;flex-direction:column;justify-content:flex-end;min-height:120px;padding:1rem 1.1rem;border-radius:var(--r);background:linear-gradient(160deg,var(--cream),#efe2cb);border:1px solid var(--line);text-decoration:none;font-family:Georgia,serif;font-size:1.15rem;color:var(--teak);transition:transform .25s,box-shadow .25s}
+.col small{font:600 .72rem system-ui;letter-spacing:.15em;color:var(--brass);text-transform:uppercase}
+.col:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px var(--teak)}
+.wash{background:var(--teak);color:#f5e9d6}.wash h2,.wash h3{color:#fff}
+.wash-g{display:grid;gap:2rem;align-items:center}@media(min-width:800px){.wash-g{grid-template-columns:1fr 1fr}}
+.sw{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
+.sw button{width:48px;height:48px;border-radius:50%;border:3px solid transparent;cursor:pointer;background:var(--c);box-shadow:0 0 0 1px rgba(255,255,255,.4)}
+.sw button[aria-pressed=true]{border-color:#fff;transform:scale(1.12)}
+.cab{position:relative;background:var(--wash);border-radius:var(--r);padding:2rem;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;transition:background .5s;overflow:hidden}
+.cab::before{content:"";position:absolute;inset:18px;border:2px solid rgba(255,255,255,.35);border-radius:8px;background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,.07) 22px 24px)}
+.cab>*{position:relative}.cab b{font:1.5rem Georgia,serif;color:#fff}.cab span{color:#fff;opacity:.9}
+.cab a{color:#fff;font-weight:700}.fine{font-size:.8rem;opacity:.75}
+.steps{list-style:none;counter-reset:s;margin:2rem 0 0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.steps li{counter-increment:s;position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1.2rem 1.2rem}
+.steps li::before{content:counter(s);position:absolute;top:-16px;left:1rem;width:34px;height:34px;border-radius:50%;background:var(--lac);color:#fff;display:grid;place-items:center;font-weight:700}
+.steps strong{display:block;font-family:Georgia,serif;font-size:1.1rem;color:var(--teak)}
+.story{display:grid;gap:2rem;align-items:center}@media(min-width:900px){.story{grid-template-columns:1fr 1fr}}
+.vid{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:#000;border:0;padding:0;width:100%;cursor:pointer}
+.vid img,.vid iframe{width:100%;height:100%;object-fit:cover;border:0}
+.vid span{position:absolute;inset:0;display:grid;place-items:center;font-size:0}
+.vid span::after{content:"";width:72px;height:72px;border-radius:50%;background:rgba(140,47,43,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 7l9 5-9 5z'/%3E%3C/svg%3E") center/60%}
+.gal{display:grid;gap:.8rem;grid-template-columns:repeat(2,1fr);margin-top:2rem}@media(min-width:800px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal img{aspect-ratio:4/3;object-fit:cover;border-radius:10px;width:100%;background:var(--cream)}
+.award{display:flex;gap:1.5rem;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;margin-top:2.5rem}
+.award img{width:96px;height:96px;border-radius:10px;flex:none;object-fit:cover}
+.out{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:2rem}
+.out div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.3rem}
+.out a{font-weight:700;text-decoration:none;color:var(--lac)}
+footer{background:#1d1410;color:#d9c9ae;padding:2.5rem 0;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
+footer a{padding:.5rem .3rem;display:inline-block}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+@media(max-width:620px){.nav nav a{padding:.6rem .5rem;font-size:.85rem}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Demo project prepared by <a href="https://softosync.com">Softosync</a></div>
+<div class="note">Ready stock arriving around end December 2026 &middot; Pre-orders: 8&ndash;16 week lead time. <a href="#preorder">See how pre-ordering works</a></div>
+<header><div class="wrap nav">
+<a href="https://www.limslegacy.com/" aria-label="LIMS Legacy Singapore home"><img src="https://www.limslegacy.com/cdn/shop/files/Limslogopng_360x.png?v=1614311119" alt="LIMS Legacy Singapore logo" width="64" height="63"></a>
+<nav aria-label="Main"><a href="https://www.limslegacy.com/collections/all">Shop</a><a href="https://www.limslegacy.com/pages/about-us">About</a><a href="https://www.limslegacy.com/pages/delivery-exchange-policy">Delivery &amp; Exchange</a><a href="https://www.limslegacy.com/pages/contact-us">Contact</a></nav>
+</div></header>
+<main id="main">
+<section class="wrap hero">
+<div class="rv"><p class="since">Singapore &middot; Since 1959</p>
+<h1>A legacy that carries culture into everyday living.</h1>
+<p>Three generations of artisanal furniture and homeware, hand-painted and carved, from the family behind Lim&rsquo;s Arts &amp; Crafts at Holland Road Shopping Centre.</p>
+<div class="cta"><a class="btn" href="https://www.limslegacy.com/collections/all">Shop the collection</a><a class="btn alt" href="https://wa.me/6596625712?text=Hello%20LIMS%20Legacy%2C%20I%20have%20a%20question%20about%20an%20item.">WhatsApp us</a></div></div>
+<div class="frame rv"><img src="https://www.limslegacy.com/cdn/shop/files/Lims-WebBanner-5_1080x.jpg?v=1643290855" srcset="https://www.limslegacy.com/cdn/shop/files/Lims-WebBanner-5_540x.jpg?v=1643290855 540w, https://www.limslegacy.com/cdn/shop/files/Lims-WebBanner-5_1080x.jpg?v=1643290855 1080w" sizes="(min-width:900px) 560px, 92vw" width="1080" height="719" alt="LIMS Legacy hand-painted oriental furniture, homepage banner" fetchpriority="high"></div>
+</section>
+
+<section class="wrap" id="collections"><h2 class="rv">Browse by collection</h2><p>From the Orient and Lattice ranges to rattan, carved wood and lamps.</p>
+<div class="cols rv">
+<a class="col" href="https://www.limslegacy.com/collections/orient-collection-new"><small>Collection</small>Orient</a>
+<a class="col" href="https://www.limslegacy.com/collections/fleur-collection-24"><small>Collection</small>Fleur</a>
+<a class="col" href="https://www.limslegacy.com/collections/lattice-collection-new"><small>Collection</small>Lattice</a>
+<a class="col" href="https://www.limslegacy.com/collections/classic"><small>Collection</small>Classic</a>
+<a class="col" href="https://www.limslegacy.com/collections/rattan-collection"><small>Collection</small>Rattan</a>
+<a class="col" href="https://www.limslegacy.com/collections/ming"><small>Collection</small>Ming</a>
+<a class="col" href="https://www.limslegacy.com/collections/wood-carved-collectiob"><small>Collection</small>Wood Carved</a>
+<a class="col" href="https://www.limslegacy.com/collections/ceramic-elephants"><small>Collection</small>Chairs &amp; Stools</a>
+<a class="col" href="https://www.limslegacy.com/collections/lamps"><small>Homeware</small>Lamps</a>
+<a class="col" href="https://www.limslegacy.com/collections/homeware"><small>Homeware</small>All homeware</a>
+</div></section>
+
+<section class="wash"><div class="wrap wash-g">
+<div class="rv"><p class="since">Hand-painted, wash by wash</p><h2>Pick a finish and see it on the A-Shape Cabinet.</h2>
+<p>Every piece is painted by hand, so each finish has its own character. Choose a wash:</p>
+<div class="sw" role="group" aria-label="Choose a wash finish" id="sw"></div>
+<p class="fine">Colours shown are indicative only. Hand-painted pieces vary, see the product page for real photos.</p></div>
+<div class="cab rv" aria-live="polite"><b id="wn">Blue wash</b><span>A-Shape Cabinet H60cm &middot; sale price $490.00</span><a href="https://www.limslegacy.com/collections/clearance">See the further reduction sale &rarr;</a></div>
+</div></section>
+
+<section class="wrap" id="preorder"><h2 class="rv">How a pre-order works</h2>
+<p>Everything you commit to, in one place, before you reach checkout. This summary follows the store&rsquo;s Delivery &amp; Exchange policy.</p>
+<ol class="steps rv">
+<li><strong>Choose &amp; pay in full</strong>Pre-orders are confirmed with full payment. Deposits are not accepted.</li>
+<li><strong>Made for you</strong>Production usually takes 8&ndash;16 weeks. Freight, weather or strikes can affect timing.</li>
+<li><strong>Delivery slot</strong>Once availability is confirmed, the team contacts you within 3 working days.</li>
+<li><strong>At your door</strong>Delivery takes roughly 7 working days. Cancel within 24 hours of ordering for a full refund.</li>
+</ol>
+<p style="margin-top:1.5rem"><a class="btn alt" href="https://www.limslegacy.com/pages/delivery-exchange-policy">Read the full policy</a></p></section>
+
+<section class="wrap story"><div class="rv"><h2>The story of C.P. Lim</h2>
+<p>At 12, our founder left Swatow, China, for Singapore in search of his Nanyang Dreams. He peddled eggs on the street, then apprenticed under a master wood carver at the former C.K. Tang, mastering teak and camphor wood chest carving.</p>
+<p>In 1970, Lim&rsquo;s Arts &amp; Crafts opened in Holland Road Shopping Centre, and became a household name for eclectic and ethnic lifestyle products.</p>
+<a class="btn alt" href="https://www.limslegacy.com/pages/about-us">Read our story</a></div>
+<div class="rv"><button class="vid" id="vid" type="button" aria-label="Play the LIMS Legacy story video"><img src="https://i.ytimg.com/vi/fXX4bTcXfwU/hqdefault.jpg" width="480" height="360" alt="Video thumbnail: LIMS Legacy, our story" loading="lazy"><span>Play video</span></button></div></section>
+
+<section class="wrap"><h2 class="rv">From our showrooms</h2>
+<div class="gal rv">
+<img loading="lazy" width="600" height="450" src="https://www.limslegacy.com/cdn/shop/files/Lims-7_1382d3d6-a7f8-4e5f-b058-156175199b90_540x.jpg?v=1704792218" alt="LIMS Legacy furniture display">
+<img loading="lazy" width="600" height="450" src="https://www.limslegacy.com/cdn/shop/files/1_580x.png?v=1681122647" alt="LIMS Legacy home styling photo, #LimsAtHome">
+<img loading="lazy" width="600" height="450" src="https://www.limslegacy.com/cdn/shop/files/3_580x.png?v=1681122648" alt="LIMS Legacy styled interior with hand-painted pieces">
+<img loading="lazy" width="600" height="450" src="https://www.limslegacy.com/cdn/shop/files/4_6bbbf547-9d03-4220-beb7-53a9152b225c_580x.png?v=1681122436" alt="LIMS Legacy lifestyle photo, #LimsLegacy">
+</div>
+<div class="award rv"><img loading="lazy" width="96" height="96" src="https://www.limslegacy.com/cdn/shop/files/1000260830_640x640.jpg?v=1742537825" alt="Expat Living Readers' Choice Awards 2025 recognition"><p><b>Top 5, Expat Living Readers&rsquo; Choice Awards 2025 (Singapore).</b> Thank you for your support. <a href="https://expatliving.sg/readers-choice-awards-2025-top-companies-in-singapore/">See the list</a></p></div></section>
+
+<section class="wrap" id="visit" style="padding-top:0"><h2 class="rv">Visit an outlet</h2>
+<div class="out rv">
+<div><h3>Holland Village</h3>211 Holland Avenue<br>#02-02 / #03-34<br>Singapore 278967<br><a href="tel:+6564671300">+65 6467 1300</a></div>
+<div><h3>Marina Square</h3>6 Raffles Boulevard<br>#02-324/325<br>Singapore 039594<br><a href="tel:+6568370708">+65 6837 0708</a></div>
+<div><h3>Leisure Park Kallang</h3>5 Stadium Walk<br>#02-33<br>Singapore 397693<br><a href="tel:+6563866578">+65 6386 6578</a></div>
+<div><h3>Online orders</h3>Questions about an order?<br><a href="https://wa.me/6596625712">WhatsApp +65 9662 5712</a><br><a href="https://www.limslegacy.com/pages/contact-us">All contact details</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><div>&copy; 2026 LIMS Legacy Singapore &middot; <a href="https://instagram.com/limslegacy">Instagram</a> &middot; <a href="https://facebook.com/limslegacy">Facebook</a><br>Concept demo, not the live store.</div>
+<a href="https://softosync.com" aria-label="Softosync"><img src="https://softosync.github.io/client-demos/softosync_logo.png" alt="Softosync logo" width="48" height="48" loading="lazy" style="background:#fff;border-radius:8px;padding:3px"></a></div></footer>
+<script>
+(function(){
+var W=[["Blue wash","#4f7fa8"],["Dark wood","#4a2f20"],["Grey wash","#7b7f84"],["Light wood","#c79a5f"],["Turquoise wash","#3a9a95"],["White wash","#e9e2d4"]],
+sw=document.getElementById("sw"),cab=document.querySelector(".cab"),wn=document.getElementById("wn");
+W.forEach(function(w,i){var b=document.createElement("button");b.type="button";b.style.setProperty("--c",w[1]);b.setAttribute("aria-label",w[0]);b.setAttribute("aria-pressed",i?"false":"true");
+b.onclick=function(){sw.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");cab.style.background=w[1];wn.textContent=w[0];
+var dark=(w[0]==="White wash"||w[0]==="Light wood");cab.style.color=dark?"#2a1d16":"#fff";cab.querySelectorAll("b,span,a").forEach(function(e){e.style.color=dark?"#2a1d16":"#fff"})};sw.appendChild(b)});
+var v=document.getElementById("vid");v.onclick=function(){var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/fXX4bTcXfwU?autoplay=1&rel=0";f.title="LIMS Legacy - Our Story";f.allow="autoplay; encrypted-media; picture-in-picture";f.allowFullscreen=true;v.replaceWith(f);f.parentNode.style.cssText="aspect-ratio:4/3;width:100%"};
+var io="IntersectionObserver" in window?new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12}):null;
+document.querySelectorAll(".rv").forEach(function(e){io?io.observe(e):e.classList.add("in")});
+})();
+</script>
+</body>
+</html>
