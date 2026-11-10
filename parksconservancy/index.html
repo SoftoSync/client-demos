@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Golden Gate National Parks Conservancy | Parks for All Forever</title>
+<meta name="description" content="Plan your visit to the Golden Gate National Parks, find volunteer events, and give to protect the parks. Year-end gifts are matched through December 31.">
+<link rel="preconnect" href="https://www.parksconservancy.org">
+<style>
+:root{--fog:#f2f4f1;--bay:#0e2b3d;--wood:#2f5d46;--bridge:#b8321e;--sand:#e9e2d0;--line:#c9d3cd;--max:1120px}
+@media (prefers-color-scheme:dark){:root{--fog:#0c1f2b;--bay:#eef2ef;--wood:#8fc3a4;--bridge:#ff8a70;--sand:#16303f;--line:#2c4757}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fog);color:var(--bay);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.sr{position:absolute;left:-999px}
+.sr:focus{left:8px;top:8px;background:var(--bay);color:var(--fog);padding:8px 12px;z-index:99}
+:focus-visible{outline:3px solid var(--bridge);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.demo{background:var(--bay);color:var(--fog);font-size:13px;text-align:center;padding:6px 12px}
+@media (prefers-color-scheme:dark){.demo{background:#000;color:#eef2ef}}
+header{border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+.logo{height:44px;width:auto}
+nav ul{display:none;list-style:none;margin:0;padding:0;gap:22px}
+nav a{text-decoration:none;font-weight:600;font-size:15px}
+nav a:hover{text-decoration:underline}
+.btn{display:inline-block;background:var(--bridge);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;min-height:44px}
+@media (prefers-color-scheme:dark){.btn{color:#0c1f2b}}
+.btn.alt{background:transparent;color:inherit;border:2px solid currentColor}
+details.m{position:relative}
+details.m summary{list-style:none;cursor:pointer;font-weight:700;padding:10px 4px;min-height:44px}
+details.m summary::-webkit-details-marker{display:none}
+details.m ul{display:grid;position:absolute;right:0;top:100%;background:var(--fog);border:1px solid var(--line);padding:12px 18px;gap:10px;min-width:210px;z-index:10;list-style:none;margin:0}
+.status{background:var(--sand);border-bottom:1px solid var(--line);font-size:15px}
+.status .wrap{padding-top:10px;padding-bottom:10px}
+.status b{color:var(--bridge)}
+.hero{position:relative;color:#fff;background:#12303f}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero .in{position:absolute;inset:0;display:flex;align-items:flex-end}
+.hero .wrap{padding-bottom:28px;width:100%}
+h1,h2,h3{font-family:Futura,"Avenir Next","Century Gothic","Trebuchet MS",sans-serif;line-height:1.08;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.4rem,9vw,4.8rem);font-weight:800;max-width:11ch}
+.hero p{max-width:34rem;margin:12px 0 18px;font-size:1.1rem}
+h2{font-size:clamp(1.7rem,5vw,2.5rem);font-weight:800}
+section{padding:56px 0}
+.lede{max-width:40rem;margin:10px 0 0}
+/* signature: the trail of upcoming events */
+.trail{list-style:none;margin:32px 0 0;padding:0 0 0 34px;position:relative}
+.trail::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:0;border-left:3px dashed var(--wood);animation:walk 1.6s ease-out both}
+@keyframes walk{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+.trail li{position:relative;padding:0 0 30px}
+.trail li::before{content:"";position:absolute;left:-31px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--fog);border:4px solid var(--bridge)}
+.when{font-weight:800;color:var(--wood)}
+.trail h3{font-size:1.3rem;margin:2px 0 2px}
+.where{font-size:.95rem;opacity:.85}
+.trail a.go{display:inline-block;margin-top:6px;font-weight:700;min-height:32px}
+.parks{display:grid;gap:12px;margin-top:28px;grid-template-columns:1fr}
+.parks a{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border:2px solid var(--bay);border-radius:14px 14px 4px 14px;text-decoration:none;font-weight:700;font-size:1.1rem;min-height:56px}
+.parks a:hover{background:var(--bay);color:var(--fog)}
+.give{background:var(--wood);color:#fff}
+@media (prefers-color-scheme:dark){.give{background:#173b2b;color:#eef2ef}}
+.give .btn{margin:22px 14px 0 0}
+.give .btn.alt{color:#fff}
+.cf{display:grid;gap:24px;align-items:center}
+.cf img{width:100%;border-radius:4px 28px 4px 28px;aspect-ratio:2/1;object-fit:cover;background:var(--sand)}
+.news{background:var(--sand)}
+footer{padding:40px 0;font-size:15px}
+footer .cols{display:grid;gap:24px}
+.sl{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13px}
+.sl img{background:#fff;border-radius:6px;padding:2px}
+@media (min-width:768px){
+nav ul{display:flex}details.m{display:none}
+.hero img{height:520px}
+.parks{grid-template-columns:repeat(3,1fr)}
+.cf{grid-template-columns:1fr 1fr}
+footer .cols{grid-template-columns:2fr 1fr 1fr}
+.trail{padding-left:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.trail::before{left:0;right:0;top:15px;bottom:auto;border-left:0;border-top:3px dashed var(--wood);height:0;width:auto;animation-name:walkx}
+.trail li{padding:34px 0 0}
+.trail li::before{left:0;top:7px}
+}
+@keyframes walkx{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.trail::before{animation:none}html{scroll-behavior:auto}}
+@media (min-width:1100px){.trail{gap:26px}}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to main content</a>
+<div class="demo">Demo project prepared by Softosync</div>
+
+<header>
+<div class="wrap bar">
+<a href="https://www.parksconservancy.org/" aria-label="Golden Gate National Parks Conservancy home"><img class="logo" src="https://www.parksconservancy.org/themes/custom/parksconservancy/logo.svg" width="160" height="44" alt="Golden Gate National Parks Conservancy"></a>
+<nav aria-label="Main">
+<ul>
+<li><a href="https://www.parksconservancy.org/parks/explore-our-parks">Visit Parks</a></li>
+<li><a href="https://www.parksconservancy.org/events">Events</a></li>
+<li><a href="https://www.parksconservancy.org/volunteer">Volunteer</a></li>
+<li><a href="https://www.parksconservancy.org/our-work/our-work">Our Work</a></li>
+<li><a href="https://www.parksconservancy.org/give-today">Giving</a></li>
+<li><a href="https://www.parksconservancy.org/our-work/about-us">About Us</a></li>
+</ul>
+<details class="m"><summary>Menu</summary>
+<ul>
+<li><a href="https://www.parksconservancy.org/parks/explore-our-parks">Visit Parks</a></li>
+<li><a href="https://www.parksconservancy.org/events">Events</a></li>
+<li><a href="https://www.parksconservancy.org/volunteer">Volunteer</a></li>
+<li><a href="https://www.parksconservancy.org/our-work/our-work">Our Work</a></li>
+<li><a href="https://www.parksconservancy.org/give-today">Giving</a></li>
+<li><a href="https://www.parksconservancy.org/our-work/about-us">About Us</a></li>
+</ul></details>
+</nav>
+<a class="btn" href="https://secure.parksconservancy.org/site/Donation2?df_id=8460&amp;mfc_pref=T&amp;8460.donation=form1&amp;autologin=true&amp;s_src=2026_CYE">Donate</a>
+</div>
+</header>
+
+<div class="status" role="status">
+<div class="wrap"><b>Alcatraz Island is closed for dock repairs.</b> Work began Oct. 26, 2026 and was expected to finish by Nov. 18, 2026. <a href="https://www.parksconservancy.org/parks/visit-alcatraz">Read the Alcatraz closure details</a></div>
+</div>
+
+<main id="main">
+<div class="hero">
+<img src="https://www.parksconservancy.org/sites/default/files/styles/hero_mobile/public/2026-11/MOPO_20210213_RFB_016_1600x580.jpg.webp?h=d69b2e29&amp;itok=8Ly2WRwF" width="1600" height="580" fetchpriority="high" alt="People walking down a boardwalk at Mori Point in San Mateo County.">
+<div class="in"><div class="wrap">
+<h1>Parks for All Forever</h1>
+<p>Protect the parks with a year-end gift. Every gift made through December 31 is matched dollar-for-dollar.</p>
+<a class="btn" href="https://secure.parksconservancy.org/site/Donation2?df_id=8460&amp;mfc_pref=T&amp;8460.donation=form1&amp;autologin=true&amp;s_src=2026_CYE">Match my gift</a>
+</div></div>
+</div>
+
+<section id="events">
+<div class="wrap">
+<h2>Out in the parks this week</h2>
+<p class="lede">Five ways to help, from Fort Mason to Stinson Beach. Dates as listed on parksconservancy.org on Nov. 10, 2026.</p>
+<ol class="trail">
+<li><span class="when">Fri, Nov 13 · 9am–12pm</span><h3>Black Point Historic Gardens</h3><div class="where">Fort Mason</div><a class="go" href="https://www.parksconservancy.org/events/register?fid=46&amp;eid=31430">Register for Black Point Historic Gardens</a></li>
+<li><span class="when">Fri, Nov 13 · 11am–12pm</span><h3>Into the Woods 1-Hour Tour</h3><div class="where">Muir Woods National Monument</div><a class="go" href="https://www.parksconservancy.org/events/muir-woods-national-monument/woods-1-hour-tour">See the Muir Woods tour</a></li>
+<li><span class="when">Sat, Nov 14 · 9am–12pm</span><h3>Women's Fall Trail Day</h3><div class="where">Muir Woods, Mount Tamalpais</div><a class="go" href="https://www.parksconservancy.org/events/register?fid=99&amp;eid=a0wUQ000009Bkwo">Register for Women's Fall Trail Day</a></li>
+<li><span class="when">Sat, Nov 14 · 10am–1pm</span><h3>Marin Headlands Nursery</h3><div class="where">Marin Headlands</div><a class="go" href="https://www.parksconservancy.org/events/event-registration?fid=46&amp;eid=30999">Register for the Marin Headlands Nursery</a></li>
+<li><span class="when">Wed, Nov 18 · 10am–2:30pm</span><h3>Invasive Plant Patrol</h3><div class="where">Stinson Beach</div><a class="go" href="https://www.parksconservancy.org/events/register?fid=46&amp;eid=31606">Register for Invasive Plant Patrol</a></li>
+</ol>
+<p><a class="btn alt" href="https://www.parksconservancy.org/events">Explore all events</a></p>
+</div>
+</section>
+
+<section id="parks" style="background:var(--sand)">
+<div class="wrap">
+<h2>Find your park</h2>
+<div class="parks">
+<a href="https://www.parksconservancy.org/parks/mount-tamalpais">Mount Tamalpais <span aria-hidden="true">›</span></a>
+<a href="https://www.parksconservancy.org/parks/marin-headlands">Marin Headlands <span aria-hidden="true">›</span></a>
+<a href="https://www.parksconservancy.org/parks/alcatraz">Alcatraz <span aria-hidden="true">›</span></a>
+<a href="https://www.parksconservancy.org/parks/stinson-beach">Stinson Beach <span aria-hidden="true">›</span></a>
+<a href="https://www.parksconservancy.org/parks/fort-point">Fort Point <span aria-hidden="true">›</span></a>
+<a href="https://www.parksconservancy.org/parks/fort-funston">Fort Funston <span aria-hidden="true">›</span></a>
+</div>
+<p style="margin-top:24px"><a href="https://www.parksconservancy.org/find-your-park">See every park in the Find Your Park guide</a></p>
+</div>
+</section>
+
+<section>
+<div class="wrap cf">
+<img src="https://www.parksconservancy.org/sites/default/files/styles/card/public/2026-05/CRFI_20260305_KSu_082_2x1.jpg.webp?h=bde28bee&amp;itok=eCmNXyFY" width="1200" height="600" loading="lazy" decoding="async" alt="A cyclist rides up a road with Crissy Field and the San Francisco skyline in the background.">
+<div>
+<h2>Meet me at Crissy Field</h2>
+<p class="lede">For 25 years we've been saying it. See how more than 3,000 volunteers and others in the community helped reimagine Crissy Field.</p>
+<p><a class="btn" href="https://www.parksconservancy.org/parks/25-years-crissy-field">Explore 25 Years of Crissy Field</a></p>
+</div>
+</div>
+</section>
+
+<section class="give" id="give">
+<div class="wrap">
+<h2>Introducing the Protect the Parks Year-End Challenge</h2>
+<p class="lede">Each gift made for the parks through December 31st will be matched dollar-for-dollar. The parks need friends like you more than ever.</p>
+<a class="btn" href="https://secure.parksconservancy.org/site/Donation2?df_id=8460&amp;mfc_pref=T&amp;8460.donation=form1&amp;autologin=true&amp;s_src=2026_CYE">Match my gift</a>
+<a class="btn alt" href="https://www.parksconservancy.org/donate/membership-benefits">See membership benefits</a>
+</div>
+</section>
+
+<section class="news">
+<div class="wrap">
+<h2>Get news from across the parks</h2>
+<p class="lede">Wildlife highlights, new trails, expert hikes, upcoming events, and easy ways to get involved. Subscribe to Park E-ventures for free.</p>
+<p><a class="btn" href="https://www.parksconservancy.org/about/sign-park-e-ventures">Subscribe to Park E-ventures</a></p>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="cols">
+<div>
+<strong>Golden Gate National Parks Conservancy</strong><br>201 Fort Mason<br>San Francisco, CA 94123<br>
+<small>The Parks Conservancy is a registered 501(c)(3) nonprofit under EIN 94-2781708. Donations are tax-deductible to the fullest extent allowable under the law.</small>
+</div>
+<div>Phone: <a href="tel:+14155613000">415.561.3000</a><br>Email: <a href="mailto:info@parksconservancy.org">info@parksconservancy.org</a></div>
+<div><a href="https://www.parksconservancy.org/careers">Careers</a><br><a href="https://www.parksconservancy.org/about/press/press-room">Press</a><br><a href="https://www.parksconservancy.org/about/privacy">Privacy Policy</a></div>
+</div>
+<p>© 2026 Golden Gate National Parks Conservancy. All rights reserved.</p>
+<div class="sl"><img src="https://softosync.github.io/client-demos/softosync_logo.png" width="32" height="32" loading="lazy" alt="Softosync logo"><span>Demo concept by Softosync. Not the official website.</span></div>
+</div>
+</footer>
+</body>
+</html>
